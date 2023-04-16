@@ -1,0 +1,213 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{type1ec}
+\usepackage[OT2]{fontenc}
+\usepackage[serbianc]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{amssymb}
+\usepackage{color} 
+\usepackage{enumitem,framed} 
+\usepackage{indentfirst}
+\usepackage{hyperref} 
+\usepackage{tikz}
+\usepackage{nicefrac}
+\usepackage{pgf}
+\usepackage{pgfplots}
+\usepackage[lmargin=2.0cm, rmargin=2.0cm,tmargin=2.50cm,bmargin=2.50cm]{geometry}
+
+\newcommand{\latin}{\fontencoding{T1}\selectfont}
+\newcommand{\nap}{\textbf{Napomena.} }
+\newcommand{\f}{\mathscr{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ps}{\subset}
+\newcommand{\psj}{\subseteq}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert} 
+\newcommand{\rang}{\mathrm{rang}}
+\renewcommand{\dim}{\mathrm{dim}}
+
+
+\newcommand{\tma}{\textbf{Teorema.} }
+\newcommand{\tvr}{\textbf{Tvrd1enje.} }
+\newcommand{\lema}{\textbf{Lema.} }
+\newcommand{\pr}{\textit{Primer.} }
+\renewcommand{\proofname}{\textbf{Dokaz.}}
+
+\pagenumbering{gobble} 
+
+\title{\textbf{Analiza 2 -- osnovne ideje dokaza vaz1nijih teorema i tvrd1enja }}
+\date{}
+\begin{document}
+
+\maketitle
+
+\section{Diferenciranje}
+\subsection{Diferenciranje u normiranim vektorskim prostorima}
+\noindent
+\begin{tma}(Izvod sloz1ene funkcije)
+Neka su $X, Y,$ i $Z$ normirani vektorski prostori, $V \psj X$, $W \psj Y$ otvoreni skupovi, $f: V \to Y$, $g: W \to Z$ i $a \in V$, $f(a) \in W$. Tada vaz1i:
+\[f\mathcal{D} a \wedge g \mathcal{D} f(a) \implies g\circ f \mathcal{D} a\]
+i pri tome je
+\[D(g \circ f) (a) = Dg(f(a))\cdot Df(a) \]
+\end{tma}
+\begin{proof}
+Dokaz sledi iz definicije izvoda preslikavanja i chinjenice da je $o(O(h)) = o(h)$.
+\end{proof}
+\noindent
+\begin{tma}(Izvod inverzne funkcije)
+Neka su $X$ i $Y$ normirani vektorski prostori, $V \psj X$ otvoren skup, $a\in V$ i $f: V \to Y$ preslikavanje sa sledec1im svojstvima:
+\begin{itemize}
+\item[1)] $f \mathcal{D} a$
+\item[2)] $Df(a)$ invertibilan
+\item[3)] u nekoj $W$ okolini tachke $b := f(a)$ preslikavanje $f$ ima inverzno
+\item[4)] $f^{-1} C b$
+\end{itemize}
+Tada je $f^{-1} \mathcal{D} b$ i vaz1i:
+\[(Df^{-1})(b) = {(Df(a))}^{-1}\]
+\end{tma}
+\begin{proof}
+Neka je $b = f(a), a = f^{-1}(b)$. Pokazati da, poshto su translacije homeomorfizmi, vaz1i $f(a+h) = b+t$ i $f^{-1}(b+t) = a+h$. Iz neprekidnosti $f^{-1}$ u $b$ zakljuchiti chemu je jednako $f^{-1} (b+t) - f^{-1}(b)$. Iz uslova $f \mathcal{D} a$ zakljuchiti chemu je jednako ${(f'(a))}^{-1} t$ kao i da je $o(h) = o(t)$. Na osnovu prethodnih koraka, i definicije izvoda, izvesti konachni zakljuchak.
+\end{proof}
+\noindent
+\begin{tvr}
+Ako je prostor Banahov (kompletan normiran vektorski prostor), skup $GL(X)$ je otvoren u $\mathcal{L}(X;X)$.
+\end{tvr}
+\begin{proof}
+Posmatrati $A \in GL(X)$ i $h \in \mathcal{L} (X;X)$. Dokazati da je i $A+h \in GL(X)$ odnosno da postoji ${(A+h)}^{-1}$. Iskoristiti kompletnost domena kao i definisanost norme.
+\end{proof}
+\noindent
+\begin{nap}
+Prethodno tvrd1enje vaz1i i u neshto opshtijem sluchaju, za $\mathcal{L}(X;Y)$, ukoliko je $X$ Banahov, a $Y$ normirani vektorski prostor.
+\end{nap}
+\\ \\
+\begin{tma}
+(Teorema o konachnom prirashtaju) Neka su $X$ i $Y$ normirani vektorski prostori, $V \in X$ otvoren i $f:V \to Y$ neprekidno. Ako je 
+\[ [a, a+h] = \{a+th \mid 0 \leq t \leq 1\} \psj V \]
+i ako je preslikavanje $f$ diferencijabilno u svim tachkama skupa 
+\[]a, a+h[ = \{a+th \mid 0 < t < 1\}\]
+onda vaz1i 
+\[\norm{f(a+h) - f(a)} \leq \sup_{x \in ]a, a+h[} \norm{f'(x)} \cdot \norm{h}\]
+\end{tma}
+\begin{proof}
+Dokazati da teorema vaz1i na svakom segmentu $[c_1, c_2] \psj ]a, a+h[$. Pretpostaviti suprotno, 
+\[ \sup_{x \in [c_1, c_2]} \norm{f'(x)} < \frac{\norm{\Delta f}}{\norm{\Delta x}} \]
+Podeliti interval $[c_1, c_2]$ na dva podintervala i primeniti pomoc1nu lemu na njih. Pro\-du\-z1i\-ti postupak, formirati niz intervala. Ponovo primeniti pomoc1nu lemu. Izvesti kon\-tra\-dik\-ci\-ju.
+\end{proof}
+\noindent
+\begin{nap}
+Pomoc1na lema iz prethodne teoreme je sledec1a nejednakost: \\ \\
+Ako za $\alpha, \beta, \gamma, a, b, c \in \R_+ $ vaz1i $c \leq a+b$ i $\gamma = \alpha + \beta$, onda je
+\[\frac{c}{\gamma} \leq \max \{ \frac{a}{\alpha}, \frac{b}{\beta} \} \]
+\end{nap}
+\\ \\
+\begin{tma}
+(Ojlerova teorema) Neka je $X$ normirani vektorski prostor nad $\R$. Di\-fe\-ren\-ci\-ja\-bil\-na funkcija $f: X \to \R$ je homogena stepena $k>0$ ako i samo ako je \[df(x) \cdot x = k f(x)\]
+\end{tma}
+\begin{proof}
+Definishati pomoc1nu funkciju $\psi (t) = f(tx) - t^kf(x)$ i odatle dokazati oba smera ekvivalencije. 
+\end{proof}
+\noindent
+\begin{tvr}
+$\mathcal{L} (X; \mathcal{L}(X;Y)) \cong \mathcal{L} (X,X; Y)$
+\end{tvr}
+\begin{proof}
+Neka je $L \in \mathcal{L} (X; \mathcal{L}(X;Y))$ proizvoljno. Definisati $\tilde{L} : X \times X \to Y$ kao \[\tilde{L} (\eta, \xi) := L(\eta)(\xi)\]
+Dokazati da je sa $\varphi(L) = \tilde{L}$ dobro definisan traz1eni izomorfizam.
+\end{proof}
+\noindent
+\begin{tma}
+Neka su $X, Y$ normirani vekorski prostori, $V \psj X$ otvoren, $a \in V$, $f \mathcal{D}^{n-1}V$ i $f\mathcal{D}^n a$. Tada je 
+\[f(a+h) = f(a) + f'(a)h + \dots + \frac{1}{n!} f^{(n)}(a) h^n + o(\norm{h}^n), h \to 0\]
+\end{tma}
+\begin{proof}
+Dokaz izvesti indukcijom po $n$ korish\-c1e\-njem Posledice 2. teoreme o konachnom prirashtaju i chinjenice da je $(Lx^n)' = n Lx^{n-1}$.
+\end{proof}
+\noindent
+\begin{tma}
+(Teorema o implicitnoj funkciji) Neka su $X, Y$ i $Z$ normirani vektorski prostori, pri chemu je $Y$ kompletan, $x_0 \in X$, $y_0 \in Y$ i $W = B]x_0; \alpha[ \times B]y_0; \beta[ \subseteq X \times Y$. Pretpostavimo da preslikavanje $F:W \to Z$ ispunjava sledec1e uslove:
+\begin{enumerate}
+\item[(1)] $F(x_0, y_0) = 0$
+\item[(2)] $FC(x_0, y_0)$
+\item[(3)] $D_2F$ definisano na $W$ i neprekidno u tachki $(x_0, y_0)$
+\item[(4)] $\exists {(D_2F(x_0, y_0))}^{-1} \in \mathcal{L} (Z; Y)$
+\end{enumerate}
+Tada postoje okoline $U$ i $ V$ tachaka $x_0$ i $y_0$ i preslikavanje $f: U \to Y$ sa svojstvima:
+\begin{enumerate}
+\item[(a)] $U \times V \subseteq W$
+\item[(b)] $[(x,y)\in U \times V$ i $F(x,y) = 0] \iff y = f(x)$
+\item[(v)] $fCx_0$
+
+\end{enumerate}
+\end{tma}
+\begin{proof}
+Poshto su translacije homeomorfizmi, bez umanjenja opshtosti pretpostaviti da vaz1i $x_0 = 0 $ i $y_0 = 0$. Definisati pomoc1nu funkciju $g_x: B]0; \beta[ \to Y$ kao \[g_x(y) := y - {(D_2F(0, 0))}^{-1} F(x,y).\] Koristec1i Teoremu o konachnom prirashtaju dokazati da je $g_x$ kontrakcija i da slika neki kompletan skup u sebe. Primeniti Banahov stav o fiksnoj tachki. Odatle izvesti zakljuchak. 
+\end{proof}
+\begin{tma}
+(Teorema o inverznoj funkciji) Neka su $X, Y$ normirani vektorski prostori, pri chemu je $Y$ kompletan, neka je $V \subseteq Y$ otvoren skup, $y_0 \in V$ i $g: V \to X$ preslikavanje koje ima sledec1a svojstva:
+\begin{enumerate}
+\item[(1)] $g \in \mathcal{D}(V;X)$
+\item[(2)] $DgCy_0$
+\item[(3)] $\exists {(Dg(y_0))}^{-1} \in \mathcal{L} (X; Y)$
+\end{enumerate}
+Tada postoje okolina $V_0 \subseteq Y$ tachke $y_0$ i okolina $U_0 \subseteq X$ tachke $x_0 := g(y_0)$ takve da je $g: V_0 \to U_0$ bijekcija, $g^{-1} \mathcal{D} x_0$ i vaz1i \[ Dg^{-1}(x_0) = {(Dg(y))}^{-1}.\]
+\end{tma}
+\begin{proof}
+Dokaz sledi iz Teoreme o implicitnoj funkciji primenjene na funkciju $F(x,y) = x - g(y)$.
+\end{proof}
+\begin{tma}(Teorema o rangu) Neka je $V \subseteq \R^k$ otvoren i $f: V \to \R^l$ preslikavanje klase $C^n$, takvo da je za sve $x \in V$ $\rang Df(x) = r$. Tada u okolini svake tachke $x_0 \in V$ i njene slike $y_0 = f(x_0) \in \R^l$ postoje lokalne koordinate klase $C^n$ u kojima $f$ ima zapis \[f: (s_1, \dots , s_k) \to (s_1, \dots, s_r, 0, \dots , 0).\]
+Krac1e recheno, preslikavanje konstantnog ranga $r$ lokalno izgleda kao projekcija na $\R^r$.
+\end{tma}
+\begin{proof}
+
+\end{proof}
+\begin{tvr}
+Svaki difeomorfizam klase $C^1$ 
+\[\R^l \supseteq V \xrightarrow[]{f} f(V) \subseteq \R^l \]
+moz1e lokalno da se predstavi kao kompozicija $l$ prostih difeomorfizama. 
+\end{tvr}
+\begin{proof}
+Indukcijom po $k$ dokazati da difeomorfizam koji menja najvishe $k$ koordinata moz1e lokalno da se predstavi kao kompozicija $k$ prostih difeomorfizama.
+\end{proof}
+
+\subsection{Podmnogostrukosti u $\R^n$ i uslovni ekstremumi}
+\noindent
+\begin{tvr}
+Za $M \psj \R^{k+l}$ sledec1a tvrd1enja su ekvivalenta:
+\begin{itemize}
+\item[(a)] M je $k$ - dimenziona podmnogostrukost klase $C^p$
+\item[(b)] $(\forall p \in M)$ postoje otvorene okoline $p \in V$ i $0 \in U$ u $\R^{k+l}$ i difeomorfizam $g: U \to V$ klase $C^p$ takav da je $g(V \cap M) = U \cap (\R^k \times {0})$
+\item[(v)] $(\forall p \in M)$ postoje otvorene okoline $p \in V$  u $\R^{k+l}$ i $0 \in U$ u $\R^k$ i imerzija $h: D \to V$ klase $C^p$ takva da je $h: D \to V \cap M$ homeomorfizam u relativnoj topologiji na $V \cap M$ nasled1enoj iz $R^{k+l}$.
+\end{itemize}
+\end{tvr}
+\begin{proof}
+Kako je $k$-dim podmnogostrukost u $\R^{k+l}$ lokalno zadata jednachinom $f(x) = 0$, gde je $f$ sumbmerzija i $\rang Df(x) = l$, iz Teoreme o rangu zakljuchiti da je moguc1e izabrati lokalne koordinate u kojima $f$ ima zapis 
+\[ f(x_1, \dots , x_{k+l}) = (x_1, \dots, x_l). \] Odatle direktno zakljuchiti (b). Uz pomoc1 prethodnog, definisati traz1enu imerziju i zakljuchiti (v).
+\end{proof}
+\begin{tvr}
+Neka je $h:D \to M$ lokalna parametrizacija okoline tachke $p = h(0)$ i neka je $f: V \to \R^l$ submerzija takva da je $M \cap V = f^{-1} (0)$. Tada vaz1i da je $T_p M = \ker D f(p)$.
+\end{tvr}
+\begin{proof}
+Diferenciranjem $f(h(t)) \equiv 0$ u tachki $t = 0$ i primenom pravila za izvod kom\-po\-zi\-ci\-je preslikavanja zakljuchiti da je $T_p M \psj \ker Df(p)$. Odatle, primenom Prve teoreme o i\-zo\-mor\-fi\-zmu na preslikavanje $Df(p)$ zakljuchiti da vaz1i jednakost.
+\end{proof}
+\begin{tma}
+Neka je $V \in \R^n$ otvoren skup, $f: V \to \R$ funkcija klase $C^1$ i $M \psj V$ glatka podmnogostrukost. Da bi tachka $p \in M$ bila tachka uslovnog lokalnog ekstremuma funkcije $f|_M$ neophodno je da bude ispunjen bar 1 od sledec1ih uslova:
+\begin{itemize}
+\item[(a)] $df(p) = 0$ (tj. $p$ je kritichna tachka za $f$)
+\item[(b)] $T_pM \psj T_pS$, gde je $S:= \{x \in V | f(x) = f(p) \}$
+\end{itemize}
+\end{tma}
+
+\subsection{Apstraktne mnogostrukosti}
+\end{document}
+
