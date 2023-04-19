@@ -125,6 +125,19 @@ $\mathcal{L} (X; \mathcal{L}(X;Y)) \cong \mathcal{L} (X,X; Y)$
 Neka je $L \in \mathcal{L} (X; \mathcal{L}(X;Y))$ proizvoljno. Definisati $\tilde{L} : X \times X \to Y$ kao \[\tilde{L} (\eta, \xi) := L(\eta)(\xi)\]
 Dokazati da je sa $\varphi(L) = \tilde{L}$ dobro definisan traz1eni izomorfizam.
 \end{proof}
+
+\noindent
+\begin{tvr}
+	$fD^n a \implies D^nf(a)$ je simetrichno $n$-linearno preslikavanje.
+\end{tvr}
+\begin{proof}
+	Primetiti najpre da je dovoljno dokazati za transpozicije, jer one generishu grupu permutacija.
+	Uvesti \[F_{\zeta, \eta} (t) := f(a +t(\zeta + \eta)) - f(a + t\zeta) - f(a + t\eta) - f(a)\] i 
+	dokazati da je \[ D^2f(a)(\zeta, \eta) = \lim_{t\to 0} \dfrac{F_{\zeta, \eta} (t)}{t^2} .\] 
+	Izvesti zakljuchak iz toga, chinjenice da je $F$ simetrichno po $\zeta$ i $\eta$, kao i 
+	\[ D^nf(a) (\zeta_1, \zeta_2, \dotso, \zeta_n) = D_{\zeta_1}D_{\zeta_2}\dotso D_{\zeta_n} f(a).\]
+\end{proof}
+
 \noindent
 \begin{tma}
 Neka su $X, Y$ normirani vekorski prostori, $V \psj X$ otvoren, $a \in V$, $f \mathcal{D}^{n-1}V$ i $f\mathcal{D}^n a$. Tada je 
@@ -133,6 +146,7 @@ Neka su $X, Y$ normirani vekorski prostori, $V \psj X$ otvoren, $a \in V$, $f \m
 \begin{proof}
 Dokaz izvesti indukcijom po $n$ korish\-c1e\-njem Posledice 2. teoreme o konachnom prirashtaju i chinjenice da je $(Lx^n)' = n Lx^{n-1}$.
 \end{proof}
+
 \noindent
 \begin{tma}
 (Teorema o implicitnoj funkciji) Neka su $X, Y$ i $Z$ normirani vektorski prostori, pri chemu je $Y$ kompletan, $x_0 \in X$, $y_0 \in Y$ i $W = B]x_0; \alpha[ \times B]y_0; \beta[ \subseteq X \times Y$. Pretpostavimo da preslikavanje $F:W \to Z$ ispunjava sledec1e uslove:
