@@ -22,7 +22,7 @@
 \usepackage[lmargin=2.0cm, rmargin=2.0cm,tmargin=2.50cm,bmargin=2.50cm]{geometry}
 
 \newcommand{\latin}{\fontencoding{T1}\selectfont}
-\newcommand{\nap}{\textbf{Napomena.} }
+\newcommand{\nap}{\noindent\textbf{Napomena.} }
 \newcommand{\f}{\mathscr{F}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -38,10 +38,10 @@
 \renewcommand{\dim}{\mathrm{dim}}
 
 
-\newcommand{\tma}{\textbf{Teorema.} }
-\newcommand{\tvr}{\textbf{Tvrd1enje.} }
-\newcommand{\lema}{\textbf{Lema.} }
-\newcommand{\pr}{\textit{Primer.} }
+\newcommand{\tma}{\noindent\textbf{Teorema.} }
+\newcommand{\tvr}{\noindent\textbf{Tvrd1enje.} }
+\newcommand{\lema}{\noindent\textbf{Lema.} }
+\newcommand{\pr}{\noindent\textit{Primer.} }
 \renewcommand{\proofname}{\textbf{Dokaz.}}
 
 \pagenumbering{gobble} 
@@ -55,7 +55,6 @@
 \section{Diferenciranje}
 \subsection{Diferenciranje u normiranim vektorskim prostorima}
 
-\noindent
 \begin{tma}(Izvod sloz1ene funkcije)
 Neka su $X, Y,$ i $Z$ normirani vektorski prostori, $V \psj X$, $W \psj Y$ otvoreni skupovi, $f: V \to Y$, $g: W \to Z$ i $a \in V$, $f(a) \in W$. Tada vaz1i:
 \[f\mathcal{D} a \wedge g \mathcal{D} f(a) \implies g\circ f \mathcal{D} a\]
@@ -66,7 +65,6 @@ i pri tome je
 Dokaz sledi iz definicije izvoda preslikavanja i chinjenice da je $o(O(h)) = o(h)$.
 \end{proof}
 
-\noindent
 \begin{tma}(Izvod inverzne funkcije)
 Neka su $X$ i $Y$ normirani vektorski prostori, $V \psj X$ otvoren skup, $a\in V$ i $f: V \to Y$ preslikavanje sa sledec1im svojstvima:
 \begin{itemize}
@@ -82,7 +80,6 @@ Tada je $f^{-1} \mathcal{D} b$ i vaz1i:
 Neka je $b = f(a), a = f^{-1}(b)$. Pokazati da, poshto su translacije homeomorfizmi, vaz1i $f(a+h) = b+t$ i $f^{-1}(b+t) = a+h$. Iz neprekidnosti $f^{-1}$ u $b$ zakljuchiti chemu je jednako $f^{-1} (b+t) - f^{-1}(b)$. Iz uslova $f \mathcal{D} a$ zakljuchiti chemu je jednako ${(f'(a))}^{-1} t$ kao i da je $o(h) = o(t)$. Na osnovu prethodnih koraka, i definicije izvoda, izvesti konachni zakljuchak.
 \end{proof}
 
-\noindent
 \begin{tvr}
 Ako je prostor Banahov (kompletan normiran vektorski prostor), skup $GL(X)$ je otvoren u $\mathcal{L}(X;X)$.
 \end{tvr}
@@ -90,7 +87,6 @@ Ako je prostor Banahov (kompletan normiran vektorski prostor), skup $GL(X)$ je o
 Posmatrati $A \in GL(X)$ i $h \in \mathcal{L} (X;X)$. Dokazati da je i $A+h \in GL(X)$ odnosno da postoji ${(A+h)}^{-1}$. Iskoristiti kompletnost domena kao i definisanost norme.
 \end{proof}
 
-\noindent
 \begin{nap}
 Prethodno tvrd1enje vaz1i i u neshto opshtijem sluchaju, za $\mathcal{L}(X;Y)$, ukoliko je $X$ Banahov, a $Y$ normirani vektorski prostor.
 \end{nap}
@@ -109,7 +105,6 @@ Dokazati da teorema vaz1i na svakom segmentu $[c_1, c_2] \psj ]a, a+h[$. Pretpos
 Podeliti interval $[c_1, c_2]$ na dva podintervala i primeniti pomoc1nu lemu na njih. Pro\-du\-z1i\-ti postupak, formirati niz intervala. Ponovo primeniti pomoc1nu lemu. Izvesti kon\-tra\-dik\-ci\-ju.
 \end{proof}
 
-\noindent
 \begin{nap}
 Pomoc1na lema iz prethodne teoreme je sledec1a nejednakost: \\ \\
 Ako za $\alpha, \beta, \gamma, a, b, c \in \R_+ $ vaz1i $c \leq a+b$ i $\gamma = \alpha + \beta$, onda je
@@ -123,7 +118,6 @@ Ako za $\alpha, \beta, \gamma, a, b, c \in \R_+ $ vaz1i $c \leq a+b$ i $\gamma =
 Definishati pomoc1nu funkciju $\psi (t) = f(tx) - t^kf(x)$ i odatle dokazati oba smera ekvivalencije. 
 \end{proof}
 
-\noindent
 \begin{tvr}
 $\mathcal{L} (X; \mathcal{L}(X;Y)) \cong \mathcal{L} (X,X; Y)$
 \end{tvr}
@@ -132,7 +126,6 @@ Neka je $L \in \mathcal{L} (X; \mathcal{L}(X;Y))$ proizvoljno. Definisati $\tild
 Dokazati da je sa $\varphi(L) = \tilde{L}$ dobro definisan traz1eni izomorfizam.
 \end{proof}
 
-\noindent
 \begin{tvr}
 	$fD^n a \implies D^nf(a)$ je simetrichno $n$-linearno preslikavanje.
 \end{tvr}
@@ -144,7 +137,6 @@ Dokazati da je sa $\varphi(L) = \tilde{L}$ dobro definisan traz1eni izomorfizam.
 	\[ D^nf(a) (\zeta_1, \zeta_2, \dotso, \zeta_n) = D_{\zeta_1}D_{\zeta_2}\dotso D_{\zeta_n} f(a).\]
 \end{proof}
 
-\noindent
 \begin{tma}
 Neka su $X, Y$ normirani vektorski prostori, $V \psj X$ otvoren, $a \in V$, $f \mathcal{D}^{n-1}V$ i $f\mathcal{D}^n a$. Tada je 
 \[f(a+h) = f(a) + f'(a)h + \dots + \frac{1}{n!} f^{(n)}(a) h^n + o(\norm{h}^n), h \to 0\]
@@ -153,7 +145,28 @@ Neka su $X, Y$ normirani vektorski prostori, $V \psj X$ otvoren, $a \in V$, $f \
 Dokaz izvesti indukcijom po $n$ korish\-c1e\-njem Posledice 2. teoreme o konachnom prirashtaju i chinjenice da je $(Lx^n)' = n Lx^{n-1}$.
 \end{proof}
 
-\noindent
+\subsection{Unutrashnje tachke ekstremuma}
+
+\begin{tvr}
+	Neka je $V$ otvoren podskup normiranog vektorskog prostora $X$, $a \in V$, $f:V\to \R$, $f D^n a$,
+	$Df(a) = D^2f(a) = \dotso = D^{n-1}f(a)$, $D^n f(a) \neq 0 $. Da bi $a$ bila tachka lokalnog ekstremuma
+    funkcije $f$:
+	\begin{itemize}
+		\item \textbf{neophodno} je da $n$ bude paran broj i da je $D^nf(a)$ semidefinitna forma.
+		\item \textbf{dovoljno} je da su vrednosti $D^nf(a)h^n$ odvojene od $0$ na jedinichnoj sveri $\norm h = 1$.
+	\end{itemize}
+\end{tvr}
+\begin{proof}
+	Primeniti Tejlorovu formulu.
+\end{proof}
+
+
+\begin{pr}(Ojler--Lagranzhove jednachine)
+	%TODO
+\end{pr}
+
+\subsection{Teorema o implicitnoj funkciji}
+
 \begin{tma}
 (Teorema o implicitnoj funkciji) Neka su $X, Y$ i $Z$ normirani vektorski prostori, pri chemu je $Y$ kompletan, $x_0 \in X$, $y_0 \in Y$ i $W = B]x_0; \alpha[ \times B]y_0; \beta[ \subseteq X \times Y$. Pretpostavimo da preslikavanje $F:W \to Z$ ispunjava sledec1e uslove:
 \begin{enumerate}
@@ -200,11 +213,10 @@ moz1e lokalno da se predstavi kao kompozicija $l$ prostih difeomorfizama.
 Indukcijom po $k$ dokazati da difeomorfizam koji menja najvishe $k$ koordinata moz1e lokalno da se predstavi kao kompozicija $k$ prostih difeomorfizama.
 \end{proof}
 
-
 \section{Mnogostrukosti}
+
 \subsection{Podmnogostrukosti u $\R^n$ i uslovni ekstremumi}
 
-\noindent
 \begin{tvr}
 Za $M \psj \R^{k+l}$ sledec1a tvrd1enja su ekvivalenta:
 \begin{itemize}
@@ -217,12 +229,14 @@ Za $M \psj \R^{k+l}$ sledec1a tvrd1enja su ekvivalenta:
 Kako je $k$-dim podmnogostrukost u $\R^{k+l}$ lokalno zadata jednachinom $f(x) = 0$, gde je $f$ sumbmerzija i $\rang Df(x) = l$, iz Teoreme o rangu zakljuchiti da je moguc1e izabrati lokalne koordinate u kojima $f$ ima zapis 
 \[ f(x_1, \dots , x_{k+l}) = (x_1, \dots, x_l). \] Odatle direktno zakljuchiti (b). Uz pomoc1 prethodnog, definisati traz1enu imerziju i zakljuchiti (v).
 \end{proof}
+
 \begin{tvr}
 Neka je $h:D \to M$ lokalna parametrizacija okoline tachke $p = h(0)$ i neka je $f: V \to \R^l$ submerzija takva da je $M \cap V = f^{-1} (0)$. Tada vaz1i da je $T_p M = \ker D f(p)$.
 \end{tvr}
 \begin{proof}
 Diferenciranjem $f(h(t)) \equiv 0$ u tachki $t = 0$ i primenom pravila za izvod kom\-po\-zi\-ci\-je preslikavanja zakljuchiti da je $T_p M \psj \ker Df(p)$. Odatle, primenom Prve teoreme o i\-zo\-mor\-fi\-zmu na preslikavanje $Df(p)$ zakljuchiti da vaz1i jednakost.
 \end{proof}
+
 \begin{tma}
 Neka je $V \in \R^n$ otvoren skup, $f: V \to \R$ funkcija klase $C^1$ i $M \psj V$ glatka podmnogostrukost. Da bi tachka $p \in M$ bila tachka uslovnog lokalnog ekstremuma funkcije $f|_M$ neophodno je da bude ispunjen bar 1 od sledec1ih uslova:
 \begin{itemize}
