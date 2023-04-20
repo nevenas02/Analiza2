@@ -28,6 +28,10 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\eps}{\varepsilon}
 \newcommand{\ps}{\subset}
@@ -244,10 +248,20 @@ Neka je $V \in \R^n$ otvoren skup, $f: V \to \R$ funkcija klase $C^1$ i $M \psj 
 \item[(b)] $T_pM \psj T_pS$, gde je $S:= \{x \in V | f(x) = f(p) \}$
 \end{itemize}
 \end{tma}
+\begin{proof}
+Pretpostaviti da vaz1i $a)$ u teoremi. Odatle direktno zakljuchiti da je $p$ kandidat za bezuslovni, a samim tim i uslovni ekstremum. Dalje, pretpostaviti da $a)$ u teoremi ne vaz1i. Dokazati da je onda u nekoj okolini tachke $p$ funkcija $f$ submerzija, pa je onda $S$ $(n-1)$ - dim glatka podmnogostrukost, pa ima smisla $T_pS$. Uzeti $\gamma: ]-\delta, +\delta[ \to M$ takvo da $\gamma(0) = p$. Iz $(f \circ \gamma)'(0) = 0$ izvesti $T_pM \psj T_pS$.
+\end{proof}
+
+\begin{nap}
+Neka je $M$ globalno zadato jednachinom $g(x) = 0$ za neku submerziju $g: V \to \RR$ i neka je $p$ lokalni ekstremum za $f|_M$. Sa $\gamma : I \to M$ data je neka kriva koja lez1i na $M$ i za koju vaz1i $\gamma(0) = p$. Tada, $f \circ \gamma$ ima lokalni ekstremum u $0$, tj. za $f \circ \gamma : \RR \to \RR$ vaz1i $(f \circ \gamma)'(0) = 0$ odnosno $\overrightarrow{\nabla f}(\gamma(0))\cdot \gamma'(0) = 0$ za svako $\gamma$ kroz $p$. Odatle sledi $\overrightarrow{\nabla f}(p) \perp M$. Kako je $\gamma \in M$, odatle sledi $(g \circ \gamma)(t) = 0$ pa kada to diferenciramo po $t$ dobijamo da je $\overrightarrow{\nabla g} \perp M$. Konachno, dobijamo sistem $n+1$ jednachina sa $n+1$ nepoznatih koji je odred1en i koji nam sluz1i za odred1ivanje uslovnih ekstremuma:
+\begin{empheq}[box=\fbox]{align*}
+\overrightarrow{\nabla f}(p) &= \lambda \overrightarrow{\nabla g}(p)\\
+g(p) &= 0 
+\end{empheq}
+\end{nap}
 
 \subsection{Apstraktne mnogostrukosti}
 
 Topoloshki prostor $M$ je topoloshka mnogostrukost ako $\dotso$
 
 \end{document}
-
