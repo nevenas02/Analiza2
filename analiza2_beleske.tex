@@ -262,6 +262,60 @@ g(p) &= 0
 
 \subsection{Apstraktne mnogostrukosti}
 
-Topoloshki prostor $M$ je topoloshka mnogostrukost ako $\dotso$
+\begin{lema}
+Neka je $M \subseteq \RR^{k+l}$ $k$ - dimenziona podmnogostrukost klase $C^p$, neka su $V_1, V_2$ okoline (u $\RR^{k+l}$) tachke $p \in M$ i neka su $h_1 : D_1 \to V_1$, $h_2: D_2 \to V_2$ dve lokalne $C^p$ parametrizacije skupova $V_1 \cap M$ i $V_2 \cap M$. Tada je
+\[h_2 \circ {h_1}^{-1} : D_1 \cap {h_1}^{-1}(V_2) \to D_2 \cap {h_2}^{-1}(V_1)\]
+difeomorfizam klase $C^p$.
+\end{lema}
+\begin{proof}
+Dokaz leme sledi iz chinjenice da je kompozicija difeomorfizama difeomorfizam.
+%\begin{center}
+%\includegraphics[width=5cm]
+%{Two_coordinate_charts_on_a_manifold.png}
+%\end{center}
+\end{proof}
+
+\begin{tvr}
+Ne postoji imerzija klase $C^p$ gde je $p \leq 1$ gde $h: \RR \to \RR^2$ takva da je $h(\RR) = \Gamma$.
+\end{tvr}
+\begin{proof}
+Iz neprekidnosti $h'$ izvesti kontradikciju.
+\end{proof}
+
+\begin{tma}
+Za svako otvoreno pokrivanje ${\{U_{\lambda} \}}_{\lambda \in \Lambda}$ glatke mnogostrukosti $M$ postoji razlaganje jedinice ${\{\rho_{\lambda} \}}_{\lambda \in \Lambda}$ takvo da je $\latin{\textrm{supp}} \rho_{\lambda} \subseteq U_{\lambda}$.
+\end{tma}
+\\ \\
+\begin{tma}
+Za ${\{U_{\lambda} \}}_{\lambda \in \Lambda}$ kao u prethodnoj teoremi postoji razlaganje jedinice ${\{\rho_{\sigma} \}}_{\sigma \in \Sigma}$ sa kompaktnim nosachem, takvo da $(\forall \sigma \in \Sigma)(\exists \lambda \in \Lambda)$ $\latin{\textrm{supp}} \rho_{\sigma} \subseteq U_{\lambda}$.
+\end{tma}
+\\ \\
+\begin{tma}
+(Vitnijeva) Svaka glatka $n$-dimenziona mnogostrukost M moz1e da se glatko uloz1i u $\RR^{2n+1}$, tj. postoji $C^{\infty}$ ulaganje  $f:M \to \RR^{2n+1}$. Drugim rechima, svaka apstraktna glatka mnogostrukost je difeomorfna podmnogostrukosti u euklidskom prostoru.
+\end{tma}
+\\ \\
+\begin{tma}
+Svaka kompaktna glatka mnogostrukost $M$ moz1e glatko da se uloz1i u $\RR^l$ za dovoljno veliko $l$.
+\end{tma}
+\begin{proof}
+Neka je $\{{(U_j, \varphi_j)}_{1 \leq j \leq k} \}$ atlas na $M$, takav da je $\varphi_j(U_j) = B(0;3)$ i da $V_j = {\varphi_j}^{-1} (B(0;1))$ takod1e pokrivaju M. Za svako $j$ konstruisati funkciju $h_j : U_j \to \RR$ pomoc1u 
+\[h(x) = \frac{g(4 - \norm{x}^2)}{g(4 - \norm{x}^2) + g(\norm{x}^2 - 1)}\]
+gde je $g$ dato sa
+\[
+g(t)=
+\begin{cases}
+e^{-\frac{1}{t}}, \hspace{0.5cm} t>0\\
+0, \hspace{0.5cm} t\leq0
+\end{cases}
+\]
+Definisati preslikavanje \[f:M \to \underbrace{\RR^n \times \dots \times \RR^n}_{k}\times \underbrace{\RR \times \dots \times \RR}_{k} =: \RR^l\]
+sa 
+\[f(p) = \biggl(h_1(p)\varphi_1(p), \dots , h_k(p)\varphi_k(p), h_1(p), \dots , h_k(p)\biggr)\]
+gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
+\\
+\end{proof}
+
+\subsection{Izvod preslikavanja $f:M \to N$}
+
 
 \end{document}
