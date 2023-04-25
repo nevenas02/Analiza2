@@ -44,6 +44,7 @@
 
 \newcommand{\tma}{\noindent\textbf{Teorema.} }
 \newcommand{\tvr}{\noindent\textbf{Tvrd1enje.} }
+\newcommand{\posl}{\noindent\textbf{Posledica.} }
 \newcommand{\lema}{\noindent\textbf{Lema.} }
 \newcommand{\pr}{\noindent\textit{Primer.} }
 \renewcommand{\proofname}{\textbf{Dokaz.}}
@@ -317,5 +318,178 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 
 \subsection{Izvod preslikavanja $f:M \to N$}
 
+\begin{lema}
+	Derivacija $D$ na $C^\infty(p)$ preslikavanja koje je konstantno u nekoj okolini tachke $p$ je 0.
+\end{lema}
+\begin{proof}
+	Primniti Lajbnicovo pravilo i iz homogenosti (derivacija je linearno preslikavanje, dakle i homogeno) zakljuchiti
+	da je dovoljno dokazati $D1 = 0$.
+\end{proof}
 
+\begin{lema}
+	Neka je $f \in C^\infty_\RR (U)$ i $p \in U$. Tada postoje lopta $B := B(p, \eps) \psj U$ i funkcije
+	$g_1, g_2, \dotso, g_n \in C^\infty_\RR (U)$ takve da:
+	\begin{enumerate}
+		\item $g_j(p) = \dfrac{\partial f}{\partial x_j}(p)$
+		\item $\ds{f(x_1, x_2, \dotso, x_n) = f(p) + \sum_{j=1}^n(x_j - p_j)g_j(x)}$
+	\end{enumerate}
+\end{lema}
+\begin{proof}
+	Za $x \in B$ ($B$ kao u postavci) mozhemo napisati
+	\begin{align*}
+		f(x) &= f(p) + \int_0^1 \frac{1}{dt}f(p+t(x-p))dt\\
+			 &= f(p) + \sum_{j=1}^n(x_j - p_j)\int_0^1 \frac{\partial f}{\partial x_j}f(p+t(x-p))dt
+	\end{align*}
+	Uzeti da je \(\ds{ g_j = \int_0^1 \frac{\partial f}{\partial x_j}f(p+t(x-p))dt }\).
+\end{proof}
+
+\begin{tma}
+	Neka je $U\psj \RR^n$ otvoren skup i $p\in U$. Za svaku derivaciju $D : C^\infty(p)\to C^\infty(p)$
+	algebre $C^\infty(p)$ postoji jedinstveni vektor $\xi \in T_p U$ takav da je $Df(p) = df(p)\cdot \xi$.
+\end{tma}
+\begin{proof}
+	Napisati $f(x)$ kao u prethodnoj lemi, i primeniti derivaciju na taj zapis. Dobijemo
+	\[ Df(x) = \sum_{j=1}^n(D\pi_j(x)\cdot g_j(x) + (x_j - p_j)\cdot Dg_j(x)) ,\] 
+	Primenom ovoga u tachki $p$ imamo:
+	\[ Df(p) = \sum_{j=1}^nD\pi_j(p)\cdot \dfrac{\partial f}{\partial x_j}(p) = df(p)\cdot \xi ,\]
+	za $\xi = (D\pi_1, D\pi_2, \dotso, D\pi_n)$.
+\end{proof}
+
+\begin{nap}
+	Prethodna teorema nam daje ekvivalenciju geometrijskog i algebarskog (analitichkog) pristupa
+	definiciji tangnetnog prostora mnogostrukosti.
+\end{nap}
+
+\begin{posl}
+	$T_p M$ je vektorski prostor, jer je linearna kombinacija derivacija takodje derivacija.
+\end{posl}
+
+\begin{posl}
+	$\dim M = n \implies \dim T_p M = n$
+\end{posl}
+\begin{proof}
+	Neka je $\varphi : U \to \RR^n$ lokalna karta i $p \in U$. Tada je 
+	$\dfrac{\partial f}{\partial x_1}, \dfrac{\partial f}{\partial x_2}, \dotso, \dfrac{\partial f}{\partial x_n}$
+	baza za $T_{\varphi(p)} U$, pa je 
+	$(\varphi^{-1})_*\dfrac{\partial f}{\partial x_1}, (\varphi^{-1})_*\dfrac{\partial f}{\partial x_2}, \dotso, (\varphi^{-1})_*\dfrac{\partial f}{\partial x_n}$
+	baza za $T_p M$.
+\end{proof}
+
+\section{Integracija}
+
+\subsection{Apstraktni integrali}
+
+\begin{lema}
+	Vektorski potprostor $\mathcal{E}$ prostora $\RR^T$ je reshetka akko vazhi
+	\[ f \in \mathcal{E} \implies |f| \in \mathcal{E} .\]
+\end{lema}
+\begin{proof}
+	Iskoristiti vezu izmedju apsolutne vrednosti i maksimuma i mimimuma.
+\end{proof}
+
+\begin{tvr}
+	Radonov integral je ujedno i elementarni integral.
+\end{tvr}
+\begin{proof}
+	Po definiciji je radonov integral linearan, tako da je dovoljno dokazati da 
+	za opadajuc1i niz funkcija $f_n$ sa kompaktnim nosachem koji tezhi $0$
+	vazhi i da je $I(f_n) \to 0$, kad $n\to \infty$. Neka je $K_n$ nosach funkcije
+	$f_n$. Kako je $f_n$ opadajuc1i niz koji tezhi nuli, sledi da je $K_1\supseteq K_2 \supseteq \dotso$.
+	Iz Dinijeve teoreme ($0$ je neprekidna funkcija) sledi da $f_n\rightrightarrows 0$, pa za proizvoljno
+	$\eps > 0$ postoji $n_0 \in \NN$, takvo da $n\geq n_0 \implies f_n\mid_{K_1} < \eps$.
+
+	Na kraju, neka je $\psi \in  C_C(T)$ funkcija za koju je $0 \leq \psi \leq 1$ i $\psi \mid_{K_1} \equiv 1$ (takva
+	funkcija postoji zbog Urisonove leme). Zbog $\mathrm{supp} f_n \psj K_1$, vazhi
+	\[ f_n = f_n \cdot \chi_{K_1} \leq f_n \cdot \psi \leq \eps \psi .\] 
+	Iz pozitivnosti i linearnosti Radonovog integrala imamo $I(f_n) \leq \eps I(\psi)$, pa je onda i $I(f_n)\to 0$, kad
+	$n\to \infty$.
+\end{proof}
+
+\begin{nap}
+	Prostor $C_C(T)$ je prostor neprekidnih funkcija $f:T\to \RR$ koje imaju kompaktan nosach, pri chemu je 
+	$T$ lokalno kompaktan metrichki (ili Hausdorfov) prostor.
+\end{nap}
+
+\begin{pr}
+	Josh neki primeri elementarnog integrala su:
+	\begin{itemize}
+		\item Dirakova delta funkcija $\delta_a: C_C(T)\to \RR$, $\delta_a(f):=f(a)$ (valuacija u tachki).
+		\item Rimanov integral
+		\item Riman-Stiltjesov integral
+	\end{itemize}
+\end{pr}
+
+\begin{lema}
+	Za Radonov integral $I: C_C(T) \to \RR$ vazhi:
+	\begin{enumerate}
+		\item $f \leq g \implies I(f) \leq I(g)$
+		\item $|I(f)| \leq I(|f|)$
+	\end{enumerate}
+\end{lema}
+\begin{proof}
+	Za prvi deo tvrdjenja primeniti linearnost i pozitivnost $I$. Za drugi deo primeniti prvi deo i $-|f| \leq f \leq |f|$.
+\end{proof}
+
+\begin{tvr}
+	Neka je $T$ lokalno kompaktan Hausdorfov prostor, $K \psj T$ kompaktan podskup i $C(T; K)$ skup funkcija i $C_C(T)$
+	kojima je nosach u $K$. Tada je restrikcija
+	\[ I:C(T;K) \to \RR \] 
+	Radonovog integrala neprekidna u odnosu na normu
+	\[ \norm{f}_K := \sup\{|f(t)| \mid t\in K\} .\] 
+\end{tvr}
+\begin{proof}
+	Neka je $\psi \in  C_C(T)$ funkcija za koju je $0 \leq \psi \leq 1$ i $\psi \mid_{K} \equiv 1$. Tada je 
+	\[ (\forall f \in C(T; K))(\forall t \in T) |f(t)| \leq \norm{f}_K \cdot \psi(t) ,\] 
+	pa je $|I(f)| \leq I(|f|) \leq I(\psi) \cdot \norm{f}_K$.
+\end{proof}
+
+\begin{tma}(Fubini)
+	Neka su $S$ i $T$ komapktni Hausdorfovi prostori i neka su 
+	\[ I_S : C(S) \to \RR ,  I_T : C(T) \to \RR\] 
+	Radonovi integrali. Tada postoji jedinstven Radonov integral 
+	\[ I:C(S\times T) \to \RR \] 
+	takav da je 
+	\[ I(f\otimes g) = I(f)\cdot I(g) .\] 
+\end{tma}
+
+\begin{nap}
+	Tenzorski proizvod funkcija $f:S\to \RR$ i $g:T\to \RR$ je funkcija $f\otimes g:S\times T \to \RR$
+	definisana sa 
+	\[ f\otimes g(s, t) := f(s)\cdot g(t) \] 
+	Definishemo i prostor $C(S)\otimes C(T)$ kao
+	\[ C(S)\otimes C(T) := \Big\{\sum_j f_j\otimes g_j\mid f_j \in C(S), g_j \in C(T)\Big\},\] 
+	gde je navedena suma konachna.
+\end{nap}
+\begin{proof}
+	Iz prethodnog tvrdjenja sledi da je Radonov integral na kompaktnim prostorima neprekidan,
+	pa je i ravnomerno neprekidan po Kantorovoj teoremi. Iz Ston-Vajershtrasove teoreme sledi
+	da je $\overline{C(S)\otimes C(T)} = C(S\times T)$, pa dokaz tvrdjenja sledi iz Principa
+	produzhenja ravnomerno neprekidnog preslikavanja sa kompletnim kodomenom (odatle 
+	sledi i jedinstvenost).
+\end{proof}
+
+\begin{posl}(Fubinijeva teorema za Rimanov integral)
+	Neka je $\mathcal{J} = \mathcal{J}_1 \times \mathcal{J}_2$ $n$-dimenzioni kvadar,
+	predstavljen kao proizvod $k$--dimenzionog kvadra $\mathcal J_1$ i $(n-k)$--dimenzionog kvadra $\mathcal J_2$.
+	Tada, za neprekidnu funkciju $f:\mathcal{J}\to \RR$ vazhi:
+	\[ \int_{\mathcal J} = \int_{\mathcal J_2} \left(\int_{\mathcal J_1}f(x, y) dx \right) dy = \int_{\mathcal J_1} \left(\int_{\mathcal J_2}f(x, y) dy \right) dx.\] 
+\end{posl}
+\begin{proof}
+	Zbog linearnosti Rimanovog integrala i prethodne teoreme, dovoljno je dokazati tvrdjenje
+	za $f = f_1 \otimes f_2$, za $f_i:\mathcal J_i \to \RR, i \in \{1, 2\}$ neprekidne funkcije.
+	Sada direktno sledi dokaz iz definicije Rimanovog integrala po kvadru $\mathcal J$.
+\end{proof}
+
+\subsection{Klasa integrabilnih funkcija}
+
+\subsection{Normirani prostor integrabilnih funkcija}
+
+\subsection{Kompletiranje metrichkog prostora i Lebegov integral}
+
+\subsection{Prostor funkcija integrabilnih po Rimanu}
+
+\subsection{Smena promenljive u integralu}
+
+\section{Vektorska polja i diferencijalne forme}
 \end{document}
+
