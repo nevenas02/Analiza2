@@ -480,15 +480,186 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	Sada direktno sledi dokaz iz definicije Rimanovog integrala po kvadru $\mathcal J$.
 \end{proof}
 
-\subsection{Klasa integrabilnih funkcija}
-
 \subsection{Normirani prostor integrabilnih funkcija}
+
+\begin{lema}
+	Relacija ekvivalencije na skupu 
+	$\mathcal D (T,\mathcal{E}, I) := \{f \in D(T,\mathcal E, I) \mid \overline{I}(|f|)< +\infty\}$,
+	definisana sa 
+	\[ f \sim g \iff f = g \text{ skoro svuda na T} .\] 
+	je kongruencija (tj. saglasna je sa operacijama vektorskog prostora). Kolichnichki prostor je 
+	normirani vektorski prostor, sa normom
+	\[ \norm{[f]}_1 := \overline{I}(|f|) ,\] 
+	koja je dobro definisana.
+\end{lema}
+\begin{proof}
+	Navedena norma je ochigledno pseudo--norma (zadovoljava nejednakost trougla i simetrichnost). Njena dobra definisanost 
+	je jasna, ako je $[f] = [g]$, onda je $f = g$ skoro svuda na $T$, pa je i $\overline{I}(|f|) = \overline{I}(|g|)$.
+	Treba josh dokazati da je $[\alpha f + \beta g] = \alpha [f] + \beta [g]$. Homogenost je jasna, pa je dovoljno dokazati
+	samo linearnost, koja c1e sledeti iz chinjenice da je unija dva skupa mere nula takodje skup mere nula.
+\end{proof}
+\begin{posl}
+	$(\widetilde{D} (T,\mathcal{E}, I), \norm{\cdot}_1)$ je normirani vektorski prostor.
+\end{posl}
+
+\begin{nap}
+	Preslikavanje $I:\widetilde{D} (T,\mathcal{E}, I) \to \RR$ je neprekidno linearno preslikavanje,
+	jer je $|I(f)| \leq I(|f|) =:\norm{f}_1$.
+\end{nap}
 
 \subsection{Kompletiranje metrichkog prostora i Lebegov integral}
 
-\subsection{Prostor funkcija integrabilnih po Rimanu}
+\begin{tma}
+	Za svaki metrichki prostor $(M_0, d_0)$ postoji kompletan metrichki prostor
+	$(M,d)$ i in\-jektivno preslikavanje $i:M_0 \ to M$ sa svojstvima:
+	\begin{enumerate}
+		\item $d(i(x), i(y)) = d_0(x, y), \forall x, y \in M_0$
+		\item $i(M_0)$ je gust u $M$.
+	\end{enumerate}
+\end{tma}
+\begin{proof}
+	Na prostoru $X\psj M_0^\NN$, svih Koshijevih nizova u $M_0$, definisati relaciju ekviva\-lencije
+	\[ \{a_n\} \sim \{b_n\} \iff \lim_{n\to \infty} d_0(a_n, b_n) = 0 .\] 
+	Na prostoru $M:= X/_\sim$ definishemo metriku $\ds{d([a_n], [b_n]):= \lim_{n\to \infty} (a_n, b_n)}$.
+
+	Dobra definisanost metrike $d$ sledi iz aditivnosti po limesu, a lako je i dokazati da $d$ jeste metrika.
+	Definishimo ulaganje $i:M_0 \to M$ sa $i(x) := [\{x\}]$, gde je $\{x\}$ konstantan niz. Posmatrajmo $x \in M$.
+	Tada je $x = [x_n]$, za neki niz $x_n$ u $M_0$ i vazhi $i(x_n) \to x$, odakle sledi da je $i(M_0)$ gust u $M$.
+	Treba josh dokazati da je $M$ kompletan. Neka je $x_n$ Koshijev niz u $M$. Iz $\overline{i(M_0)} = M$ sledi 
+	da postoji $a_n \in M_0$ za koje je $d(i(a_n), x_n) < \frac{1}{n}$. Zakljuchujemo da ako je $x_n$ Koshijev,
+	onda je i $i(a_n)$ Koshijev (kao niz konstantnih nizova u $M$). Medjutim, odatle sledi i da je $a_n$ Koshijev
+	u $M_0$, pa $a_n$ definishe tachku u $M$ i vazhi $x_n \to a$.
+\end{proof}
+
+\begin{nap}
+	Ovo se mozhe i primeniti da od normiranog vektorskog prostora dobijemo Banahov prostor. Dokaz 
+	se mozhe izvesti elegantnije, zbog chinjenice da je dual uvek kompletan i zbog chinjenice 
+	da postoji linearno ulaganje normiranog vektorskog prostora u dual duala.
+\end{nap}
+
+\begin{posl}
+	Kompletiranje prostora $(C(\mathcal J), \norm{\cdot}_1)$ naziva se prostorom funkcija inte\-grabilnih po Lebegu. 
+	Kako je integral ravnomerno neprekidan, onda se on mozhe (iz Principa produzhenja ravnomerno neprekidne funkcije
+	sa kompletnim kodomenom) pro\-duzhiti do preslikavanja koje nazivamo Lebegovim integralo.
+\end{posl}
+
+\subsection{Klasa funkcija integrabilnih po Rimanu}
+
+\begin{lema}
+	\( f \in \mathcal R (\mathcal J) \implies f \text{ je ogranichena na } \mathcal J \) 
+\end{lema}
+\begin{proof}
+	Pretpostaviti suprotno, i zakljuchitida za svaku podelu postoji kvadar na kojem je funkcija
+	neogranichena, tj. postoje tachke $\zeta, \eta$ iz tog kvadra takve da je \( |f(\zeta) - f(\eta)| \) 
+	proizvoljno veliko. Uzeti dve podele sa uochenim tachkama koje se razlikuju samo na tom kvadru,
+	jednu sa uochenom tachkom $\zeta$, a drugu sa $\eta$. Izvesti kontradikciju iz Koshijevog kriterijuma
+	postojanja limesa po filteru.
+\end{proof}
+
+\begin{tma}(Darbuova)
+	Za svaku ogranichenu funkciju $f:\mathcal J \to \RR$ vazhi:
+	\begin{align*}
+		\overline{\int_{\mathcal J}}f(x)dx = \lim_{\f _{\mathcal J}} S(f, \mathcal P)\\
+		\underline{\int_{\mathcal J}}f(x)dx = \lim_{\f _{\mathcal J}} s(f, \mathcal P)
+	\end{align*}
+\end{tma}
+\begin{proof}
+	Dovoljno je dokazati jedno od navedenih tvrdjenja (drugo sledi primenom na $-f$). Oznachimo $\underline I = \underline{\int_{\mathcal J}}$
+	Neka je $\mathcal P_\eps$ podela takva da je $s(f, \mathcal P _\eps) > \underline I - \eps$. Posmatrati $\Gamma_\eps$, skup 
+	svih tachaka koje lezhe na granici nekog od kvadara podele $\mathcal P_\eps$ i dokazati da je on Lebegove mere 0.
+	Onda postoji $\lambda_\eps > 0$ takvo da je za svaku podelu chiji je parametar manji od $\lambda_\eps$, zbir zapremina
+	kvadara koji seku $\Gamma_\eps$ manji od $\eps$. Neka je $\mathcal P$ takva podela i neka je $\mathcal P'$ podela koja
+	sadrzhi sve tachke podela $\mathcal P$ i $\mathcal P_\eps$. Tada je 
+	\[ \underline I - \eps < s(f, \mathcal P_\eps) < s(f, \mathcal P') \leq \underline I .\] 
+	Zakljuchiti da u razlici $s(f, \mathcal P') - s(f,\mathcal P)$ uchestvuju samo sabirci koji odgovaraju kvadrima koji
+	seku $\Gamma_\eps$, pa je $|s(f, \mathcal P') - s(f,\mathcal P)| < 2M\eps$, gde je $|f| \leq M$. Na kraju dokazati da 
+	je $\underline I = s(f, P) < (2M+1)\eps$, odakle sledi tvrdjenje.
+\end{proof}
+
+\begin{posl}
+	\[ f \in \mathcal R(\mathcal J) \iff f \text{ je ogranichena i } \underline \int f(x)dx = \overline \int f(x)dx\] 
+\end{posl}
+
+\begin{lema}
+	Neka je $T\psj \RR^n$ i $f:T \to\RR$ ogranichena funkcija i $\eps > 0$. Tada je skup
+	$$F:=\{t \in T \mid \omega(f; T) \geq \eps\}$$
+	zatovren u $T$
+\end{lema}
+\begin{proof}
+	Dokazati da je komplement $T\setminus F$ otvoren.
+\end{proof}
+
+\begin{tma}(Lebegov kriterijum integrabilnosti po Rimanu)
+	Funkcija $f: \mathcal J \to \RR$ je integrabilna po Rimanu akko je ogranichena i neprekidna skoro svuda u smilsu Lebega 
+	(tj. ako je skup prekida \( E = \{x \in \mathcal J \mid \omega(f; x) > 0\} \) mere 0.)
+\end{tma}
+\begin{proof}
+	($\implies$)
+	Najpre, zakljuchiti da je dovoljno dokazati 
+	\[ (\forall n \in \NN) E_n :=  \left\{x \in \mathcal J \mid \omega(f; x) > \frac{1}{n}\right\} \text{ je mere 0.}\] 
+	Neka je $\mathcal P$ podela takva da je $S(f, \mathcal P) - s(f, \mathcal P) < \frac{\eps}{n}$ i neka je 
+	\( P_n := \{\mathcal J \in \mathcal P \mid \mathcal J \cap E_n \neq \emptyset\} \).
+	Odatle izvesti zakljuchak da je \( \ds{\sum_{I \in P_n} \mu(I) < \eps} \), pa je $E_n$ mere 0 ($P_n$ pokrivaju $E_n$).
+
+	($\impliedby$)
+	Posmatrati $E_\eps := \{ x\in \mathcal J \mid \omega(f; x) \geq \frac{\eps}{2\mu(J)}\}$. Kao podskup skupa $E$,
+	ovaj skup je mere nula, a zbog prethodne leme je i zatvoren, pa c1e biti i kompaktan. Onda postoji konachna familija 
+	kvadara koja ga pokriva i za koju je $\mu(J_1) + \mu(J_2) + \dotso + \mu(J_k) < \frac{\eps}{4\norm{f}_\infty}$.
+	Za $t \in \mathcal J \setminus \bigcup_{i=1}^k J_k$ vazhi \( \omega(f; t) < \frac{\eps}{2\mu(J)}\), tj.
+	za svako takvo $t$ postoji kvadar $I_t$ takav da je $\sup_{I_t}f - \inf_{I_t}f< \frac{\eps}{2\mu(J)} $.
+	Kako je skup $t \in \mathcal J \setminus \bigcup_{i=1}^k J_k$ zatovren, mozhemo izdvojiti konachno potpokrivanje $I_t$.
+	Na kraju, razliku $S(f, \mathcal P) - s(f, \mathcal P)$ predstaviti kao $\sum (M_i - m_i) \mu(K_i)$ i razdvojiti je 
+	na sumiranje po kvadrima $J_i$ i $I_t$, odakle c1emo dobiti $S(f, \mathcal P) - s(f, \mathcal P) < \eps$.
+\end{proof}
+
+\begin{posl}
+	Neka je $E\psj \RR^K$ ogranichen skup sadrzhan u kvadru $\mathcal J$. Tada je 
+	\[ \chi_E \in \mathcal R (\mathcal J) \iff \partial E \text{ je skup mere 0} .\] 
+\end{posl}
+\begin{proof}
+	$\partial E$ je skup prekida funkcije $\chi_E$.
+\end{proof}
+
+\begin{tvr}
+	Neka je $\mathcal J \psj \RR^k$ $k-$dimenzioni kvadar. Tada je prostor $(C(\mathcal J), \norm{\cdot}_1)$
+	gust u $(\mathcal R(\mathcal J), \norm{\cdot}_1)$.
+\end{tvr}
+\begin{proof}
+	Pokriti skup prekida prebrojivom unijom kvadara $\{J_n\}_{n \in \NN}$, chiji je zbir zapremina manji od $ \frac{\eps}{2M}$. Ideja
+	je da \textit{neprekidno} predjemo sa kvadra $J_n$ na ostatak prostora, a to c1emo uraditi konstruisanjem funkcije
+	$\varphi_n$ koja je jednaka $0$ na $J_n$, varira izmedju $0$ i $1$ na kvadru $\widetilde{J}_n$ koji je dvaput vec1e zapremine
+	od $J_n$ i sadrzhi ga, i jedanaka je $1$ van $\widetilde{J}_n$. Kombinovanjem svih tih funkcija dobijamo funkciju $g$,
+	za koju vazhi 
+	\[  \norm{f - g}_1 = \int_{\bigcup \widetilde{J}_n} |f-g| < \eps.\] 
+\end{proof}
+
+\begin{tvr}
+	Fubinijeva teorema vazhi za klasu funkcija integrabilnih po Rimanu.
+\end{tvr}
+\begin{proof}
+	Sledi iz ranije dokazane teoreme za neprekidne funkcije i principa produzhenja neprekidnog preslikavanja
+	$\int_{I\times J}: C(I\times J) \to \RR$ na skup $\mathcal R(I\times J)$, u kome je $C(I\times J)$ gust.
+\end{proof}
+
+\begin{nap}
+	Pre smo Fubinija dokazali za Rimanov integral neprekidne funkcije, sada smo dokazali za Rimanov integral funkcije 
+	integrabilne po Rimanu.
+\end{nap}
+
+\begin{tma}
+	Neka je $\mathcal J \psj \RR^k$ $k-$dim kvadar i $E\psj \mathcal J$ skup merljiv po Zhordanu. Predstavimo $\mathcal J$
+	kao proizvod $\mathcal J = \mathcal J_x \times \mathcal J_y$ kvadara $\mathcal J_x \psj \RR^l$ i $\mathcal J_y \psj \RR^{k-l}$.
+	Tada je za svako $y_0 \in \mathcal J_y$ presek $E_{y_0} := \{(x, y) \in E \mid y = y_0\}$ skupa $E$ i $l-$dimenzione ravni $y=y_0$
+	merljiv po Zhordanu i vazhi 
+	\[ \mu_k(E) = \int_{\mathcal J_y} \mu_l (E_y)dy ,\] 
+	gde je $\mu_k$ (odnosno $\mu_l$) Zhordanova mera u $\RR^k$ (odnosno $\RR^l$)
+\end{tma}
+\begin{proof}
+	Sedi iz Fubinijeve teoreme primenjene na funkciji $\chi_E(x, y) = \chi_{E_y}(x)$
+\end{proof}
 
 \subsection{Smena promenljive u integralu}
+
 
 \section{Vektorska polja i diferencijalne forme}
 \end{document}
