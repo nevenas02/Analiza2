@@ -655,12 +655,97 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	gde je $\mu_k$ (odnosno $\mu_l$) Zhordanova mera u $\RR^k$ (odnosno $\RR^l$)
 \end{tma}
 \begin{proof}
-	Sedi iz Fubinijeve teoreme primenjene na funkciji $\chi_E(x, y) = \chi_{E_y}(x)$
+	Sledi iz Fubinijeve teoreme primenjene na funkciji $\chi_E(x, y) = \chi_{E_y}(x)$
 \end{proof}
 
 \subsection{Smena promenljive u integralu}
 
+\begin{tma}
+Neka su $D_t$ i $D_x$ organicheni otvoreni skupovi u $\RR^k$, $\varphi: D_t \to D_x$ difeomorfizam (klase $C^1$), $\varphi ' : D_t \to \RR^{k \times k}$ njegova matrica prvog izvoda i $f \in \mathcal R (D_x)$ funkcija chiji je nosach $\latin{\textrm{supp}} f := \{\overline{x \in D_x \mid f(x) \ne 0 }\}$ kompaktan u $D_x$. Tada vaz1i:
+\begin{itemize}
+\item[(1)] $(f \circ \varphi) |\det \varphi ' | \in \mathcal R(D_t)$
+\item[(2)] $\int_{D_x} f(x) dx = \int_{D_t} f \circ \varphi(t) |\det \varphi ' (t)| dt$
+\end{itemize}
+\end{tma}
+\begin{nap}
+Dokaz1imo prvo $4$ pomoc1ne leme.
+\end{nap}
+\\ \\
+\begin{lema}
+Neka su $D_t, D_x, \varphi$ kao u teoremi, $E_t \subseteq D_t$, $E_x := \varphi(E_t) \subseteq D_x$. Tada vaz1i:
+\begin{itemize}
+\item[(1)] Ako je $E_t$ skup mere nula u smislu Lebega, onda je takav i $E_x$.
+\item[(2)] Ako je Z1ordanova mera skupova $E_t$ i $\overline{E_t}$ nula, onda je i Z1ordanova mera skupova $E_x$ i $\overline{E_x}$ nula.
+\item[(3)] Ako je skup $E_t$ merljiv po Z1ordanu i $\overline{E_t} \subseteq D_t$ onda je i skup $E_x$ merljiv po Z1ordanu i $\overline{E_x} \subseteq D_x$.
+\end{itemize}
+\end{lema}
+\begin{proof}
+Primetiti da se svaki otvoren skup $D \in \RR^k$ moz1e predstaviti kao prebrojiva unija kvadara chije se unutrashnjosti med1usobno ne seku. Kako je prebrojiva unija skupova mere nula skup mere nula, dokazati $(1)$ pod pretpostavkom da je $E_t \subseteq J$ za neko $J$. Neka je $\{ I_n \}_{n \in \NN}$ pokrivanje skupa $E_t$ kvadrima takvim da je $\sum \mu (I_j) < \epsilon$. Primenom Teoreme o konachnom prirashtaju i prethodnog zakljuchiti da se svaki skup $\varphi (I_j) $ nalazi u kvadru $\tilde{I}_j $ takvom da je $\mu (\tilde{I}_j) = M^k \mu (I_j)$. Odatle izvesti $(1)$. 
+
+Deo $(2)$ sledi iz $(1)$ jer je $\tilde{E}_t$, a samim tim i njegova neprekidna slika $\tilde{E}_x$, kompaktan skup, a svaki kompaktan skup mere nula u Lebegovom smislu ima Z1ordanovu meru nula.
+
+Deo $(3)$ izvesti iz chinjenice da difeomorfizam slika unutrashnje tachke u unutrashnje tachke, sho je posledica Teoreme o inverznoj funkciji, odnosno izvesti zakljuchak iz $\partial E_x = \varphi (\partial E_x)$.
+\end{proof}
+
+\begin{posl}
+Pod uslovima Teoreme o smeni promenljive, integral u tachki $(2)$ postoji.
+\end{posl}
+\begin{proof}
+Sledi iz Lebegove teoreme o integrabilnosti i prethodne leme.
+\end{proof}
+
+\begin{lema} (jednodimenzioni sluchaj) Neka je $\varphi: I_t \to I_x$ difeomorfizam intervala $I_t \subseteq \RR$ na interval $I_x \subseteq \RR$ i neka $f \in \mathcal R (I_x)$ i vaz1i 
+\[\int_{I_x} f(x) dx = \int_{I_t} f \circ \varphi(t) | \varphi ' (t)| dt\]
+\end{lema}
+
+\begin{proof}
+Dokazati primenom Njutn - Lajbnicove formule iz Analize 1.
+\end{proof}
+
+\begin{nap}
+Kod smene promenljive za funkcije jedne promenljive u uobichajenom obliku nemamo apsolutnu vrednost kod $\varphi '$. To nije u koliziji, zbog toga shto se u u toj apsolutnoj vrednosti samo krije znak koji "obrc1e" granice intervala.
+\end{nap}
+\\ \\
+\begin{nap}
+Pojava $|\cdot|$ sugerishe vezu integracije i orijentacije. Ne moz1emo integraliti po objektima koji nisu orijentabilni.
+\end{nap}
+\\ \\
+\begin{lema}
+Teorema o smeni promenljive u integralu vaz1i za proste difeomorfizme.
+\end{lema}
+\begin{proof}
+Ova lema je u sushtini posledica prethodne leme i Fubinijeve teoreme. Pret\-po\-sta\-vi\-ti radi jednostavnosti zapisa da $\varphi$ menja samo poslednju ($k$ - tu) koordinatu. Kvadre $J_x \supseteq D_x$ i $J_t \supseteq D_t$ u $\RR^k$ predstaviti kao Dekartov proizvod kvadra u $\RR^{k-1}$ i intervala. Primeniti Fubinijevu teoremu na integral funkcije $f \chi_{D_x}$ po kvadru $J_x$ imajuc1i u vidu da je $\varphi$ prost difeomorfizam te je $\det \varphi ' = \frac{\partial \varphi_k}{\partial t_k}$.
+\end{proof}
+
+\begin{lema}
+Ako Teorema o smeni promenljive vaz1i za difeomorfizme 
+\[\psi: D_s \to D_t, \hspace{0.6cm} \varphi : D_t \to D_x\]
+onda vaz1i i za kompoziciju $\varphi \circ \psi : D_s \to D_x$.
+\end{lema}
+\begin{proof}
+Dokaz izvesti iz $\det(\varphi \circ \psi)' = \det \varphi ' \cdot \det \psi '$ i dve primene Teorema o smeni promenljive: prvo na funkciju $f$ i di\-fe\-o\-mor\-fi\-zam $\varphi$, a zatim na $f \circ \varphi | \det \varphi '|$ i di\-fe\-o\-mor\-fi\-zam $\psi$.
+\end{proof}
+\noindent
+Moz1emo sada dovrshiti dokaz prve teoreme.
+
+\begin{proof}(Dokaz teoreme o smeni promenljive u integralu)
+Dokaz zavrshiti korish\-c1enjem Tvrd1enja o predstavljanju difeomorfizma kao kompozicije prostih, med1utim obratiti paz1nju na \textit{lokalno} u njemu. Ideja da se dokaz1e da teorema vaz1i na celom $D_t$ jeste da se $D_t$ podeli na manje skupove na kojima teorema vaz1i.
+\end{proof}
+
+\begin{nap}
+Intuicija za malo drugachiji dokaz:
+Neka je $J$ kvadar, $f: J \to \RR$ neprekidna funkcija i $\varphi: J \to \varphi(J)$ difeomorfizam klase $C^1$. Posmatrajmo shta je $\int_{\varphi(J)} f(x) dx$. Podelimo kvadar $J$ na kvadre $J_l$. Tada je \[\int_{\varphi(J)} f(x) dx = \sum_l \int_{\varphi(J_l)} f(x) dx\]
+Dalje imamo da je
+\[\min_{\varphi(J_l)} f \int_{\varphi(J_l)} 1 dx \leq \int_{\varphi(J_l)} f(x) dx \leq \max_{\varphi(J_l)} f \int_{\varphi(J_l)} 1 dx\]
+odnosno
+\[\min_{\varphi(J_l)} f \leq \frac{1}{\mu(\varphi(J_l))}\int_{\varphi(J_l)} f(x) dx \leq \max_{\varphi(J_l)} f \]
+Iz neprekidnosti $f$, primenom teoreme o srednjoj vrednosti zakljuchiti da postoji $\xi_l$ takvo da
+\[f(\xi_l) =\frac{1}{\mu(\varphi(J_l))}\int_{\varphi(J_l)} f(x) dx\]
+Sledi da je \[\int_{\varphi(J)} f(x) dx = \sum_l f(\xi_l) \mu(\varphi(J_l))\]
+ Uzmimo $\tau_l \in J_l$ takvo da $\xi_l = \varphi(\tau_l)$. Tada je
+\[\int_{\varphi(J)} f(x) dx = \sum_l f \circ \varphi(\tau_l) \mu(\varphi(J_l))\]
+Dokazati josh da je $\mu(\varphi(J_l)) = |\det \varphi| \cdot \mu(J_l)$. U sluchaju da je $\varphi$ linearno, dokaz izvesti koristec1i teoremu o jedinstvenosti determinante. U sluchaju da $\varphi$ nije linearno predstaviti ga kao $\varphi \approx C + \varphi '$, gde je $\varphi '$ linearno a $C = \varphi(x_0)$ translacija, stoga ne menja zapreminu.
+\end{nap}
 
 \section{Vektorska polja i diferencijalne forme}
 \end{document}
-
