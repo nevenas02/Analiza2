@@ -748,4 +748,49 @@ Dokazati josh da je $\mu(\varphi(J_l)) = |\det \varphi| \cdot \mu(J_l)$. U sluch
 \end{nap}
 
 \section{Vektorska polja i diferencijalne forme}
+
+\begin{tvr}
+Za $\alpha \in \Omega^k(M)$, $\beta \in \Omega^l(M)$ i glatko preslikavanje $F: M \to N$ vaz1i:
+\begin{itemize}
+\item[(1)] $F^* (\alpha + \beta) = F^* \alpha + F^* \beta$
+\item[(2)] $F^* (\alpha \wedge \beta) = F^* \alpha \wedge F^* \beta$
+\end{itemize}
+Drugim rechima, ako definishemo \[\Omega^*(M) = \bigoplus^{\dim M}_{j=0} \Omega^j (M)\] i slichno $\Omega^*(N) $ onda je 
+\[F^*: (\Omega^*(N), +, \wedge) \to (\Omega^*(M), +, \wedge)\]
+homomorfizam algebri.
+\end{tvr}
+
+\begin{proof}
+\begin{itemize}
+\item[(1)] $F^*(\alpha + \beta) X = (\alpha + \beta) (F_* X) = \alpha(F_* X) + \beta(F_* X) = (F^* \alpha + F^* \beta) X$
+\item[(2)]
+\begin{align*}
+ F^* (\alpha \wedge \beta) (X,Y) &= (\alpha \wedge \beta) (F_* (X), F_* (Y)) \\
+ &= \begin{vmatrix} \alpha(F_*(X)) & \alpha(F_*(Y)) \\ \beta(F_*(X)) & \beta(F_*(Y)) \end{vmatrix} \\
+ &= \alpha(F_*(X))\cdot \beta(F_*(Y)) - \alpha(F_*(Y)) \cdot \beta(F_*(X)) \\
+ &= F^*(\alpha) X \cdot F^*(\beta) Y - F^*(\alpha) Y \cdot F^*(\beta) X \\
+ &=  \begin{vmatrix} F^*(\alpha)X & F^*(\alpha)Y \\ F^*(\beta)X & F^*(\beta)Y \end{vmatrix} \\
+ &= (F^*(\alpha) \wedge F^*(\beta))(X,Y)
+\end{align*}
+\end{itemize}
+\end{proof}
+
+\begin{nap} \latin{Pullback} \fontencoding{OT2}\selectfont se takod1e slaz1e i sa spoljashnjim diferencijalom, odnosno vaz1i \[F^* \circ d  = d \circ F^* \]
+za $F: U \to V$ preslikavanje klase $C^{\infty}$, gde su $U \in \RR^n$ i $V \in \RR^k$.
+ Zahvaljujuc1i ovome, moguc1e je definisati $d: \Omega^l(M) \to \Omega^{l+1}(M)$ za proizvoljnu mno\-go\-stru\-kost. 
+\end{nap}
+\\ \\
+
+\begin{tvr} (Lajbnicovo pravilo)
+Neka su $\alpha \in \Omega^l(M)$ i $\beta \in \Omega^k(M)$ dve forme. Tada vaz1i 
+\[d(\alpha \wedge \beta) = d \alpha \wedge \beta + (-1)^l \alpha \wedge d \beta \]
+\end{tvr}
+\begin{proof}
+Zbog linearnosti $d$ dovoljno je dokazati formulu za $\alpha = f(x) dx_{j_1} \wedge \dots \wedge dx_{j_l}$ i $\beta = g(x) dx_{i_1} \wedge \dots \wedge dx_{i_k}$. Primeniti definiciju $d$ i izvesti zakljuchak.
+\end{proof}
+
+\begin{tma} 
+$\alpha \in \Omega^l(M) \implies d(d \alpha) = 0$
+\end{tma}
+
 \end{document}
