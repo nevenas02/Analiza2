@@ -649,7 +649,7 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	gust u $(\mathcal R(\mathcal J), \norm{\cdot}_1)$.
 \end{tvr}
 \begin{proof}
-	Pokriti skup prekida prebrojivom unijom kvadara $\{J_n\}_{n \in \NN}$, chiji je zbir zapremina manji od $ \frac{\eps}{2M}$. Ideja
+	Pokriti skup prekida prebrojivom unijom kvadara $\{J_n\}_{n \in \NN}$, chiji je zbir zapre\-mina manji od $ \frac{\eps}{2M}$. Ideja
 	je da \textit{neprekidno} predjemo sa kvadra $J_n$ na ostatak prostora, a to c1emo uraditi konstruisanjem funkcije
 	$\varphi_n$ koja je jednaka $0$ na $J_n$, varira izmedju $0$ i $1$ na kvadru $\widetilde{J}_n$ koji je dvaput vec1e zapremine
 	od $J_n$ i sadrzhi ga, i jedanaka je $1$ van $\widetilde{J}_n$. Kombinovanjem svih tih funkcija dobijamo funkciju $g$,
@@ -685,7 +685,7 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 \subsection{Smena promenljive u integralu}
 
 \begin{tma}
-Neka su $D_t$ i $D_x$ organicheni otvoreni skupovi u $\RR^k$, $\varphi: D_t \to D_x$ difeomorfizam (klase $C^1$), $\varphi ' : D_t \to \RR^{k \times k}$ njegova matrica prvog izvoda i $f \in \mathcal R (D_x)$ funkcija chiji je nosach $\latin{\textrm{supp}} f := \{\overline{x \in D_x \mid f(x) \ne 0 }\}$ kompaktan u $D_x$. Tada vaz1i:
+Neka su $D_t$ i $D_x$ organicheni otvoreni skupovi u $\RR^k$, $\varphi: D_t \to D_x$ difeo\-morfizam (klase $C^1$), $\varphi ' : D_t \to \RR^{k \times k}$ njegova matrica prvog izvoda i $f \in \mathcal R (D_x)$ funkcija chiji je nosach $\latin{\textrm{supp}} f := \{\overline{x \in D_x \mid f(x) \ne 0 }\}$ kompaktan u $D_x$. Tada vaz1i:
 \begin{itemize}
 \item[(1)] $(f \circ \varphi) |\det \varphi ' | \in \mathcal R(D_t)$
 \item[(2)] $\int_{D_x} f(x) dx = \int_{D_t} f \circ \varphi(t) |\det \varphi ' (t)| dt$
@@ -706,9 +706,9 @@ Neka su $D_t, D_x, \varphi$ kao u teoremi, $E_t \subseteq D_t$, $E_x := \varphi(
 \begin{proof}
 Primetiti da se svaki otvoren skup $D \in \RR^k$ moz1e predstaviti kao prebrojiva unija kvadara chije se unutrashnjosti med1usobno ne seku. Kako je prebrojiva unija skupova mere nula skup mere nula, dokazati $(1)$ pod pretpostavkom da je $E_t \subseteq J$ za neko $J$. Neka je $\{ I_n \}_{n \in \NN}$ pokrivanje skupa $E_t$ kvadrima takvim da je $\sum \mu (I_j) < \epsilon$. Primenom Teoreme o konachnom prirashtaju i prethodnog zakljuchiti da se svaki skup $\varphi (I_j) $ nalazi u kvadru $\tilde{I}_j $ takvom da je $\mu (\tilde{I}_j) = M^k \mu (I_j)$. Odatle izvesti $(1)$. 
 
-Deo $(2)$ sledi iz $(1)$ jer je $\tilde{E}_t$, a samim tim i njegova neprekidna slika $\tilde{E}_x$, kompaktan skup, a svaki kompaktan skup mere nula u Lebegovom smislu ima Z1ordanovu meru nula.
+Deo $(2)$ sledi iz $(1)$ jer je $\overline{E}_t$, a samim tim i njegova neprekidna slika $\overline{E}_x$, kompaktan skup, a svaki kompaktan skup mere nula u Lebegovom smislu ima Z1ordanovu meru nula.
 
-Deo $(3)$ izvesti iz chinjenice da difeomorfizam slika unutrashnje tachke u unutrashnje tachke, sho je posledica Teoreme o inverznoj funkciji, odnosno izvesti zakljuchak iz $\partial E_x = \varphi (\partial E_x)$.
+Deo $(3)$ izvesti iz chinjenice da difeomorfizam slika unutrashnje tachke u unutrashnje tachke, shto je posledica Teoreme o inverznoj funkciji, odnosno izvesti zakljuchak iz $\partial E_x = \varphi (\partial E_t)$.
 \end{proof}
 
 \begin{posl}
@@ -731,7 +731,9 @@ Kod smene promenljive za funkcije jedne promenljive u uobichajenom obliku nemamo
 \end{nap}
 \\ \\
 \begin{nap}
-Pojava $|\cdot|$ sugerishe vezu integracije i orijentacije. Ne moz1emo integraliti po objektima koji nisu orijentabilni.
+Pojava $|\cdot|$ sugerishe vezu integracije i orijentacije. Ne moz1emo integraliti po objektima koji nisu orijentabilni. No, ipak postoji metoda da
+se zaobidje ova prepreka, uz pomoc1 chinjenice da svaku neorijentabilna mnogostrukost ima dvolisno orijentabilno natkrivanje, po kojem onda
+mozhemo vrshiti integraciju.
 \end{nap}
 \\ \\
 \begin{lema}
@@ -754,6 +756,7 @@ Moz1emo sada dovrshiti dokaz prve teoreme.
 
 \begin{proof}(Dokaz teoreme o smeni promenljive u integralu)
 Dokaz zavrshiti korish\-c1enjem Tvrd1enja o predstavljanju difeomorfizma kao kompozicije prostih, med1utim obratiti paz1nju na \textit{lokalno} u njemu. Ideja da se dokaz1e da teorema vaz1i na celom $D_t$ jeste da se $D_t$ podeli na manje skupove na kojima teorema vaz1i.
+Ovde c1e biti neophodno primeniti Lebegovu lemu o kompaktnosti na skup \( \mathrm{supp} (f\circ \varphi \cdot |\det \varphi'|) \).
 \end{proof}
 
 \begin{nap}
@@ -768,7 +771,7 @@ Iz neprekidnosti $f$, primenom teoreme o srednjoj vrednosti zakljuchiti da posto
 Sledi da je \[\int_{\varphi(J)} f(x) dx = \sum_l f(\xi_l) \mu(\varphi(J_l))\]
  Uzmimo $\tau_l \in J_l$ takvo da $\xi_l = \varphi(\tau_l)$. Tada je
 \[\int_{\varphi(J)} f(x) dx = \sum_l f \circ \varphi(\tau_l) \mu(\varphi(J_l))\]
-Dokazati josh da je $\mu(\varphi(J_l)) = |\det \varphi| \cdot \mu(J_l)$. U sluchaju da je $\varphi$ linearno, dokaz izvesti koristec1i teoremu o jedinstvenosti determinante. U sluchaju da $\varphi$ nije linearno predstaviti ga kao $\varphi \approx C + \varphi '$, gde je $\varphi '$ linearno a $C = \varphi(x_0)$ translacija, stoga ne menja zapreminu.
+Dokazati josh da je $\mu(\varphi(J_l)) = |\det \varphi| \cdot \mu(J_l)$. U sluchaju da je $\varphi$ linearno, dokaz izvesti koristec1i teoremu o jedinstvenosti determinante. U sluchaju da $\varphi$ nije linearno pred-staviti ga kao $\varphi \approx C + \varphi '$, gde je $\varphi '$ linearno a $C = \varphi(x_0)$ translacija, stoga ne menja zapreminu.
 \end{nap}
 
 \section{Vektorska polja i diferencijalne forme}
