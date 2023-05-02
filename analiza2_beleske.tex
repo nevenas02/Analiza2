@@ -556,6 +556,30 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	postojanja limesa po filteru.
 \end{proof}
 
+\begin{pr}
+	Grafik neprekidne funkcije $f: E \to \RR$, $E \psj \RR^{k-1}$ je skup Lebegove mere $0$.
+\end{pr}
+\begin{proof}
+	Najpre, tvrdjenje se mozhe dokazati iz ravnomerne neprekidnosti u sluchaju da je $E$ zatvoren kvadar.
+	Da bismo ovo proshirili na proizvoljan skup $E\psj \RR^{k-1}$, dovoljno je da pokrijemo grafik funkcije
+	sa prebrojivo mnogo skupova mere $0$. Posmatrajmo skup $S:= \QQ^{k-1}\cap E$. On je gust u $E$ i prebrojiv,
+	pa je dovoljno dokazati da je u nekoj okolini svake tachke iz $S$, grafik restrikcije
+	na tu okolinu skup mere $0$. To je ochigledno, jer oko svake tachke skupa $S$ mozhemo posmatrati zatvoren
+	kvadar koji je sadrzhan u $E$, a na tom kvadru je grafik restrikcije mere $0$, zbog razmatranja na pochetku 
+	zadatka. Prebrojiva unija skupova mere $0$ je skup mere $0$, pa je i grafik cele funkcije $f$ mere $0$.
+\end{proof}
+
+\begin{pr}
+	Neka je $0 < l < k$ i $\pi: \RR^k\to \RR^l$ projekcija $\RR^k$ na neki $l-$dimenzioni potprostor.
+	Ako je $E\psj \RR^k$ skup takav da je $\pi(E)$ skup mere nula u $\RR^l$, onda je i $E$ skup mere $0$
+	u $\RR^k$.
+\end{pr}
+\begin{proof}
+	Prethodni primer mozhemo dokazati i kada je kodomen $\RR^n$. Lako je videti da je \( E\psj \pi(E)\times \RR^{k-l} \).
+	Primenimo prethodni zadatak na konstantnu funkciju, odakle sledi da je $\pi(E)\times \RR^{k-l}$ skup mere $0$.
+	Tada je i $E$ skup mere $0$, kao podskup skupa mere $0$.
+\end{proof}
+
 \begin{tma}(Darbuova)
 	Za svaku ogranichenu funkciju $f:\mathcal J \to \RR$ vazhi:
 	\begin{align*}
@@ -576,7 +600,7 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	je $\underline I = s(f, P) < (2M+1)\eps$, odakle sledi tvrdjenje.
 \end{proof}
 
-\begin{posl}
+\begin{posl}(Darbuov kriterijum integrabilnosti po Rimanu)
 	\[ f \in \mathcal R(\mathcal J) \iff f \text{ je ogranichena i } \underline \int f(x)dx = \overline \int f(x)dx\] 
 \end{posl}
 
