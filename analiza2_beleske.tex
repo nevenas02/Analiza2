@@ -39,7 +39,7 @@
 \newcommand{\ds}{\displaystyle}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert} 
 \newcommand{\rang}{\mathrm{rang}}
-\renewcommand{\dim}{\mathrm{dim}}
+%\renewcommand{\dim}{\mathrm{dim}}
 
 
 \newcommand{\tma}{\noindent\textbf{Teorema.} }
@@ -269,7 +269,7 @@ Neka je $M \subseteq \RR^{k+l}$ $k$ - dimenziona podmnogostrukost klase $C^p$, n
 difeomorfizam klase $C^p$.
 \end{lema}
 \begin{proof}
-Dokaz leme sledi iz chinjenice da je kompozicija difeomorfizama difeomorfizam.
+Dokaz leme sledi iz chinjenice da je kompozicija difeomorfizama difeomor-fizam.
 %\begin{center}
 %\includegraphics[width=5cm]
 %{Two_coordinate_charts_on_a_manifold.png}
@@ -284,7 +284,7 @@ Iz neprekidnosti $h'$ izvesti kontradikciju.
 \end{proof}
 
 \begin{tma}
-Za svako otvoreno pokrivanje ${\{U_{\lambda} \}}_{\lambda \in \Lambda}$ glatke mnogostrukosti $M$ postoji razlaganje jedinice ${\{\rho_{\lambda} \}}_{\lambda \in \Lambda}$ takvo da je $\latin{\textrm{supp}} \rho_{\lambda} \subseteq U_{\lambda}$.
+Za svako otvoreno pokrivanje ${\{U_{\lambda} \}}_{\lambda \in \Lambda}$ glatke mnogostrukosti $M$ postoji razla-ganje jedinice ${\{\rho_{\lambda} \}}_{\lambda \in \Lambda}$ takvo da je $\latin{\textrm{supp}} \rho_{\lambda} \subseteq U_{\lambda}$.
 \end{tma}
 \\ \\
 \begin{tma}
@@ -322,7 +322,7 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	Derivacija $D$ na $C^\infty(p)$ preslikavanja koje je konstantno u nekoj okolini tachke $p$ je 0.
 \end{lema}
 \begin{proof}
-	Primniti Lajbnicovo pravilo i iz homogenosti (derivacija je linearno preslikavanje, dakle i homogeno) zakljuchiti
+	Primeniti Lajbnicovo pravilo i iz homogenosti (derivacija je linearno pres-likavanje, dakle i homogeno) zakljuchiti
 	da je dovoljno dokazati $D1 = 0$.
 \end{proof}
 
@@ -348,7 +348,7 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	algebre $C^\infty(p)$ postoji jedinstveni vektor $\xi \in T_p U$ takav da je $Df(p) = df(p)\cdot \xi$.
 \end{tma}
 \begin{proof}
-	Napisati $f(x)$ kao u prethodnoj lemi, i primeniti derivaciju na taj zapis. Dobijemo
+	Napisati $f(x)$ kao u prethodnoj lemi, i primeniti derivaciju na taj zapis. Dobi-jemo
 	\[ Df(x) = \sum_{j=1}^n(D\pi_j(x)\cdot g_j(x) + (x_j - p_j)\cdot Dg_j(x)) ,\] 
 	Primenom ovoga u tachki $p$ imamo:
 	\[ Df(p) = \sum_{j=1}^nD\pi_j(p)\cdot \dfrac{\partial f}{\partial x_j}(p) = df(p)\cdot \xi ,\]
@@ -369,9 +369,9 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 \end{posl}
 \begin{proof}
 	Neka je $\varphi : U \to \RR^n$ lokalna karta i $p \in U$. Tada je 
-	$\dfrac{\partial f}{\partial x_1}, \dfrac{\partial f}{\partial x_2}, \dotso, \dfrac{\partial f}{\partial x_n}$
+	$\dfrac{\partial }{\partial x_1} \Big|_p, \dfrac{\partial }{\partial x_2}\Big|_p, \dotso, \dfrac{\partial }{\partial x_n}\Big|_p$
 	baza za $T_{\varphi(p)} U$, pa je 
-	$(\varphi^{-1})_*\dfrac{\partial f}{\partial x_1}, (\varphi^{-1})_*\dfrac{\partial f}{\partial x_2}, \dotso, (\varphi^{-1})_*\dfrac{\partial f}{\partial x_n}$
+	$(\varphi^{-1})_*\dfrac{\partial }{\partial x_1}\Big|_p, (\varphi^{-1})_*\dfrac{\partial }{\partial x_2}\Big|_p, \dotso, (\varphi^{-1})_*\dfrac{\partial }{\partial x_n}\Big|_p$
 	baza za $T_p M$.
 \end{proof}
 
