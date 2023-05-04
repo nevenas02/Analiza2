@@ -40,6 +40,7 @@
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert} 
 \newcommand{\rang}{\mathrm{rang}}
 %\renewcommand{\dim}{\mathrm{dim}}
+\newcommand{\hdr}[1]{{\mathrm{H_{dR}}}^{#1}}
 
 
 \newcommand{\tma}{\noindent\textbf{Teorema.} }
@@ -56,6 +57,16 @@
 \begin{document}
 
 \maketitle
+
+\section{Neprekidnost}
+
+\subsection{Kompletnost}
+
+\subsection{Kompaktnost}
+
+\subsection{Prostor neprekidnih preslikavanja}
+
+\subsection{Povezanost}
 
 \section{Diferenciranje}
 \subsection{Diferenciranje u normiranim vektorskim prostorima}
@@ -820,4 +831,79 @@ Zbog linearnosti $d$ dovoljno je dokazati formulu za $\alpha = f(x) dx_{j_1} \we
 $\alpha \in \Omega^l(M) \implies d(d \alpha) = 0$
 \end{tma}
 
+\begin{proof}
+Dva puta primeniti definiciju $d$ na $f dx_{j_1}\wedge \dots \wedge dx_{j_l} $ i iskoristiti anti\-ko\-mu\-ta\-tiv\-nost $\wedge$.
+\end{proof}
+
+\begin{posl}
+$\mathrm{Im} \hspace{0.1cm} d \psj \mathrm{Ker} \hspace{0.1cm} d$
+\end{posl}
+\\ \\
+\begin{tvr}
+Ako je $F: M \to N$ difeomorfizam, onda je $F* : \hdr{l} (N) \to \hdr{l} (M)$ izomorfizam.
+\end{tvr}
+
+\begin{proof}
+Iskoristiti chinjenicu da je ${(G \circ F)}^* = F^* \circ G^*$. Odatle zakljuchiti ${(F^{-1})}^* = {(F^*)}^{-1}$.
+\end{proof}
+
+\begin{tvr}
+Za svako neprekidno preslikavanje $f: M \to N$ glatkih mnogostrukosti postoji glatko preslikavanje $F:M \to N$ takvo da je $f \simeq F$.
+\end{tvr}
+
+\begin{proof}
+Izvesti iz Vajershtrasove teoreme o aproksimaciji i razlaganja jedinice. 
+%Kako? pomoc
+\end{proof}
+
+\begin{tvr}
+(Kartanova formula) $\phi_t : M \to M$ glatka (po $t$) familija glatkih pre\-sli\-ka\-va\-nja. Neka je $X(\phi_t(p)) := \frac{d \phi_t}{dt} (p)$ (pishemo krac1e: $X$). Za $\alpha \in \Omega^l(M)$ vaz1i:
+\[\frac{d}{dt} {\phi_t}^* \alpha = {\phi_t}^*(X \lrcorner d \alpha + d(X \lrcorner \alpha))\]
+\end{tvr}
+\begin{proof}
+Indukcijom po $l$.
+\end{proof}
+
+\begin{posl}
+Neka su $f_0, f_1 : M \to N$, ${f_0}^*, {f_1}^* : \hdr{*}(N)\to \hdr{*}(M)$. Tada vaz1i 
+\[f_0 \simeq f_1 \implies f_0^* = f_1^*\]
+\end{posl}
+
+\begin{posl}
+Ako je $M \simeq N$ onda je $\hdr{*}(M) \cong \hdr{*}(N)$.
+\end{posl}
+\\ \\
+\begin{nap}
+Mnogostrukost $M$ je povezana ako  i samo ako je $\hdr{0} (M) = \RR$. 
+\end{nap}
+\\ \\
+\begin{nap}
+Opshtije: $\hdr{0} (M) = \RR^m$, gde je $m$ broj komponenti povezanosti $M$.
+\end{nap}
+\\ \\
+\begin{nap}
+Ako $l \in \{0,n\}$ onda vaz1i $\hdr{l} (\mathbb{S}^n) = \RR$, inache $\hdr{l} (\mathbb{S}^n) = 0$.
+\end{nap}
+\\ \\
+\begin{tvr}
+Ne postoji glatko preslikavanje $f: \mathbb{B}^n \to \mathbb{S}^{n-1} := \partial \mathbb{B}^n$ takvo da je $f(x) = x$ za sve $x \in \mathbb{S}^n$. Odnosno, ne postoji glatka retrakcija $\mathbb{B}^n$ na $\partial \mathbb{B}^n$.
+\end{tvr}
+\begin{proof}
+Definisati $j: \mathbb{S}^{n-1} \to \mathbb{B}^n$ kao $j(x) = x$. Pretpostaviti suprotno, da postoji traz1ena retrakcija $f: \mathbb{B}^n \to \mathbb{S}^{n-1}$, td. $\forall a \in \mathbb{S}^{n-1}$ $f(a) = a$. Posmatrati $f \circ j$ i $\hdr{n-1}$ posmatranih objekata ($\mathbb{S}^{n-1}$ i $\mathbb{B}^n$) i izvesti konstradikciju.
+\end{proof}
+\begin{nap}
+Ne postoji neprekidna retrakcija mnogostrukosti na granicu.
+% jel ovo validno? i zasto neprekidna, nije li retrakcija po def nepr
+\end{nap}
+\\ \\
+\begin{tma}
+(Brauerova teorema o fiksnoj tachki) \\ Svako neprekidno preslikavanje $f: \mathbb{B}^n \to \mathbb{B}^n$ ima bar jednu fiksnu tachku. Drugim rechima
+\[f \in C(\mathbb{B}^n, \mathbb{B}^n) \implies (\exists x_0 \in \mathbb{B}^n) f(x_0) = x_0 \]
+\end{tma}
+\begin{proof}
+Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Definisati $r(x) = \frac{f(x) - x}{\norm{f(x) - x}}$, $r: \mathbb{B}^n \to \mathbb{S}^{n-1}$. Pokazati da je $r$ retrakcija. Odatle, na osnovu prethodnog, izvesti kontradikciju.
+\end{proof}
+
+\section{Dualni pogled na diferencijalne forme}
+\section{Furijeova analiza}
 \end{document}
