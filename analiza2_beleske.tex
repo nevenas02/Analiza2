@@ -39,6 +39,7 @@
 \newcommand{\ds}{\displaystyle}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert} 
 \newcommand{\rang}{\mathrm{rang}}
+\newcommand{\diam}{\mathrm{diam}}
 %\renewcommand{\dim}{\mathrm{dim}}
 \newcommand{\hdr}[1]{{\mathrm{H_{dR}}}^{#1}}
 
@@ -60,7 +61,176 @@
 
 \section{Neprekidnost}
 
+\begin{tvr}
+(Koshi - Shvarcova nejednakost) Ako je $\langle \cdot, \cdot \rangle$ pozitivna hermit\-ska forma, onda je 
+\[{|\langle x, y \rangle |}^2 = \langle x, x \rangle \langle y, y \rangle\]
+\end{tvr}
+\begin{proof}
+Neka su $x, y \in X$ i $\alpha \in \RR$. Zbog pozitivnosti $0 \leq \langle x + \alpha y, x + \alpha y \rangle$. Raspisati prethodni izraz, zameniti $\alpha = \frac{- \langle x, y \rangle }{\langle y, y \rangle}$ i izvesti traz1eno. U sluchaju da je $\alpha \in \CC$ pokazati da je $|\langle x, y \rangle | = {( \mathrm{Re} \langle x, \alpha y \rangle)}^2$. Svesti na prvi sluchaj.
+\end{proof}
+
+\begin{tvr}
+Za linearno preslikavanje $L:X \to Y$ normiranih vektorskih prostora sledec1i iskazi su ekvivalentni:
+\begin{itemize}
+\item[a)] $L$ je neprekidno u jednoj tachki
+\item[b)] $L$ je neprekidno
+\item[v)] $L$ je ravnomerno neprekidno
+\item[g)] $L$ je Lipshicovo
+\item[d)] $\sup_{\norm{x} = 1} \norm{L(x)} < \infty$
+\end{itemize}
+\end{tvr}
+\begin{proof}
+Primetiti da g) $\implies$ v)$ \implies$ b) $ \implies$ a) uvek vaz1i. Dalje, d)$ \implies$ g) sledi iz definicije $\mathrm{lip} f$. Potrebno je josh dokazati a) $\implies$ d). Kako iz $LCa$ sledi da je $L$ ogranicheno na nekoj lopti $B[a; \rho]$,tj. ogranicheno je i na $S[a; \rho]$. Predstaviti $S[a;\rho]$ kao $a + \rho S[0;1]$ i odale izvesti zakljuchak.
+\end{proof}
+
+\begin{tma}
+Neka su $X$ i $Y$ metrichki prostori. Za $f:X \to Y$ sledec1i iskazi su ekvivalentni:
+\begin{itemize}
+\item[a)] $f$ je neprekidno
+\item[b)] Za svaki otvoren skup $V \psj Y$ skup $f^{-1}(V) \psj X$ je otvoren
+\item[v)] Za svaki zatvoren skup $G \psj Y$ skup $f^{-1}(G)$ je zatvoren
+\item[g)] Za svaki podskup $A \psj X$ je $f(\overline{A}) \psj \overline{f(A)}$
+\end{itemize}
+\end{tma}
+
+\begin{proof}
+a) $\implies$ g) : Dokazati da za $a\in \overline{A}$ vazi $f(a) \in \overline{f(A)}$. Iskoristiti neprekidnost u tachki $a$. \\ 
+g) $\implies$ v) : Dokazati da je $f^{-1}(G)$ jednako $\overline{f^{-1}(G)}$. \\
+v) $\implies$ b) : Iskoristiti zatvorenost $f^{-1}(Y \setminus V) = Y \setminus f^{-1}(V)$. \\
+b) $\implies$ a) : Dokazati da $f^{-1}(W) \in \mathcal{F}_a$ gde je $V \psj W$ i $V$ otvoren, a $a \in X$ i $W \in \mathcal{F}_{f(a)}$. 
+\end{proof}
+
+\begin{tvr}
+(Princip produz1enja jednakosti) Neka su $X, Y$ metrichki prostori, $f,g : X \to Y$ neprekidna preslikavanja, $A \psj X$. Tada vaz1i:
+\begin{itemize}
+\item[(1)] Skup $S = \{x \in X | f(x) = g(x) \}$ je zatvoren
+\item[(2)] $f|_A = g|_A \implies f|_{\overline{A}} = g|_{\overline{A}}$
+\end{itemize}
+\end{tvr}
+\begin{proof}
+\begin{itemize}
+\item[(1)] $f(x) = g(x) \Leftrightarrow d(f(x), g(x)) = 0$. Tada $S = {(d(f,g))}^{-1}(\{ 0 \}$ zatvoren zbog neprekidnosti $ d(f,g)$.
+\item[(2)] $f|_A = g|_A \implies A \psj S \implies \overline{A} \psj \overline{S} = S \implies f|_{\overline{A}} = g|_{\overline{A}}$
+\end{itemize}
+\end{proof}
+
+\begin{tvr}
+(Princip produz1enja nejednakosti) Neka je $X$ metrichki prostor, $A \psj X$ i $f,g : X \to \RR$ neprekidna preslikavanja. Tada vaz1i:
+\begin{itemize}
+\item[1)] Skup $V = \{x \in X \mid f(x) < g(x) \}$ je otvoren
+\item[2)] Skup $V = \{x \in X \mid f(x) \leq g(x) \}$ je zatvoren
+\item[3)] $f|_A \leq g|_A \implies f|_{\overline{A}} \leq g|_{\overline{A}}$
+\item[4)] $\sup f(A) = \sup f(\overline{A})$ (analogno i za $\inf$)
+\end{itemize}
+\end{tvr}
+
+\begin{proof}
+Definisati preslikavanje $\varphi := g - f : X \to \RR$ i za $1)$ i $2)$ posmatrati inverzne slike skupova $[0, \infty)$ i $]0, \infty)$. Pod $3)$ se dokazuje kao u prethodnom tvrd1enju. $4)$ sledi iz $3)$ ako uzmemo da je $g = C$ gde je $C$ konstanta kojom je ogranichena restrikcija $f$ na $A$.
+\end{proof}
+
+\begin{nap}
+U prethodnom tvrd1enju kodomen funkcija $f$ i $g$ je $\RR$ zbog toga shto nam je zbog nejednakosti potrebno ured1enje na kodomenu.
+\end{nap}
+\\ \\
+\begin{posl}
+$\diam(A) = \diam(\overline{A})$
+\end{posl}
+\begin{proof}
+Sledi iz principa produz1enja nejednakosti.
+\end{proof}
+
+\begin{tvr}
+(Smena promenljive u limesu) Neka su $X, Y$ metrichki prostori, $A \psj X$, $a \in \overline{A}$. Tachka $\xi \in Y$ je granichna vrednost preslikavanja $f$ u tachki $a$. Neka je $\varphi: M \to X$ homeomorfizam metrichkog prostora $M$ na $X$. Tada je 
+\[\lim_{x \to a} f(x) = \lim_{t \to {\varphi}^{-1}(a)} f \circ \varphi(t)\]
+\end{tvr}
+\begin{proof}
+Formirajmo niz $t_n \in \varphi^{-1} (A)$ koji tez1i ka $\varphi^{-1}(A)$. Tada $f(\varphi(t_n)) \to \xi$ zbog neprekidnosti $\varphi$ u $a$ i zbog $\lim_{x \to a} f(x) = \xi$.
+\end{proof}
+
 \subsection{Kompletnost}
+
+\begin{tvr}
+Podskup $A \psj X$ kompletnog prostora $X$ je kompletan akko je zatvoren.
+\end{tvr}
+\begin{proof}
+$\boxed{\Rightarrow}$ Dokazati da je $A = \overline{A}$.\\
+$\boxed{\Leftarrow}$ Iz zatvorenosti svaki Koshijev niz je konvergentan u $A$.
+\end{proof}
+
+\begin{nap}
+Primeri prostora koji nisu kompletni su nezatvoreni podskupovi kompletnih.
+\end{nap}
+
+\begin{tvr}
+Proizvod $(X, d_{\infty}) = \prod_{j=1}^{k} (X_i, d_i)$ je kompletan ako i samo ako su svi $X_i$ kompletni.
+\end{tvr}
+\begin{proof}
+Neka je $\pi_j : X \to X_j$. Dokazati da nizovi $\pi_j a_n$ konvergiraju u prostorima $X_j$, gde je $a_n$ niz u $X$.
+\end{proof}
+
+\begin{tma}
+(Kantorova karakterizacija kompletnosti) Metrichki prostor $(X,d)$ je kompletan ako i samo ako svaki opadajuc1i niz nepraznih zatvorenih podskupova chiji niz dijametara tezi nuli ima neprazan presek.
+\end{tma}
+\begin{proof}
+$\boxed{\Rightarrow}$ Pretpostavimo da je prostor kompletan. Neka je $F_n$ niz podskupova iz uslova teoreme. Formiramo niz $a_n \in F_n$. Pokazi da je taj niz Koshijev, pa je zbog kompletnosti i konvergentan, stoga presek je $a_{\infty}$ pa nije prazan. \\
+$\boxed{\Leftarrow}$ Neka je $a_n$ Koshijev niz u $X$. Definisati $F_n := \{\overline{a_n ,a_{n+1}, ...}\}$, pa kako $X$ ima Kantorovo svojstvo, presek nije prazan, tj postoji $a_{\infty} \in \cap_{n \in \NN} F_n$.
+\end{proof}
+
+\begin{tma}
+(Produz1enje neprekidnog preslikavanja) Neka su $X, Y$ metrichki prostori, $A \in X$, $\overline{A} = X$ (tj. $A$ gust u $X$) i $f: A \to Y$ neprekidno preslikavanje. Tada vaz1i:
+\begin{itemize}
+\item[(1)] Postoji neprekidno preslikavanje $F: X \to Y$ sa osobinom $F|_{A} = f$ ako i samo ako $(\forall x \in X)$ $\exists \lim_{t \to x} f(t) =: g(x)$. Pri tome je $F \equiv g$ (jedinstvenost produz1enja).
+\item[(2)] Ako je $f$ ravnomerno neprekidno i $Y$ kompletan, onda postoji ravnomerno neprekidno $F: X \to Y$ sa osobinom $F|_{A} = f$.
+\end{itemize}
+\end{tma}
+\begin{proof}
+
+\end{proof}
+
+\begin{tma}
+(Banahova teorema o fiksnoj tachki) Neka je $X$ kompletan metrichki prostor, $f: X \to X$ kontrakcija, $0 < q = \mathrm{lip} f < 1$. Tada $f$ ima tachno jednu fiksnu tachku, tj. postoji jedinstvena tachka $a_{\infty} \in X$ takva da je $f(a_{\infty}) = a_{\infty}$.\\ \\
+Tachka $a_{\infty}$ je granichna vrednost niza definisanog rekurentno: $a_0$ proizvoljno, $a_{n+1} = f(a_n)$ (niz sukcesivnih aproksimacija) i pri tome vaz1i \[d(a_n, a_{\infty}) \leq \frac{q^n}{1-q} d(a_0, a_1)\]
+\end{tma}
+
+\begin{proof}
+Pocheti od $d(a_{n+2}, a_{n+1}) = d(f(a_{n+1}), f(a_n)) \leq q d(a_{n+1}, a_n)$. Pomnoz1iti nejednakost sa $q^{-(n+1)}$. Zakljuchiti da je niz $q^{-n} d(a_{n+1}, a_n)$ opadajuc1i. Proceniti $d(a_{n+1}, a_n)$ sa $d(a_1, a_0)$. Proceniti $d(a_m, a_n)$ (supremum toga) i zakljuchiti da je $a_n$ Koshijev. Tad je fiksna tachka limes tog niza. Dokazati jedinstvenost suprotnom pretpostavkom.
+\end{proof}
+
+\begin{tma}
+Normirani vektorski prostor $X$ je kompletan ako i samo ako je svaki apsolutno konvergentan red u njemu konvergentan.
+\end{tma}
+\begin{proof}
+$\boxed{\Rightarrow}$ Neka je $X$ kompletan i $\sum_{n=0}^{\infty} \norm{a_k}<\infty$. Neka je $s_n = \sum_{k=0}^n a_k$. Dokazati da je $s_n$ Koshijev. \\
+$\boxed{\Leftarrow}$ Neka je $a_n$ Koshijev u $X$. Tada postoji $\varphi: \NN \nearrow \NN$ td. $\norm{a_{\varphi(n)} - a_{\varphi(n+1)}} \leq 2^{-n}$. Poshto $\sum 2^{-n}$ konvergira, zakljuchiti i da $a_{\varphi(n)}$ konvergira. Iskoristiti chinjenicu da je Koshijev niz koji ima konvergentan podniz i sam konvergentan. Sledi kompletnost $X$.
+\end{proof}
+
+\begin{tma}
+$B_Y(X)$ je Banahov ako i samo ako je $Y$ Banahov.
+\end{tma}
+
+\begin{posl}
+$\mathcal{L}(X;Y)$ je kompletan ako i samo ako je $Y$ kompletan.
+\end{posl}
+
+\begin{proof}
+Dokaz sledi iz prethodnog i toga da je $\mathcal{L}(X;Y)\hookrightarrow B_Y(S)$ izomorfizam na zatvoren podskup,  gde je $S = \{x \in X \mid \norm{x} = 1 \}$.
+\end{proof}
+
+\begin{nap} Ako je $X$ normirani vektorski prostor nad poljem $\mathbb{K} \in \{\RR, \CC \}$, onda je njegov dual $X^* := \mathcal{L} (X; \mathbb{K})$ kompletan.
+\end{nap}
+\\ \\
+\begin{nap}
+U konachno dimenzionom sluchaju $X \cong X^*$, tj vaz1i Risova teorema o re\-pre\-zen\-ta\-ci\-ji
+\[(\forall \alpha \in X^*) (\exists a \in X) (\forall v \in X) \hspace{0.12cm} \alpha(v) = \langle v, a \rangle \]
+\end{nap}
+\\ \\
+\begin{nap}
+U beskonachno dimenzionom slucaju ne mora da vaz1i prethodno, $X$ ne mora biti kompletan, a $X^*$ je uvek kompletan.
+\end{nap}
+\\ \\
+\begin{nap}
+Ako je $X$ Hilbertov, onda je $X \cong X^*$.
+\end{nap}
 
 \subsection{Kompaktnost}
 
