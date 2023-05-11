@@ -42,6 +42,7 @@
 \newcommand{\diam}{\mathrm{diam}}
 %\renewcommand{\dim}{\mathrm{dim}}
 \newcommand{\hdr}[1]{{\mathrm{H_{dR}}}^{#1}}
+\newcommand{\const}{\mathrm{const}}
 
 
 \newcommand{\tma}{\noindent\textbf{Teorema.} }
@@ -234,9 +235,203 @@ Ako je $X$ Hilbertov, onda je $X \cong X^*$.
 
 \subsection{Kompaktnost}
 
+\begin{tvr}
+Kompaktan metrichki prostor je kompletan.
+\end{tvr}
+\begin{proof}
+Sledi iz chinjenice da ako Koshijev niz ima konvergentan podniz, onda je i sam konvergentan.
+\end{proof}
+
+\begin{tvr}
+\begin{itemize}
+\item[(1)] Kompaktan skup je zatvoren
+\item[(2)] Zatvoren podskup kompaktnog skupa je kompaktan
+\end{itemize}
+\end{tvr}
+\begin{proof}
+\begin{itemize}
+\item[(1)] Ranije dokazano za kompletnost
+\item[(2)] Trivijalno
+\end{itemize}
+\end{proof}
+
+\begin{tvr}
+Neprekidna slika kompaktnog skupa je kompaktan.
+\end{tvr}
+\begin{proof}
+Konstruisati niz $b_n$ u $f(X)$. Nac1i njegov konvergentan podniz.
+\end{proof}
+
+\begin{posl}
+Neprekidna realna funkcija na kompaktnom skupu je ogranichena i ima $\min$ i $\max$.
+\end{posl}
+\\
+\begin{tvr}
+Proizvod metrichkih prostora je kompaktan ako i samo ako su takvi prostori faktori.
+\end{tvr}
+\begin{proof}
+$\boxed{\Rightarrow}$ projekcije su neprekidne surjekcije pa su ima slike kompaktne \\
+$\boxed{\Leftarrow}$ princip dijagonalizacije
+\end{proof}
+
+\begin{tvr}
+Kompaktan skup je ogranichen.
+\end{tvr}
+\begin{proof}
+Neprekidnost $f: A \to \RR$ $f(x)=d(x,a)$
+\end{proof}
+
+\begin{tvr}
+Neka su $X$ i $Y$ metrichki prostori, $X$ kompaktan, $f: X \to Y$ neprekidna bijekcija. Tada je $f$ homeomorfizam, tj. preslikavanje $f^{-1}:Y \to X$ je takod1e neprekidno.
+\end{tvr}
+\begin{proof}
+Neka je $F \psj X$ zatvoren podskup. Tada je $F$ kompaktan, pa je i $f(F)$ kompaktan, odnosno $f(F)$ je zatvoren. Zakljuchak sledi iz chinjenice da je neprekidna slika zatvorenog skupa zatvorena akko je preslikavanje neprekidno.
+\end{proof}
+
+\begin{nap}
+Preslikavanje $\varphi: [0,2 \pi[ \to \mathbb{S}^1$ dato kao $ \varphi(t):= e^{it}$ je neprekidna bijekcija koja nije homeomorfizam.
+\end{nap}
+
+\begin{tma}
+(Kantorova) Neprekidno preslikavanje na kompaktu je ravnomerno neprekidno.
+\end{tma}
+\begin{proof}
+Pretpostaviti suprotno, da je $X$ kompaktan, $f:X \to Y$ neprekidno, ali nije ravnomerno. Negirati uslov ravnomerne neprekidnosti i uzeti $\delta = \frac{1}{n}$.  Izvesti kontradikciju. 
+\end{proof}
+
+\begin{lema}
+Svaka norma 
+\[\norm{\cdot} : \mathbb{K}^r \to \RR \]
+na vektorskom prostoru $\mathbb{K}^r$ je Lipshicovo preslikavanje normiranog vektorskog prostora $(\mathbb{K}^r, \norm{\cdot})$ sa standardnom euklidskom normom.
+\end{lema}
+\begin{proof}
+Predstaviti $x = (x_1, \dots, x_r)$ kao linearnu kombinaciju baznih vektora. Primenom Koshi-Shvarcove nejednakosti zakljuchiti da je $\norm{x} \leq C |x|$, odnosno dalje, $|\norm{x} - \norm{y} | \leq \norm{x-y} \leq C |x-y|$.
+\end{proof}
+
+\begin{tvr}
+Neka je $\norm{\cdot}$ proizvoljna norma. Tada 
+\[(\exists m,M \in (0,\infty) ) (\forall x \in \mathbb{K}^r) \hspace{0.1cm} m|x| \leq \norm{x} \leq M|x| \]
+gde je $|\cdot|$ standardna euklidska norma na $\mathbb{K}^r$.
+\end{tvr}
+\begin{proof}
+Poshto je jedinichna sfera kompaktan skup, $\norm{\cdot}$ dostiz1e minimum i maksimum na njemu. Vaz1i
+ \[ m \leq \norm{\frac{x}{|x|}} \leq M\]
+\end{proof}
+
+\begin{nap}
+Na $k-\dim$ prostoru sve norme su ekvivalentne.
+\end{nap}
+\\ \\
+\begin{posl}
+Svaka dva normirana vektorska prostora iste konachne dimenzije su algebarski i topoloshki izomorfna.
+\end{posl}
+\\ \\
+\begin{nap}
+Dimenzija je jedina invarijanta konachno dimenzionog vektorskog prostora.
+\end{nap}
+\\ \\
+\begin{tvr}
+Metrichki prostor je totalno ogranichen (pred-kompaktan) ako i samo ako svaki niz u njemu ima Koshijev podniz.
+\end{tvr}
+\begin{proof}
+$\boxed{\Rightarrow}$ Neka je $X$ totalno ogranichen i neka je $a \in X^{\NN}$. Neka je $E_1$ 1-mrez1a. Tada se za neko $e_1 \in E_1$ u lopti $B_1 = B]e1;1[$ nalazi beskonachno mnogo chlanova niza $a_n$. Dalje, ponavljati postupak za $\frac{1}{n}$ - mrez1e. Dobija se niz lopti $B_n$ takvih da je svaka sledec1a sadrz1ana u prethodnoj. Trazeni niz definisati kao $a \circ \varphi$ gde je $\varphi: \NN \nearrow \NN$ dato sa: \[\varphi(0) = 0, \varphi(n+1) = \min a^{-1} (B_n \cap (\varphi(n), + \infty))\]
+$\boxed{\Leftarrow}$ Pretpostaviti suprotno, da $X$ nije totalno ogranichen. Izvesti kontradikciju.
+\end{proof}
+
+\begin{posl}
+Metrichki prostor je kompaktan ako i samo ako je kompletan i totalno ogranichen.
+\end{posl}
+
+\begin{tvr}
+Podskup $A \psj X$ kompletnog metrichkog prostora $X$ je relativno kompaktan, odnosno njegovo zatvorenje je kompaktno, ako i samo ako je totalno ogranichen.
+\end{tvr}
+\begin{proof}
+Iz kompaktnosti $\overline{A}$ zakljuchiti da je $\overline{A}$ kompletan i totalno ogranichen. Primenom produz1enja nejednakosti zakljuchiti da je i $A$ totalno ogranichen.
+\end{proof}
+
+\begin{nap}
+Svaki kompaktan podskup u Hausdorfovom prostoru je relativno kompaktan
+\end{nap}
+\\ \\
+\begin{lema}
+Neka je $X$ kompaktan metrichki prostor i $(V_{\lambda})_{\lambda \in \Lambda}$ njegovo otvoreno pokrivanje. Tada $(\exists \delta > 0)$ sa svojstvom da je svaka otvorena lopta poluprechnika $\delta$ sadrz1ana u nekom $V_{\lambda}$.
+\end{lema}
+
 \subsection{Prostor neprekidnih preslikavanja}
 
 \subsection{Povezanost}
+
+\begin{tma}
+Za topoloshki prostor $(X, \tau)$ sledec1i iskazi su ekvivalentni:
+\begin{itemize}
+\item[a)] $X$ ne moz1e da se predstavi kao unija $2$ disjunktna neprazna otvorena skupa
+\item[b)]  $X$ ne moz1e da se predstavi kao unija $2$ disjunktna neprazna zatvorena skupa
+\item[v)] Jedini podskupovi u $X$ koji su i otvoreni i zatvoreni su $\emptyset$ i $X$
+\item[g)] Svako neprekidno preslikavanje $X \to \{0,1\}$ (gde je $\{0,1\}$ metrichki prostor sa diskretnom metrikom $d(0,1) = 1, d(0,0) = d(1,1) = 0$) je konstantno
+\end{itemize}
+\end{tma}
+
+\begin{proof}
+a) $\Leftrightarrow$ b) : Pretpostaviti suprotno. Zakljuchak sledi iz chinjenice da ako je $A$ otvoren tada je $B = X \setminus A$ zatvoren i obrnuto. \\ 
+a) $\implies$ v) : Pretpostaviti suprotno, da postoji $A \subset X$ koji je i otvoren i zatvoren i neprazan. Tada se $X$ moz1e predstaviti kao unija dva otvorena disjunktna skupa $A$ i $X \setminus A$ odakle sledi kontradikcija sem ako $A$ nije prazan.
+\\ 
+v) $\implies$ a) : Slichno prethodnom.
+\\
+a) $\implies$ g) : Pretpostaviti suprotno, da $f$ nije konstantno. Dokazati da tada ne vaz1i a). Kontrapozicija.
+\\
+g) $\implies$ a) : Pretpostaviti $\neg$ a). Koristec1i chinjenicu da je inverzna slika otvorenog skupa otvoren skup zakljuchiti $\neg$ g).
+\end{proof}
+
+\begin{tvr}
+Ako je $S$ povezan skup i $S \psj A \psj \overline{S}$, onda je i $A$ povezan.
+\end{tvr}
+\begin{proof}
+Posmatrati neprekidno preslikavanje $f: A \to \{0, 1\}$ koje zbog povezanosti mora biti $\const$. Zakljchak sledi iz principa produz1enja jednakosti.
+\end{proof}
+
+\begin{tvr}
+Ako je $\{S_{\lambda}\}_{\lambda \in \Lambda}$ familija povezanih skupova i $\bigcap_{\lambda \in \Lambda} S_{\lambda} \ne \emptyset$, onda je $\bigcup_{\lambda \in \Lambda} S_{\lambda}$ povezan skup.
+\end{tvr}
+\begin{proof}
+Konstruisati neprekidno preskikavanje $f: \bigcup_{\lambda \in \Lambda} S_{\lambda} \to \{ 0, 1 \}$. Na svakom $S_\lambda$ ono je $\const$. Posto je presek njih neprazan, mora biti $\const$ i na celoj uniji.
+\end{proof}
+
+\begin{nap}
+Vaz1i i uopshtenje: $\{S_{\lambda}\}_{\lambda \in \Lambda}$ povezani i $(\exists \lambda_0) (\forall \lambda \in \Lambda) S_{\lambda} \bigcap S_{\lambda_0} \ne \emptyset \implies \bigcup_{\lambda \in \Lambda} S_{\lambda}$ povezan - (teorema "cvetic1").
+\end{nap}
+
+\begin{posl}
+Dekartov proizvod povezanih metrichkih prostora je povezan.
+\end{posl}
+\begin{proof}
+Predstaviti $M \times N = \bigcup_{a\in M} \{a\} \times N = (\bigcup_{a\in M} \{a\} \times N) \cup
+(M \times  \{y_0\})$. Dalje, sledi na osnovu prethodnog.
+\end{proof}
+
+\begin{tvr}
+Neprekidna slika povezanog skupa je povezan skup.
+\end{tvr}
+\begin{proof}
+Sledi iz definicije i surjektivnosti $f: X \to f(S)$.
+\end{proof}
+
+\begin{tvr}
+Putno povezan skup je povezan.
+\end{tvr}
+\begin{proof}
+Pokazati da je neprekidno $\varphi: S \to \{0,1\}$ konstantno. Zakljuchiti da je $\varphi \circ \gamma = \const$ gde je $\gamma:[0,1] \to S$ neprekidno takvo da je $\gamma(0) = s_0, \gamma(1) = x$. Odatle sledi $\varphi(x) = \varphi(s_0)$, tj. $\varphi = \const$.
+\end{proof}
+
+\begin{tvr}
+Neprekidna slika putno povezanog skupa je putno povezan.
+\end{tvr}
+\begin{proof}
+Konstruisati $f \circ \gamma$. Posmatrati shta je to preslikavanje u $0$ i $1$.
+\end{proof}
+
+\begin{nap}
+Prethodni dokaz i dokaz slichnog tvrd1enja za obichnu povezanost su na neki nachin dualni ("metod obrnutih strelica").
+\end{nap}
 
 \section{Diferenciranje}
 \subsection{Diferenciranje u normiranim vektorskim prostorima}
