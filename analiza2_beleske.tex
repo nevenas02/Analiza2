@@ -359,6 +359,118 @@ Neka je $X$ kompaktan metrichki prostor i $(V_{\lambda})_{\lambda \in \Lambda}$ 
 
 \subsection{Prostor neprekidnih preslikavanja}
 
+\begin{tvr}
+$X$ kompaktan $\implies$ $C(X;Y) \psj B(X;Y)$
+\end{tvr}
+\begin{proof}
+Zakljuchiti iz toga da funkcija $f:X \to \RR$ koja slika $x\mapsto d(b,f(x))$ na kompaktu dostiz1e minimum i maksimum.
+\end{proof}
+
+\begin{tvr}
+$C_Y(X)$ je zatvoren u $B_Y(X)$.
+\end{tvr}
+\begin{proof}
+Neka je $f_n:X \to Y$ niz u $C_Y(X)$. Neka $f_n \longrightarrow f_{\infty}$ kad $n \to \infty$. Dokazati da je $f_{\infty} \in C_Y(X)$, odnosno da je $(\forall
+a \in X) fCa$. Iskoristiti definiciju neprekidnosti u tachki.
+\end{proof}
+
+\begin{posl}
+Ako je $X$ kompaktan i $Y$ kompletan, onda je i $C_Y(X)$ kompletan.
+\end{posl}
+\begin{proof}
+Zbog toga shto, ako je $X$ kompaktan tada je $C(X;Y) \psj B(X;Y)$. Ako je $Y$ kompletan, tada je $B(X;Y)$ kompletan. Prema prethodnom $C(X;Y)$ je zatvoren u $B(X;Y)$, pa stoga zakljuchujemo da je i kompletan kao zatvoren podskup kompletnog skupa.
+\end{proof}
+
+\begin{tma}
+(Dini) Neka je $X$ kompaktan metrichki prostor i $f_n$ monoton niz u $C_{\RR}(X)$ takav da vaz1i:
+\begin{itemize}
+\item[(1)] $(\forall x \in X) \lim_{n \to \infty} f_n(x) = f_{\infty}(x)$
+\item[(2)] $f_{\infty} \in C_{\RR}(X)$
+\end{itemize}
+Tada $f_n \rightrightarrows f_{\infty}$ (tj. $f_n \to F$ u $(C_{\RR}(X), d_{\infty})$.
+\end{tma}
+\begin{proof}
+Na kodomenu $\RR$ metrika je definisana uz pomoc1 $|\cdot |$, dalje na $C_{\RR}(X)$ imamo normu $\norm{g}_{\infty}:= \max_{x\in X}|g(x)|$ i ravnomerna metrika je $d_{\infty}(f,g) = \norm{f - g}_{\infty}$. Posmatrajmo niz funkcija: $g_n:X \to \RR$, $g_n(x) = |f_{\infty}(x) - f_n(x)|$. Dokaz sprovesti u dva koraka:
+\begin{itemize}
+\item[1)] Iz osobina niza $g_n$ zakljuchiti da $\norm{g_n}_{\infty} \searrow$.
+\item[2)] Formirati niz $F_n = \{x \in X | g_n(x) \leq \epsilon \}$. On je zatvoren. Dokazati da vaz1i $\lim_{n \to \infty} \norm{g_n}_{\infty} = 0$. Odatle sledi traz1eno.
+\end{itemize}
+\end{proof}
+
+\begin{tma}
+(Korovkinova) Neka je $X$ kompaktan metrichki prostor i $S \psj C_{\RR}(X)$ podskup, takav da je njime generisani vektorski prostor minimizirajuc1i. Ako je \[P_n: C_{\RR}(X) \to C_{\RR}(X)\]
+ niz pozitivnih linearnih preslikavanja takav da $(\forall f \in S) P_n f \rightrightarrows f$, tada vaz1i
+\[(\forall f \in C_{\RR}(T)) P_nf \rightrightarrows f \]
+\end{tma}
+
+\begin{proof}
+Zbog linearnosti uniformne konvergencije i linearnosti $P_n$ moz1emo da pretpostavimo da je $S = M$.  Neka je $f \in C_{\RR}(X)$. Izvesti dokaz u tri koraka:
+\begin{itemize}
+\item[1)] Neka je $\epsilon >0$. Tada 
+\[(\forall a \in X)(\exists g \in M) g(a) \leq f(a) + \epsilon \wedge g > f\]
+\item[2)] $(\forall \epsilon > 0)$ $\exists$ konachan niz $g_1, \dots, g_r \in M$ takav da je $f < \inf \{g_1, \dots, g_r \} \leq f + \epsilon $
+\item[3)] Primenom prethodnog, dokazati da je $\norm{P_n f - f}_{\infty} = \sup_{x \in X} |P_nf - f|<\epsilon$.
+\end{itemize}
+\end{proof}
+
+\begin{pr}
+(Bernshtajnovi polinomi)
+$B_n: C[0,1] \to C[0,1]$
+\[B_n f(x) = \sum_{j=0}^n {{n}\choose{j}} f\bigg(\frac{j}{n}\bigg) x^j {(1-x)}^{n-j}\]
+Neka je $S = \{e_0, e_1, e_2 \}$, $e_0(x) = 1, e_1(x) = x, e_2(x) = x^2$ i neka je $M$ vektorski prostor sa bazom $\{e_0,e_1,e_2\}$. $M \psj C[0,1]$, $M$ je minimizirajuc1i. Vaz1i da $B_n e_j \rightrightarrows e_j$ za sve $j \in \{0,1,2\}$. Po Korovkinovoj teoremi zakljuchujemo: \[(\forall f \in C[0,1])\hspace{0.15cm} B_n f \rightrightarrows f \].
+\end{pr}
+\\ \\
+\begin{posl}
+(Prva Vajershtrasova teorema) Skup polinoma je gust u $(C[a,b], \norm{\cdot}_{\infty})$.
+\end{posl}
+\begin{proof}
+Homeomorfizam $\varphi:[0,1] \to [a,b]$ gde je $\varphi(t) = bt + a(1-t)$ definishe linearnu izmometriju $\varphi^*: C[a,b] \to C[0,1]$ sa $\varphi^* f = f \circ \varphi$. Dalje razmatranje svodi se na prethodni primer.
+\end{proof}
+
+\begin{nap}
+Profinjenje Prve Vajershtrasove teoreme je razvoj u stepeni red.
+\end{nap}
+\\ \\
+\begin{tma}
+(Ston - Vajershtrasov stav)
+\begin{itemize}
+\item Realni oblik: Ako je $\mathcal{A}$ podalgebra algebre $C_{\RR}(X)$ koja sadrz1i $1$ i razlikuje tachke, tj. vaz1i $(\forall x,y \in X) x \ne y \implies (\exists f \in \mathcal{A}) f(x) \ne f(y)$, onda je $\mathcal{A}$ gusta u $C_{\RR}(X)$: $\overline{\mathcal{A}} = C_{\RR}(X)$.
+\item Kompleksni oblik: Ako je $\mathcal{A}$ podalgebra algebre $C_{\CC}(X)$ koja sadrz1i $1$ i razlikuje tachke i zatvorena je za kon\-jugovanje, tj. $f \in \mathcal{A} \implies \overline{f} \in \mathcal{A}$, onda je $\mathcal{A}$ gusta u $C_{\CC}(X)$.
+\end{itemize}
+\end{tma}
+\begin{proof}
+
+\end{proof}
+
+\begin{posl}
+(Druga Vajershtrasova teorema)
+\begin{itemize}
+\item Algebra generisana skupom $\{e^{i n t}\}$ je gusta u $C_{\CC}(2 \pi)$.
+\item  Algebra generisana skupom ${\{1, \cos nt, \sin nt \}}_{n \in \NN}$ je gusta u $C_{\RR}(2 \pi)$.
+\end{itemize}
+\end{posl}
+
+\begin{nap}
+Profinjenje Druge Vajershtrasove teoreme jeste razvoj u Furijeov red.
+\end{nap}
+\\ \\
+\begin{tma}
+(Arcela - Askolijeva teorema) Neka je $X$ separabilan i $f_n: X \to \CC$ niz koji je:
+\begin{itemize}
+\item[1.] ogranichen po tachkama, tj. $(\forall x \in M)$ $\sup_{n \in \NN} |f_n(x)| < \infty$
+\item[2.] ravnostepeno neprekidan
+\end{itemize}
+Tada niz $f_n$ ima podniz koji ravnomerno konvergira na svakom kompaktnom podskupu.
+\end{tma}
+\begin{proof}
+Poshto je $X$ separabilan, postoji prebrojiv gust podskup $S \ps X$. Pored1ajmo njegove tachke u niz $S = \{x_1, x_2, \dots \}$. Definishimo niz podskupova $N_k \ps \NN$ induktivno. Neka je $N_0 = N$. Neka je $N_k$ definisano. Prema uslovu $1.$ postoji beskonachan skup $N_{k+1} \ps N_k$, takav da postoji 
+\[\lim_{(n \to \infty) \in N_{k+1}} f_n(x_{k+1}) \]
+Formirajmo $N := \{n_1, n_2, \dots \}$ gde je $n_k$ $k$ - ti element iz skupa $N_k$ za svako $k$ - dijagonalni izbor.  ... dopuni
+\end{proof}
+
+\begin{nap}
+U Arcela - Askolijevoj teoremi $X$ moz1e biti i kompaktan, poshto je kompaktnost jache svojstvo od separabilnosti.
+\end{nap}
 \subsection{Povezanost}
 
 \begin{tma}
