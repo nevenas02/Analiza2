@@ -1383,4 +1383,112 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 
 \section{Dualni pogled na diferencijalne forme}
 \section{Furijeova analiza}
+
+\begin{lema}
+Neka je $\{e_1, \dots, e_n\}$ ortonormiran sistem i $f$ proizvoljan vektor. Tada je vektor 
+\[h = f - \sum_{j=1}^n \langle f, e_j \rangle e_j\]
+ortogonalan na prostor $\mathcal{L}(\{e_1, \dots, e_n\})$.
+\end{lema}
+\begin{proof}
+Dokazati da za svako $l$ vaz1i $\langle h, e_l \rangle = 0$ i iz linearnosti zakljuchiti traz1eno.
+\end{proof}
+
+\begin{posl}
+Svaki vektor $f$ moz1e da se napishe kao 
+\[f = f_e + h\]
+gde je $f_e \in \mathcal{L}(\{e_1, \dots, e_n \})$ i $h$ ortogonalno na $\mathcal{L}(\{e_1, \dots, e_n \})$.
+\end{posl}
+\\ \\
+\begin{lema}
+(Pitagorina teorema) Neka je $g\bot h$ i $f = g+h$. Tada je \[\norm{f}^2 = \norm{g}^2 + \norm{h}^2\]
+\end{lema}
+\begin{proof}
+Raspisati $\norm{f}^2 = \langle f, f \rangle = \langle g+h, g+h \rangle $.
+\end{proof}
+
+\begin{posl}
+Ako je $f_1, \dots, f_n$ ortogonalan sistem i $f = f_1 + \dots + f_n$, onda je 
+\[\norm{f}^2 = \norm{f_1}^2 + \dots + \norm{f_n}^2 \]
+\end{posl}
+\\ \\
+\begin{posl}
+Ako je $e_1, \dots , e_n$ ortonormiran sistem i $f = c_1 e_1 + \dots + c_n e_n$, onda je 
+\[\norm{f}^2 = {|c_1|}^2 + \dots + {|c_n|}^2\]
+\end{posl}
+\\ \\
+\begin{tvr}
+Neka je $e_1, \dots , e_n$ ortonormiran sistem i $f$ proizvoljan vektor. Tada je \[f_e := \sum_{j=1}^n \langle f, e_j \rangle e_j\] najbliz1i vektor u $\mathcal{L}(\{e_1, \dots, e_n \})$ vektoru $f$.
+\end{tvr}
+\begin{proof}
+Primenom Pitagorine teoreme dokazati da vaz1i $\norm{f-g}^2 \geq \norm{f - f_e}^2$
+\end{proof}
+
+\begin{tvr}
+(Beselova nejednakost) Ako je $e_1, \dots, e_n$ ortonormirani sistem, onda za svaki vektor $f$ vaz1i
+\[\sum_{j=1}^n {| \langle f, e_j \rangle |}^2 \leq \norm{f}^2 \]
+\end{tvr}
+\begin{proof}
+Zapisati $f$ kao $f = f_e + h$, gde je $f_e\bot h$ i $f_e = \sum_{j=1}^n \langle f, e_j \rangle e_j$. Primeniti pitagorinu teoremu.
+\end{proof}
+
+\begin{tma}
+Ako je $\{e_1, e_2, \dots \}$ ortonormiran sistem, sledec1i iskazi su ekvivalentni:
+\begin{itemize}
+\item[a)] sistem $\{e_1, e_2, \dots \}$ je potpun
+\item[b)] za svaki vektor $f$ vaz1i
+\[f = \sum_{n=1}^{\infty} \langle f, e_n \rangle e_n\]
+\item[v)] za svaki vektor $f$ vaz1i \textit{Parsevalova jednakost}:
+\[\norm{f}^2 = \sum_{n=1}^{\infty} {|\langle f, e_n \rangle |}^2 \]
+\end{itemize}
+\end{tma}
+\begin{proof}
+Trivijalno iz prethodnih tvrd1enja.
+\end{proof}
+
+\begin{posl}
+Ortonormirani sistem vektora je potpun ako i samo ako je baza.
+\end{posl}
+\begin{proof}
+$\boxed{\Leftarrow}:$ vaz1i uvek \\
+$\boxed{\Rightarrow}:$ je a) $\Longrightarrow$ b) u prethodnoj teoremi
+\end{proof}
+
+\begin{pr}
+Sistem $\{1,x,x^2, \dots \}$ je potpun u pred - Hilbertovom prostoru $C_{\CC}[-1,1]$ sa skalarnim proizvodom $\int_{-1}^1 f(x) g(x) dx$, ali on nije baza!
+\end{pr}
+\\ \\
+\begin{tma}
+Neka je $X$ Hilbertov prostor, $\{e_1, e_2 \dots \}$ ortonormiran sistem i $f \in X$ proizvoljan vektor. Tada vaz1i:
+\begin{itemize}
+\item[(1)] Furijeov red $\sum_{n=1}^{\infty} \langle f, e_n \rangle e_n$ konvergira ka nekom vektoru $f_e \in X$.
+\item[(2)] $f = f_e + h$, gde je $h \bot \mathcal{L}(\{e_1, \dots, e_n \})$
+\end{itemize}
+\end{tma}
+\begin{proof}
+\begin{itemize}
+\item[(1)] Na osnovu Beselove nejednakosti $\sum {|\langle f, e_n \rangle |}^2$ konvergira. Na osnovu Pita\-go\-ri\-ne teoreme zakljuchiti da $\sum \langle f, e_n \rangle e_n $ zadovoljava Koshijev kriterijum, pa zbog kom\-ple\-tno\-sti prostora i konvergira.
+\item[(2)] Dokazati da za svako $j$ vaz1i $\langle h, e_j \rangle = 0$
+\end{itemize}
+\end{proof}
+
+\begin{tma}
+Neka je $X$ pred - Hilbertov prostor i $\{f_1, f_2, \dots\}$ sistem linearno nezavisnih vektora.
+\begin{itemize}
+\item[(1)] Da bi ovaj sistem bio potpun neophodno je da u $X$ ne postoji vektor koji je razlichit od $0$ i ortogonalan na sve $f_j$.
+\item[(2)] Ako je prostor $X$ Hilbertov, uslov iz $(1)$ je i dovoljan za potpunost sistema.
+\end{itemize}
+\end{tma}
+\begin{proof}
+\begin{itemize}
+\item[(1)] Pretpostaviti suprotno i na osnovu Pitagorine teoreme izvesti kon\-tra\-dik\-ci\-ju.
+\item[(2)] 
+\end{itemize}
+\end{proof}
+
+\begin{pr}
+Neka je $f:[-1,1] \to \CC$ neprekidna funkcija, takva da je $\forall n$ 
+\[\int_{-1}^1 x^n f(x) dx = 0\]
+Tada je na osnovu prethodne i Prve Vajershtrasove teoreme , $f\equiv 0$.
+\end{pr}
+
 \end{document}
