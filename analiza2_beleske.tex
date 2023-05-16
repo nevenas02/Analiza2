@@ -43,6 +43,10 @@
 %\renewcommand{\dim}{\mathrm{dim}}
 \newcommand{\hdr}[1]{{\mathrm{H_{dR}}}^{#1}}
 \newcommand{\const}{\mathrm{const}}
+\newcommand{\grad}{\mathrm{grad}}
+\newcommand{\rot}{\mathrm{rot}}
+\renewcommand{\div}{\mathrm{div}}
+\renewcommand{\vec}{\overrightarrow}
 
 
 \newcommand{\tma}{\noindent\textbf{Teorema.} }
@@ -1382,6 +1386,48 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 \end{proof}
 
 \section{Dualni pogled na diferencijalne forme}
+
+\begin{tvr}
+	\( \div \circ \rot = 0, \rot \circ \grad = 0 .\)
+\end{tvr}
+\begin{proof}
+	$\div (\rot \vec B) = \vec \nabla \cdot (\vec \nabla \times \vec B) = 0$, $\rot (\grad f) = \vec \nabla \times (\vec \nabla  f)$.
+\end{proof}
+
+\begin{nap}
+	Vektor $\vec \nabla$ mozhe da se s\-hvati kao analogija diferencijala $d$, a prethodno tvrdjenje kao $d\circ d = 0$.
+	Uspostaviti izomorfizam izmedju diferencijalnih formi i odgovarajuc1ih prostora glatkih funkcija na kojima definishemo
+	$\grad, \rot, \div$ i dokazati da c1e svi dijagrami komutirati.
+\end{nap}
+
+\begin{tvr}
+	Svaka $1-$forma u $\RR^n$ je oblika $\omega^1_{\vec B} := \langle \vec B, \cdot \rangle$, za jedinstveno $\vec B$ i 
+	svaka $2-$forma u $\RR^3$ je oblika $\omega^2_{\vec B} := (\vec B, \cdot, \cdot) $ za jedinstveno $\vec B$.
+\end{tvr}
+\begin{proof}
+	Sledi iz chinjenice da su to potprostori celog prostora iste dimenzije kao i ceo prostor.
+\end{proof}
+
+\begin{nap}
+	Prethodno tvrdjenje opravdava sledec1u definiciju:
+	\begin{align*}
+		d\omega^0_f =:\omega^1_{\grad f} \\
+		d\omega^1_{\vec B} =:\omega^2_{\rot \vec B} \\
+		d\omega^2_{\vec B} =:\omega^3_{\div \vec B}
+	\end{align*}
+	Iz ove definicije je jasno da \( \div \circ \rot = 0, \rot \circ \grad = 0 \) sledi iz $d \circ d = 0$.
+\end{nap}
+
+\begin{pr}
+	\( \omega^1_{\vec A}\wedge \omega^1_{\vec B} = \omega^2_{\vec A \times \vec B}\),
+	\( \omega^1_{\vec A}\wedge \omega^2_{\vec B} = \omega^3_{\vec A \cdot \vec B}\) 
+\end{pr}
+\begin{proof}
+	Napisati $ \omega^1_{\vec A}$ kao $A_1dx + A_2dy + A_3dz$ i slichno sa ostalim formama i dokazati u 
+	koordinatnom zapisu.
+\end{proof}
+
+
 \section{Furijeova analiza}
 
 \begin{lema}
