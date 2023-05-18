@@ -174,11 +174,11 @@ Neka je $\pi_j : X \to X_j$. Dokazati da nizovi $\pi_j a_n$ konvergiraju u prost
 \end{proof}
 
 \begin{tma}
-(Kantorova karakterizacija kompletnosti) Metrichki prostor $(X,d)$ je kompletan ako i samo ako svaki opadajuc1i niz nepraznih zatvorenih podskupova chiji niz dijametara tezi nuli ima neprazan presek.
+(Kantorova karakterizacija kompletnosti) Metrichki prostor $(X,d)$ je kom-pletan ako i samo ako svaki opadajuc1i niz nepraznih zatvorenih podskupova chiji niz dijametara tezi nuli ima neprazan presek.
 \end{tma}
 \begin{proof}
 $\boxed{\Rightarrow}$ Pretpostavimo da je prostor kompletan. Neka je $F_n$ niz podskupova iz uslova teoreme. Formiramo niz $a_n \in F_n$. Pokazi da je taj niz Koshijev, pa je zbog kompletnosti i konvergentan, stoga presek je $a_{\infty}$ pa nije prazan. \\
-$\boxed{\Leftarrow}$ Neka je $a_n$ Koshijev niz u $X$. Definisati $F_n := \{\overline{a_n ,a_{n+1}, ...}\}$, pa kako $X$ ima Kantorovo svojstvo, presek nije prazan, tj postoji $a_{\infty} \in \cap_{n \in \NN} F_n$.
+$\boxed{\Leftarrow}$ Neka je $a_n$ Koshijev niz u $X$. Definisati $F_n := \overline{\{a_n ,a_{n+1}, ...\}}$, pa kako $X$ ima Kantorovo svojstvo, presek nije prazan, tj postoji $a_{\infty} \in \bigcap_{n \in \NN} F_n$.
 \end{proof}
 
 \begin{tma}
@@ -189,6 +189,16 @@ $\boxed{\Leftarrow}$ Neka je $a_n$ Koshijev niz u $X$. Definisati $F_n := \{\ove
 \end{itemize}
 \end{tma}
 \begin{proof}
+\begin{itemize}
+	\item[(1)] Jedan smer je trivijalan. Za drugi smer iskoristiti svojstvo neprekidne funkcije $f(\overline{A}) \psj \overline{f(A)}$,
+		primenjeno na odgovarajuc1u okolinu tachke.
+\item[(2)] Neka je $x\in X$ proizvoljna tachka i $a_n$ niz u $A$ koji tezhi ka $x$. Tada je $a_n$ Koshijev, pa 
+	je $f(a_n)$ takodje Koshijev (jer je $Y$ kompletan i $f$ ravnomerno neprekidno), pa je $f(a_n)$ konvergentan.
+		Da bismo mogli da kazhemo $F(x):= \lim_{n\to\infty}f(a_n)$, moramo dokazati da ova definicija ne zavisi od izbora
+		niza. Pretpostavimo da $b_n\to x$. Dokazati tada $d_X(a_n, b_n)\to 0$ i odatle, iz ravnomerne neprekidnosti, zakljuchiti
+		da $d_Y(f(a_n), f(b_n))\to 0$, odakle sledi dobra definicija (ovo je smisleno zbog kara-kterizacije limesa u tachki preko 
+		limesa niza).
+\end{itemize}
 
 \end{proof}
 
@@ -357,7 +367,7 @@ Iz kompaktnosti $\overline{A}$ zakljuchiti da je $\overline{A}$ kompletan i tota
 Svaki kompaktan podskup u Hausdorfovom prostoru je relativno kompaktan
 \end{nap}
 \\ \\
-\begin{lema}
+\begin{lema}(Lebegova)
 Neka je $X$ kompaktan metrichki prostor i $(V_{\lambda})_{\lambda \in \Lambda}$ njegovo otvoreno pokrivanje. Tada $(\exists \delta > 0)$ sa svojstvom da je svaka otvorena lopta poluprechnika $\delta$ sadrz1ana u nekom $V_{\lambda}$.
 \end{lema}
 
