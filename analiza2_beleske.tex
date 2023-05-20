@@ -407,8 +407,12 @@ Tada $f_n \rightrightarrows f_{\infty}$ (tj. $f_n \to F$ u $(C_{\RR}(X), d_{\inf
 Na kodomenu $\RR$ metrika je definisana uz pomoc1 $|\cdot |$, dalje na $C_{\RR}(X)$ imamo normu $\norm{g}_{\infty}:= \max_{x\in X}|g(x)|$ i ravnomerna metrika je $d_{\infty}(f,g) = \norm{f - g}_{\infty}$. Posmatrajmo niz funkcija: $g_n:X \to \RR$, $g_n(x) = |f_{\infty}(x) - f_n(x)|$. Dokaz sprovesti u dva koraka:
 \begin{itemize}
 \item[1)] Iz osobina niza $g_n$ zakljuchiti da $\norm{g_n}_{\infty} \searrow$.
-\item[2)] Formirati niz $F_n = \{x \in X | g_n(x) \leq \epsilon \}$. On je zatvoren. Dokazati da vaz1i $\lim_{n \to \infty} \norm{g_n}_{\infty} = 0$. Odatle sledi traz1eno.
+\item[2)] Formirati niz $F_n = \{x \in X | g_n(x) \geq \epsilon \}$. On je zatvoren. Dokazati da vaz1i \\$\lim_{n \to \infty} \norm{g_n}_{\infty} = 0$. Odatle sledi traz1eno.
 \end{itemize}
+
+Moguc1e je i posmatrati niz otvorenih skupova $U_n = \{x \in X | g_n(x) < \epsilon \}$. Ovo je otvoreni pokrivach kompaktnog prostora $X$, odakle
+	sledi da imamo konachan potpokrivach. Kako je $g_n$ opadajuc1i niz, odabirom maksimalnog $n$ iz konachnog potpokrivacha sledi da je $\norm{g_n}_\infty < \eps$,
+	a kako je $\eps$ proizvoljno, odatle sledi dokaz.
 \end{proof}
 
 \begin{tma}
@@ -418,7 +422,7 @@ Na kodomenu $\RR$ metrika je definisana uz pomoc1 $|\cdot |$, dalje na $C_{\RR}(
 \end{tma}
 
 \begin{proof}
-Zbog linearnosti uniformne konvergencije i linearnosti $P_n$ moz1emo da pretpostavimo da je $S = M$.  Neka je $f \in C_{\RR}(X)$. Izvesti dokaz u tri koraka:
+Zbog linearnosti uniformne konvergencije i linearnosti $P_n$ moz1emo da pretpo\-stavimo da je $S = M$.  Neka je $f \in C_{\RR}(X)$. Izvesti dokaz u tri koraka:
 \begin{itemize}
 \item[1)] Neka je $\epsilon >0$. Tada 
 \[(\forall a \in X)(\exists g \in M) g(a) \leq f(a) + \epsilon \wedge g > f\]
@@ -431,7 +435,7 @@ Zbog linearnosti uniformne konvergencije i linearnosti $P_n$ moz1emo da pretpost
 (Bernshtajnovi polinomi)
 $B_n: C[0,1] \to C[0,1]$
 \[B_n f(x) = \sum_{j=0}^n {{n}\choose{j}} f\bigg(\frac{j}{n}\bigg) x^j {(1-x)}^{n-j}\]
-Neka je $S = \{e_0, e_1, e_2 \}$, $e_0(x) = 1, e_1(x) = x, e_2(x) = x^2$ i neka je $M$ vektorski prostor sa bazom $\{e_0,e_1,e_2\}$. $M \psj C[0,1]$, $M$ je minimizirajuc1i. Vaz1i da $B_n e_j \rightrightarrows e_j$ za sve $j \in \{0,1,2\}$. Po Korovkinovoj teoremi zakljuchujemo: \[(\forall f \in C[0,1])\hspace{0.15cm} B_n f \rightrightarrows f \].
+Neka je $S = \{e_0, e_1, e_2 \}$, $e_0(x) = 1, e_1(x) = x, e_2(x) = x^2$ i neka je $M$ vektorski prostor\\ sa bazom $\{e_0,e_1,e_2\}$. $M \psj C[0,1]$, $M$ je minimizirajuc1i. Vaz1i da $B_n e_j \rightrightarrows e_j$ za sve \\$j \in \{0,1,2\}$. Po Korovkinovoj teoremi zakljuchujemo: \[(\forall f \in C[0,1])\hspace{0.15cm} B_n f \rightrightarrows f \].
 \end{pr}
 \\ \\
 \begin{posl}
@@ -478,12 +482,18 @@ Tada niz $f_n$ ima podniz koji ravnomerno konvergira na svakom kompaktnom podsku
 \end{tma}
 \begin{proof}
 Poshto je $X$ separabilan, postoji prebrojiv gust podskup $S \ps X$. Pored1ajmo njegove tachke u niz $S = \{x_1, x_2, \dots \}$. Definishimo niz podskupova $N_k \ps \NN$ induktivno. Neka je $N_0 = N$. Neka je $N_k$ definisano. Prema uslovu $1.$ postoji beskonachan skup $N_{k+1} \ps N_k$, takav da postoji 
-\[\lim_{(n \to \infty) \in N_{k+1}} f_n(x_{k+1}) \]
-Formirajmo $N := \{n_1, n_2, \dots \}$ gde je $n_k$ $k$ - ti element iz skupa $N_k$ za svako $k$ - dijagonalni izbor.  ... dopuni
+\[\lim_{ N_{k+1}\ni n \to \infty} f_n(x_{k+1}) \]
+Formirajmo $N := \{n_1, n_2, \dots \}$ gde je $n_k$ $k$ - ti element iz skupa $N_k$ za svako $k$ - dijagonalni izbor. Iz konstrukcije
+sledi da za svako $x\in S$ postoji
+	\[ \lim_{N\ni n \to \infty}f_n(x) .\] 
+	Neka je $K\ps M$ kompaktan podskup. Pokriti $K$ sa konachno mnogo otvorenih lopti, koje su dovoljno malog poluprechnika takvog
+	da je za svako  $n$ vrednost $|f_n(x) - f_n(y)|$ proizvoljno mala (ovo je moguc1e zbog ravnostepene neprekidnosti).
+	Iskoristiti sada i da postoji tachka u preseku $S$ i svake takve lopte. Na kraju dovrshiti dokaz ocenom
+	$|f_n(x) - f_m(x)|$ uz pomoc1u nejednakosti trougla, Kosijevog uslova (u kompletnom prostoru $\CC$).
 \end{proof}
 
 \begin{nap}
-U Arcela - Askolijevoj teoremi $X$ moz1e biti i kompaktan, poshto je kompaktnost jache svojstvo od separabilnosti.
+U Arcela - Askolijevoj teoremi $X$ moz1e biti i kompaktan, poshto je kompakt\-nost jache svojstvo od separabilnosti.
 \end{nap}
 \subsection{Povezanost}
 
