@@ -56,6 +56,9 @@
 \newcommand{\pr}{\noindent\textit{Primer.} }
 \renewcommand{\proofname}{\textbf{Dokaz.}}
 
+\def\zn{,\kern-0.09em,} % definisemo donje navodnike 
+\def\zng{'\kern-0.09em' } % definisemo gornje navodnike
+
 \pagenumbering{gobble} 
 
 \title{\textbf{Analiza 2 -- osnovne ideje dokaza vaz1nijih teorema i tvrd1enja }}
@@ -715,10 +718,40 @@ Tada postoje okolina $V_0 \subseteq Y$ tachke $y_0$ i okolina $U_0 \subseteq X$ 
 \begin{proof}
 Dokaz sledi iz Teoreme o implicitnoj funkciji primenjene na funkciju $F(x,y) = x - g(y)$.
 \end{proof}
-\begin{tma}(Teorema o rangu) Neka je $V \subseteq \R^k$ otvoren i $f: V \to \R^l$ preslikavanje klase $C^n$, takvo da je za sve $x \in V$ $\rang Df(x) = r$. Tada u okolini svake tachke $x_0 \in V$ i njene slike $y_0 = f(x_0) \in \R^l$ postoje lokalne koordinate klase $C^n$ u kojima $f$ ima zapis \[f: (s_1, \dots , s_k) \to (s_1, \dots, s_r, 0, \dots , 0).\]
+\begin{tma}(Teorema o rangu) Neka je $V \subseteq \R^k$ otvoren i $f: V \to \R^l$ preslikavanje klase $C^n$, takvo da je za sve $x \in V$ $\rang Df(x) = r$. Tada u okolini svake tachke $x_0 \in V$ i njene slike $y_0 = f(x_0) \in \R^l$ postoje lokalne koordinate (difeomorfizmi) klase $C^n$ u kojima $f$ ima zapis \[f: (s_1, \dots , s_k) \to (s_1, \dots, s_r, 0, \dots , 0).\]
 Krac1e recheno, preslikavanje konstantnog ranga $r$ lokalno izgleda kao projekcija na $\R^r$.
 \end{tma}
 \begin{proof}
+	Ideja dokaza je da \zn ispravimo\zng koordinate za prvih $r$ koordinata.
+	Najpre, kako je permutacija koordinata difeomorfizam, mozhemo da pretpostavimo da je 
+	glavni minor matrice $Df$ nesingularan, tj. $\det \left( \frac{\partial f_i}{\partial x_j}\right)_{1\leq i, j \leq r} \neq 0$.
+	Definishimo preslikavanje $\varphi$ sa 
+	\begin{align*}
+		\varphi_j (x_1, \dotso, x_k):= 
+		\begin{cases}
+			f_j(x_1, \dotso, x_k), &1\leq j \leq r \\
+			x_j, &r<j\leq k
+		\end{cases}
+	\end{align*}
+	Ono jeste lokalni difeomorfizam, jer je $D\varphi \neq 0$ i vazhi 
+	\begin{align*}
+		f_j\circ \varphi^{-1}(s_1,\dotso, s_k) = 
+		\begin{cases}
+			s_j, &1 \leq j \leq r \\ 
+			f_j(s_1, \dotso , s_k), &r < j \leq k
+		\end{cases}
+	\end{align*}
+	Sada zakljuchiti kako izgleda matrica prvog izvoda $D(f\circ \varphi^{-1})$ i zbog chinjenice da je $\varphi$ lokalni
+	difeomorfizam zakljuchiti da je ona istog ranga kao i $Df$, kao i da je $\frac{\partial f_i}{\partial x_j}= 0,r< i, j \leq k$,
+	odakle sledi da $f_j(s_1, \dotso , s_k)$ zavisi samo od $s_1,\dotso, s_r$. Na kraju, definisati $\psi$ sa 
+	\begin{align*}
+		\psi_j (y):= 
+		\begin{cases}
+			y_j, &1\leq j \leq r \\
+			y_j - f_j(y_1,\dotso, y_r), &r<j\leq l
+		\end{cases}
+	\end{align*}
+	Zakljuchiti da je $\psi$ lokalni izomorfizam i da je $\psi\circ f\circ \varphi^{-1}$ trazhena kompozicija.
 
 \end{proof}
 \begin{tvr}
