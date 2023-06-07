@@ -1571,7 +1571,7 @@ Neka je $X$ Hilbertov prostor, $\{e_1, e_2 \dots \}$ ortonormiran sistem i $f \i
 \end{proof}
 
 \begin{tma}
-Neka je $X$ pred - Hilbertov prostor i $\{f_1, f_2, \dots\}$ sistem linearno nezavisnih vektora.
+Neka je $X$ pred-Hilbertov prostor i $\{f_1, f_2, \dots\}$ sistem linearno nezavisnih vektora.
 \begin{itemize}
 \item[(1)] Da bi ovaj sistem bio potpun neophodno je da u $X$ ne postoji vektor koji je razlichit od $0$ i ortogonalan na sve $f_j$.
 \item[(2)] Ako je prostor $X$ Hilbertov, uslov iz $(1)$ je i dovoljan za potpunost sistema.
@@ -1579,15 +1579,101 @@ Neka je $X$ pred - Hilbertov prostor i $\{f_1, f_2, \dots\}$ sistem linearno nez
 \end{tma}
 \begin{proof}
 \begin{itemize}
-\item[(1)] Pretpostaviti suprotno i na osnovu Pitagorine teoreme izvesti kon\-tra\-dik\-ci\-ju.
-\item[(2)] 
+\item[(1)] Pretpostaviti suprotno i na osnovu Pitagorine teoreme izvesti kon\-tra\-dik\-ci\-ju sa potpunosh\-c1u sistema.
+\item[(2)] Gram-SHmitovim postupkom ortonormirati sistem. Na osnovu prethodne teoreme zakljuchiti da se svaki vektor $f \in X$ moz1e zapisati kao $f = f_e + h$, gde je $f_e = \sum \langle f, e_n \rangle e_n$ i $h \perp \mathcal{L}(\{e_1, \dots, e_n\}$. Sledi da je $h = 0$. Izvesti krajnji zakljuchak iz prethodnog.
 \end{itemize}
 \end{proof}
 
 \begin{pr}
 Neka je $f:[-1,1] \to \CC$ neprekidna funkcija, takva da je $\forall n$ 
 \[\int_{-1}^1 x^n f(x) dx = 0\]
-Tada je na osnovu prethodne i Prve Vajershtrasove teoreme , $f\equiv 0$.
+Tada je na osnovu prethodne i Prve Vajershtrasove teoreme, $f\equiv 0$.
 \end{pr}
+\\ \\
+\begin{pr}
+Sistem $\{1, x, x^2, \dots \}$ je linearno nezavisan i potpun u pred-Hilbertovom pro\-sto\-ru $C_{\CC}[-1,1]$ sa skalarnim proizvodom $\int_{-1}^1 f(x)\overline{g(x)} = \langle f, g \rangle$ ali nije baza u tom prostoru! \\ \ Pretpostaviti suprotno, neka jeste baza. Tada se svako $f \in C_{\CC}[-1,1]$ moz1e zapisati kao red $f(x) = \sum c_n x^n$. \\ Obratiti paz1nju da se konvergencija tog reda odnosi na konvergenciju u normi iznduko\-va\-noj skalarnim proizvodom zadatim ranije. Kako opshti chlan konvergentnog reda tez1i nuli, zakljuchiti da $\norm{c_n x^n} \to 0$. Dalje, iz definicije skalarnog proizvoda zakljuchiti da je $\norm{c_n x^n} = |c_n| \sqrt{\frac{2}{2n+1}}$ i da zbog $\norm{c_n x^n} \to 0$, za dovoljno veliko $n$ vaz1i $|c_n| < \sqrt{2n+1}$. \\ Koristec1i ovu nejednakost dokazati da stepeni red $\sum c_n x^n$ konvergira na intervalu $]-1, 1[$. Odnosno, tada je funkcija $g: ]-1, 1[ \to \CC$, $g(x) = \sum_{n=0}^{\infty} c_n x^n$ dobro definisana funkcija. Poshto posmatramo konvergencije u razlichitim normama, mora se paz1ljivo pristupati detalju na kraju ovog dokaza. Nije ochigledno da je $f = g$. To se moz1e pokazati imajuc1i u vidu sledec1e: $\int_{-1 + \epsilon}^{1 - \epsilon} {|f-g|}^2 \leq {\norm{f - \sum c_n x^n}}^2 \to 0$. Odatle sledi da je $f \in C^{\infty}]-1, 1[$, med1utim to nije tachno, te dobijamo kontradikciju.
+\end{pr}
+\\ \\
+\begin{tma}
+Svaka funkcija moz1e proizvoljno dobro da se aproksimira u normi $\norm{\cdot}_2$:
+\begin{itemize}
+\item[(a)] funkcijom koja je ogranichena na $]- \pi, \pi[$ i integrabilna na $[-\pi, \pi]$
+\item[(b)] deo po deo konstantnom funkcijom
+\item[(v)] neprekidnom funkcijom
+\item[(g)] trigonometrijskom polinomom
+\end{itemize}
+\end{tma}
+\begin{proof}
+\begin{itemize}
+\item[(a)] Tvrd1enje je netrivijalno samo ako se radi o nesvojstvenom integralu. Pret\-po\-sta\-vi\-ti da je nesvojstven u granichnim tachkama (sluchaj unutrashnjih razmatra se analogno).
+\item[(b)] Integral ogranichene integrabilne funkcije moz1e se proizvoljno dobro aproksi\-mi\-ra\-ti donjom Darbuovom sumom, te ovo sledi iz prethodnog.
+\item[(v)] Dovoljno je dokazati da konstantne funkcije iz prethodnog mogu dovoljno dobro da se aprok\-si\-mi\-ra\-ju neprekidnim funkcijama. 
+\item[(g)] Dovoljno je dokazati da se neprekidna funkcija $h$ iz prethodnog moz1e proizvoljno dobro aproksimirati trigonometrijskim polinomom. Biramo $h_1$ tako da je nepre\-ki\-dna i $h_1(x) = h(x)$ za $x \in [-\pi, \pi - \delta]$ i $h_1(-\pi) = h_1(\pi)$. Odatle izvesti zakljuchak na osnovu Druge Vajershtrasove teoreme.
+\end{itemize}
+\end{proof}
+\begin{posl}
+Neka je $PC([-\pi, \pi]; \CC)$ pred-Hilbertov prostor deo-po-deo neprekidnih funkcija. Tada vaz1i:
+\begin{itemize}
+\item[(a)] Trigonometrijski Furijeov red proizvoljne funkcije $f \in PC([-\pi, \pi]; \CC)$ konvergira ka $f$ u normi izvedenoj iz skalarnog proizvoda \[\langle f, g \rangle = \int_{-\pi}^{\pi} f(x) \overline{g(x)} dx \]
+\item[(b)] Ako trigonometrijski red
+\[\sum_{n = -\infty}^{\infty} c_n e^{inx}\]
+konvergira ka funkciji $f$ u normi izvedenoj iz skalarnog proizvoda, onda je on njen Furijeov red.
+\item[(v)] Ako funkcije $f,g \in PC([-\pi, \pi]; \CC)$ imaju isti Furijeov red, onda je $f \equiv g$.
+\end{itemize}
+\end{posl}
+\begin{proof}
+\begin{itemize}
+\item[(a)] Posledica chinjenice da je svaki potpun ortonormiran sistem baza i chinjeni\-ce da su parcijalne sume Furijeovog reda svakog vektora linearne kombinacije or\-to\-nor\-mi\-ra\-nog sistema koje najbolje aproksimiraju taj vektor.
+\item[(b)] Sledi iz opshte chinjenice o jedinstvenosti razlaganja proizvoljnog vektora $f$ pred-Hilbertovog prostora po ortonormiranoj bazi.
+\item[(v)] Iz prethodnog.
+\end{itemize}
+\end{proof}
+\begin{lema}(Riman - Lebegova) Neka je $f: ]\alpha, \beta[ \to \CC$ lokalno antegrabilna i neka je apsolutno integrabilna u obichnom Rimanovom ili nesvojstvenom smislu. Tada je 
+\[\lim_{\RR \ni \lambda \to \infty} \int_{\alpha}^{\beta} f(x) e^{i \lambda x} dx = 0\]
+\end{lema}
+\begin{proof}
+Prvo, zakljuchiti da je dovoljno dokazati tvrd1enje za realnu funkciju $f$. Dalje, zakljuchiti da je dovoljno da se tvrd1enje dokaz1e za funkciju $f: [a,b] \to \RR$, odnosno da moz1emo iskljuchiti tachke $\alpha$ i  $\beta$ iz domena. Tako moz1emo postupiti sa svim singularnim tachkama. Posmatrati donju Darbuovu sumu $\sum m_j \Delta x_j$ i  funkciju $g(x) = m_j$ za $x_{j-1} \leq x \leq x_j$. Zakljuchiti da je dovoljno dokazati tvrd1enje za $g$ umesto $f$. Za $g$ dati integral se eksplicitno izrachinava.
+\end{proof}
+\begin{tma}
+Neka funckija $f:]-\pi, \pi[ \to \CC$ zadovoljava uslove Riman-Lebegove leme i neka je $0 < \delta < \pi$. Tada za svako $x \in ]-\pi, \pi[$ vaz1i
+\[\lim_{n \to \infty}\big(\int_{-\pi}^{-\delta}f(x-t)D_n(t) dt + \int_\delta^\pi f(x-t)D_n(t)dt\big) = 0\]
+\end{tma}
+\begin{proof}
+Konstruisati pomoc1nu funkciju $g$ sa
+\[
+g(t) = \begin{cases}
+  f(x-t) {(\sin \frac{t}{2})}^{-1}  & \delta \leq |t| \leq \pi \\
+  0 & |t|>\pi
+\end{cases}
+\]
+Izvesti zakljuchak iz chinjence da je $D_n(x) = \frac{\sin(n + \frac{1}{2})x}{\sin \frac{x}{2}}$ i Riman-Lebegove leme.
+\end{proof}
+\begin{posl}(Princip lokalizacije) Neka funkcije $f,g:]-\pi, \pi[ \to \CC$ zadovoljavaju uslove Riman-Lebegove leme i neka u nekoj okolini $V$ tachke $x_0 \in ]-\pi, \pi[$ vaz1i $f|_V \equiv g|_V$. Tada Furijeovi redovi 
+\[f \sim \sum_{n = - \infty}^{+ \infty} c_n e^{inx_0}\]
+i
+\[g \sim \sum_{n = -\infty}^{+ \infty} d_n e^{inx_0} \]
+funkcija $f$ i $g$ ili oba divergiraju, ili oba konvergiraju ka istoj vrednosti.
+\end{posl}
+\begin{proof}
+Parcijalna suma Furijeovog reda funkcije $f$ u tachki $x_0$ je
+\[S_n(x_0) = \frac{1}{2\pi} \int_{-\pi}^{\pi}f(x_0 - t) D_n(t) dt\]
+To lako dobijamo iz chinjenice da za konachne sume integral i suma komutiraju, kao i chinjenice da je $D_n$ $2 \pi$-periodichno. Dalje, na osnovu perthodne teoreme zakljuchujemo da $\lim_{n\to \infty} S_n(x_0)$ zavisi samo od restrikcije $f|_V = g|_V$.
+\end{proof}
+\begin{tma}(Dinijev dovoljan uslov konvergencije Furijeovog reda)
+Neka je $f: \RR \to \CC$ $2 \pi$-periodichna funkcija koja zadovoljava uslove Riman-Lebegove leme. Ako $f$ zadovoljava Dinijev uslov u tachki $x$, onda njen Furijeov red konvergira u toj tachki i vaz1i
+\[\sum_{n = - \infty}^{\infty} c_n e^{inx} = \frac{f(x_-) + f(x_+)}{2}\]
+\end{tma}
+\begin{nap}
+Ne moz1emo da ochekujemo da Furijeov red funkcije u tachki uvek konvergira ka vrednosti $f(x)$ funkcije u toj tachki.
+\end{nap}
+\\ \\
+\begin{tma}
+(Fejerova) Neka je $f: \RR \to \CC$ $2 \pi$-periodichna funkcija, apsolutno integrabilna na $[-\pi, \pi]$. Tada vaz1i:
+\begin{itemize}
+\item[(1)] $f \in C(\RR) \implies \sigma_n \rightrightarrows f$
+\item[(2)] $fCx_0 \implies \sigma_n(x_0) \to f(x_0)$
+\end{itemize}
+gde je \[\sigma_n(x):= \frac{S_0(x) + \dots + S_n(x)}{n+1}\]
+\end{tma}
 
 \end{document}
