@@ -332,6 +332,9 @@ Sledi iz chinjenice da ako Koshijev niz ima konvergentan podniz, onda je i sam k
 \item[(2)] Zatvoren podskup kompaktnog skupa je kompaktan
 \end{itemize}
 \end{tvr}
+
+\newpage
+
 \begin{proof}
 \begin{itemize}
 \item[(1)] Ranije dokazano za kompletnost
@@ -354,7 +357,7 @@ Neprekidna realna funkcija na kompaktnom skupu je ogranichena i ima $\min$ i $\m
 Proizvod metrichkih prostora je kompaktan ako i samo ako su takvi prostori faktori.
 \end{tvr}
 \begin{proof}
-$\boxed{\Rightarrow}$ projekcije su neprekidne surjekcije pa su ima slike kompaktne \\
+$\boxed{\Rightarrow}$ projekcije su neprekidne surjekcije pa su im slike kompaktne \\
 $\boxed{\Leftarrow}$ princip dijagonalizacije
 \end{proof}
 
@@ -380,7 +383,7 @@ Preslikavanje $\varphi: [0,2 \pi[ \to \mathbb{S}^1$ dato kao $ \varphi(t):= e^{i
 (Kantorova) Neprekidno preslikavanje na kompaktu je ravnomerno neprekidno.
 \end{tma}
 \begin{proof}
-Pretpostaviti suprotno, da je $X$ kompaktan, $f:X \to Y$ neprekidno, ali nije ravnomerno. Negirati uslov ravnomerne neprekidnosti i uzeti $\delta = \frac{1}{n}$.  Izvesti kontradikciju. 
+Pretpostaviti suprotno, da je $X$ kompaktan, $f:X \to Y$ neprekidno, ali nije ravnomerno. Negirati uslov ravnomerne neprekidnosti i uzeti $\delta = \frac{1}{n}$.  Izvesti kontradik\-ciju. 
 \end{proof}
 
 \begin{lema}
@@ -407,7 +410,7 @@ Na $k-\dim$ prostoru sve norme su ekvivalentne.
 \end{nap}
 \\ \\
 \begin{posl}
-Svaka dva normirana vektorska prostora iste konachne dimenzije su algebarski i topoloshki izomorfna.
+Svaka dva normirana vektorska prostora iste konachne dimenzije su alge\-barski i topoloshki izomorfna.
 \end{posl}
 \\ \\
 \begin{nap}
@@ -440,6 +443,20 @@ Svaki kompaktan podskup u Hausdorfovom prostoru je relativno kompaktan
 \begin{lema}(Lebegova)
 Neka je $X$ kompaktan metrichki prostor i $(V_{\lambda})_{\lambda \in \Lambda}$ njegovo otvoreno pokrivanje. Tada $(\exists \delta > 0)$ sa svojstvom da je svaka otvorena lopta poluprechnika $\delta$ sadrz1ana u nekom $V_{\lambda}$.
 \end{lema}
+\begin{proof}
+	Pokrijmo $X$ nekom $\frac{1}{2} r_a-$mrezhom, takvom da je za svako $a\in X$, $B(a, r_a)$ sarzhano u nekom $V_\lambda$. Tada postoji konachna podmrezha,
+	koja pokriva $X$. Dokazati da $\delta:=\min \frac{1}{2} r_a$ ispunjava uslove zadatka.
+\end{proof}
+\begin{tvr}
+	Svaki totalno ogranichen prostor je separabilan. Specijalno, kompaktan prostor je separabilan.
+\end{tvr}
+\begin{proof}
+	Neka je $E_n$ konachna $\frac{1}{n}-$mrezha. Posmatrati skup $E = \bigcup_{n \in \NN} E_n$ i zakljuchiti da je $\overline E = X$.
+\end{proof}
+
+\begin{tvr}
+	Prostor je separabilan ako i samo ako svaki otvoreni pokrivach ima prebrojiv potpokrivach.
+\end{tvr}
 
 \subsection{Prostor neprekidnih preslikavanja}
 
