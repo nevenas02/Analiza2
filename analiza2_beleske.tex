@@ -78,6 +78,14 @@ Neka su $x, y \in X$ i $\alpha \in \RR$. Zbog pozitivnosti $0 \leq \langle x + \
 \end{proof}
 
 \begin{tvr}
+	Neka je $f:X\to Y$ i $g: Y\to Z$ i $f C a$, $g C f(a)$. Tada je $g\circ f C a$.
+\end{tvr}
+\begin{proof}
+	Iskoristiti karakterizaciju neprekidnosti:
+	\[ (\forall V \in \mathcal F_{f(a)})(\exists U \in \mathcal F_{a}) f(U)\psj V .\]
+\end{proof}
+
+\begin{tvr}
 Za linearno preslikavanje $L:X \to Y$ normiranih vektorskih prostora sledec1i iskazi su ekvivalentni:
 \begin{itemize}
 \item[a)] $L$ je neprekidno u jednoj tachki
@@ -91,8 +99,29 @@ Za linearno preslikavanje $L:X \to Y$ normiranih vektorskih prostora sledec1i is
 Primetiti da g) $\implies$ v)$ \implies$ b) $ \implies$ a) uvek vaz1i. Dalje, d)$ \implies$ g) sledi iz definicije $\mathrm{lip} f$. Potrebno je josh dokazati a) $\implies$ d). Kako iz $LCa$ sledi da je $L$ ogranicheno na nekoj lopti $B[a; \rho]$,tj. ogranicheno je i na $S[a; \rho]$. Predstaviti $S[a;\rho]$ kao $a + \rho S[0;1]$ i odale izvesti zakljuchak.
 \end{proof}
 
+\begin{nap}
+	Ukoliko je $L$ vishelinearno preslikavanje, onda se na slichan nachin mozhe definisati $\norm L _{\infty}$. Tada
+	vazhi: $L$ je neprekdino akko je $\norm L _{\infty} < \infty$. Primeri ovoga su mnozhenje, determinanta, 
+	mnozhenje skalarom, vektorski proizvod, hermitski proizvod, meshoviti, slaganje neprekidnih
+	linearnih preslikavanja, \dotso
+\end{nap}
+
+\newpage
+
+\begin{tvr}
+	Neka je $\ds{(X,d_\infty) = \prod_{j=1}^{\infty}(X_j, d_j)}$, $A_j\psj X_j$, $\ds{A = \prod_{j=1}^{\infty}A}$. Tada vazhi:
+	\begin{enumerate}
+		\item[(1)] Projekcije $\pi_j:X \to X_j$ su otvorena preslikavanja.
+		\item[(2)] Unutrashnjost skupa $A$ je proizvod unutrashnjosti skupova $A_j$. Specijalno, $A$ je otvoren akko je otvoren \zn po koordinatama\zng.
+		\item[(3)] Zatvorenje skupa $A$ je proizvod zatvorenja skupova $A_j$. Specijalno, $A$ je zatvoren akko je otvoren \zn po koordinatama\zng.
+	\end{enumerate}
+\end{tvr}
+\begin{proof}
+	Iskoristiti da je $\ds{B(a, \delta) = \prod_{j=1}^{\infty}B(a_j, \delta)}$
+\end{proof}
+
 \begin{tma}
-Neka su $X$ i $Y$ metrichki prostori. Za $f:X \to Y$ sledec1i iskazi su ekvivalentni:
+Neka su $X$ i $Y$ metrichki prostori. Za $f:X \to Y$ sledec1i iskazi su ekviva\-lentni:
 \begin{itemize}
 \item[a)] $f$ je neprekidno
 \item[b)] Za svaki otvoren skup $V \psj Y$ skup $f^{-1}(V) \psj X$ je otvoren
@@ -102,16 +131,16 @@ Neka su $X$ i $Y$ metrichki prostori. Za $f:X \to Y$ sledec1i iskazi su ekvivale
 \end{tma}
 
 \begin{proof}
-a) $\implies$ g) : Dokazati da za $a\in \overline{A}$ vazi $f(a) \in \overline{f(A)}$. Iskoristiti neprekidnost u tachki $a$. \\ 
+a) $\implies$ g) : Dokazati da za $a\in \overline{A}$ vazhi $f(a) \in \overline{f(A)}$. Iskoristiti neprekidnost u tachki $a$. \\ 
 g) $\implies$ v) : Dokazati da je $f^{-1}(G)$ jednako $\overline{f^{-1}(G)}$. \\
-v) $\implies$ b) : Iskoristiti zatvorenost $f^{-1}(Y \setminus V) = Y \setminus f^{-1}(V)$. \\
+v) $\implies$ b) : Iskoristiti zatvorenost $f^{-1}(Y \setminus V) = X \setminus f^{-1}(V)$. \\
 b) $\implies$ a) : Dokazati da $f^{-1}(W) \in \mathcal{F}_a$ gde je $V \psj W$ i $V$ otvoren, a $a \in X$ i $W \in \mathcal{F}_{f(a)}$. 
 \end{proof}
 
 \begin{tvr}
 (Princip produz1enja jednakosti) Neka su $X, Y$ metrichki prostori, $f,g : X \to Y$ neprekidna preslikavanja, $A \psj X$. Tada vaz1i:
 \begin{itemize}
-\item[(1)] Skup $S = \{x \in X | f(x) = g(x) \}$ je zatvoren
+\item[(1)] Skup $S = \{x \in X \mid f(x) = g(x) \}$ je zatvoren
 \item[(2)] $f|_A = g|_A \implies f|_{\overline{A}} = g|_{\overline{A}}$
 \end{itemize}
 \end{tvr}
@@ -141,7 +170,7 @@ U prethodnom tvrd1enju kodomen funkcija $f$ i $g$ je $\RR$ zbog toga shto nam je
 \end{nap}
 \\ \\
 \begin{posl}
-$\diam(A) = \diam(\overline{A})$
+	$\diam(A) = \diam(\overline{A})$, $d(A, B) = d(\overline A, \overline B)$
 \end{posl}
 \begin{proof}
 Sledi iz principa produz1enja nejednakosti.
@@ -152,7 +181,24 @@ Sledi iz principa produz1enja nejednakosti.
 \[\lim_{x \to a} f(x) = \lim_{t \to {\varphi}^{-1}(a)} f \circ \varphi(t)\]
 \end{tvr}
 \begin{proof}
-Formirajmo niz $t_n \in \varphi^{-1} (A)$ koji tez1i ka $\varphi^{-1}(A)$. Tada $f(\varphi(t_n)) \to \xi$ zbog neprekidnosti $\varphi$ u $a$ i zbog $\lim_{x \to a} f(x) = \xi$.
+Formirajmo niz $t_n \in \varphi^{-1} (A)$ koji tez1i ka $\varphi^{-1}(a)$. Tada $f(\varphi(t_n)) \to \xi$ zbog nepre\-kidnosti $\varphi$ u $a$ i zbog $\lim_{x \to a} f(x) = \xi$.
+\end{proof}
+
+\begin{tvr}(Princip produzhenja nejednakosti)
+	Neka je $A\psj X, a\in \overline A$, $f,g:A\to \RR$, \( \lim_{x\to a}f(x) = \alpha \) , \( \lim_{x\to a} = \beta \). Tada vazhi:
+	\begin{enumerate}
+		\item[(1)] $(\exists B)(B\psj A \land a \in \overline B \land f|_B \leq g|_B) \implies \alpha \leq \beta$
+		\item[(2)] $\alpha < \beta \implies (\exists V \in \mathcal F _a^{0})f|_{A \cap V} \leq g|_{A\cap V}$
+	\end{enumerate}
+\end{tvr}
+\begin{proof}
+	\begin{enumerate}
+		\item[(1)] Formirati niz $B \ni b_n \to a$ i primeniti saglasnost limesa sa $\leq$.
+		\item[(2)] Postoji $\gamma, \alpha < \gamma < \beta$. Kako su $(-\infty, \gamma)$ i $(\gamma, +\infty)$ okoline tachaka $\alpha$ i $\beta$, redom,
+			ti intervali su ujedno i elementi filtera (probushenih) okolina tachaka $\alpha$ i $\beta$, redom. Iz chinjenice da je filter zatvoren u odnosu
+			na presek, izvesti zakljuchak.
+	\end{enumerate}
+
 \end{proof}
 
 \subsection{Kompletnost}
