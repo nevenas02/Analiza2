@@ -204,22 +204,30 @@ Formirajmo niz $t_n \in \varphi^{-1} (A)$ koji tez1i ka $\varphi^{-1}(a)$. Tada 
 \subsection{Kompletnost}
 
 \begin{tvr}
+	Ravnomerno neprekidna slika Koshijevog niza je Koshijev niz.
+\end{tvr}
+\begin{proof}
+	Primeniti definiciju.
+\end{proof}
+
+\begin{tvr}
 Podskup $A \psj X$ kompletnog prostora $X$ je kompletan akko je zatvoren.
 \end{tvr}
 \begin{proof}
-$\boxed{\Rightarrow}$ Dokazati da je $A = \overline{A}$.\\
+$\boxed{\Rightarrow}$ Dokazati da je $A = \overline{A}$ preko konvergentnog niza.\\
 $\boxed{\Leftarrow}$ Iz zatvorenosti svaki Koshijev niz je konvergentan u $A$.
 \end{proof}
 
 \begin{nap}
-Primeri prostora koji nisu kompletni su nezatvoreni podskupovi kompletnih.
+Primeri prostora koji nisu kompletni su nezatvoreni podskupovi komple\-tnih.
 \end{nap}
 
 \begin{tvr}
 Proizvod $(X, d_{\infty}) = \prod_{j=1}^{k} (X_i, d_i)$ je kompletan ako i samo ako su svi $X_i$ kompletni.
 \end{tvr}
 \begin{proof}
-Neka je $\pi_j : X \to X_j$. Dokazati da nizovi $\pi_j a_n$ konvergiraju u prostorima $X_j$, gde je $a_n$ niz u $X$.
+Neka je $\pi_j : X \to X_j$. Dokazati da nizovi $\pi_j a_n$ konvergiraju u prostorima $X_j$, gde je $a_n$ niz u $X$. Za drugi smer, utopiti $X_j$ u $X$
+	kao $i:X_j \to X_j\times \{c_1\} \times \{c_2\} \dotso$
 \end{proof}
 
 \begin{tma}
@@ -234,7 +242,7 @@ $\boxed{\Leftarrow}$ Neka je $a_n$ Koshijev niz u $X$. Definisati $F_n := \overl
 (Produz1enje neprekidnog preslikavanja) Neka su $X, Y$ metrichki prostori, $A \in X$, $\overline{A} = X$ (tj. $A$ gust u $X$) i $f: A \to Y$ neprekidno preslikavanje. Tada vaz1i:
 \begin{itemize}
 \item[(1)] Postoji neprekidno preslikavanje $F: X \to Y$ sa osobinom $F|_{A} = f$ ako i samo ako $(\forall x \in X)$ $\exists \lim_{t \to x} f(t) =: g(x)$. Pri tome je $F \equiv g$ (jedinstvenost produz1enja).
-\item[(2)] Ako je $f$ ravnomerno neprekidno i $Y$ kompletan, onda postoji ravnomerno neprekidno $F: X \to Y$ sa osobinom $F|_{A} = f$.
+\item[(2)] Ako je $f$ ravnomerno neprekidno i $Y$ kompletan, onda postoji ravnomerno nepre\-kidno $F: X \to Y$ sa osobinom $F|_{A} = f$.
 \end{itemize}
 \end{tma}
 \begin{proof}
@@ -261,16 +269,29 @@ Pocheti od $d(a_{n+2}, a_{n+1}) = d(f(a_{n+1}), f(a_n)) \leq q d(a_{n+1}, a_n)$.
 \end{proof}
 
 \begin{tma}
-Normirani vektorski prostor $X$ je kompletan ako i samo ako je svaki apsolutno konvergentan red u njemu konvergentan.
+Normirani vektorski prostor $X$ je kompletan ako i samo ako je svaki apsolu\-tno konvergentan red u njemu konvergentan.
 \end{tma}
 \begin{proof}
 $\boxed{\Rightarrow}$ Neka je $X$ kompletan i $\sum_{n=0}^{\infty} \norm{a_k}<\infty$. Neka je $s_n = \sum_{k=0}^n a_k$. Dokazati da je $s_n$ Koshijev. \\
-$\boxed{\Leftarrow}$ Neka je $a_n$ Koshijev u $X$. Tada postoji $\varphi: \NN \nearrow \NN$ td. $\norm{a_{\varphi(n)} - a_{\varphi(n+1)}} \leq 2^{-n}$. Poshto $\sum 2^{-n}$ konvergira, zakljuchiti i da $a_{\varphi(n)}$ konvergira. Iskoristiti chinjenicu da je Koshijev niz koji ima konvergentan podniz i sam konvergentan. Sledi kompletnost $X$.
+$\boxed{\Leftarrow}$ Neka je $a_n$ Koshijev u $X$. Tada postoji $\varphi: \NN \nearrow \NN$ td. $\norm{a_{\varphi(n)} - a_{\varphi(n+1)}} \leq 2^{-n}$.
+	Takvo $\varphi$ konstruishemo na sledec1i nachin
+	\begin{align*}
+		A_n &= \{ a_n, a_{n+1},\dotso \} \\
+		\varphi(0) :&= \min\{n \in \NN \mid \mathrm{diam}(A_n) < 2^0 \}\\
+		\varphi(n+1) :&=\min\{k \in \NN \mid k>\varphi(n) \land \mathrm{diam}(A_k) < 2^{-(n+1)} \} 
+	\end{align*}
+	Poshto $\sum 2^{-n}$ konvergira, zakljuchiti i da $a_{\varphi(n)}$ konvergira. Iskoristiti chinjenicu da je Koshijev niz koji ima konvergentan podniz i sam konvergentan. Sledi kompletnost $X$.
 \end{proof}
 
 \begin{tma}
 $B_Y(X)$ je Banahov ako i samo ako je $Y$ Banahov.
 \end{tma}
+\begin{proof}
+	$\boxed{\Rightarrow}$ Neka je $B_Y(X)$ kompletan i $b_n$ niz u $Y$. Hoc1emo da iskoristimo prethodnu teoremu, tj. pretpostavimo da red sa 
+	opshtim chlanom $b_n$ apsolutno konvergira. Defini\-shimo $f_n:X\to Y$, $f_n(x) \equiv b_n$. Zakljuchiti da red sa opshtim chlanom $f_n$ konvergira
+	(u $B_Y(X)$), pa odatle izvesti zakljuchak da $\sum b_n$ konvergira. \\
+	$\boxed{\Leftarrow}$ Slichna ideja kao u direktnom smeru. Iskoristiti josh i poredbeni princip.
+\end{proof}
 
 \begin{posl}
 $\mathcal{L}(X;Y)$ je kompletan ako i samo ako je $Y$ kompletan.
