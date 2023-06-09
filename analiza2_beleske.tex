@@ -485,8 +485,8 @@ Zbog toga shto, ako je $X$ kompaktan tada je $C(X;Y) \psj B(X;Y)$. Ako je $Y$ ko
 \begin{tma}
 (Dini) Neka je $X$ kompaktan metrichki prostor i $f_n$ monoton niz u $C_{\RR}(X)$ takav da vaz1i:
 \begin{itemize}
-\item[(1)] $(\forall x \in X) \lim_{n \to \infty} f_n(x) = f_{\infty}(x)$
-\item[(2)] $f_{\infty} \in C_{\RR}(X)$
+	\item[(1)] $\ds{(\forall x \in X) \lim_{n \to \infty} f_n(x) = f_{\infty}(x)}$
+	\item[(2)] $f_{\infty} \in C_{\RR}(X)$
 \end{itemize}
 Tada $f_n \rightrightarrows f_{\infty}$ (tj. $f_n \to F$ u $(C_{\RR}(X), d_{\infty})$.
 \end{tma}
@@ -576,7 +576,7 @@ sledi da za svako $x\in S$ postoji
 	Neka je $K\ps M$ kompaktan podskup. Pokriti $K$ sa konachno mnogo otvorenih lopti, koje su dovoljno malog poluprechnika takvog
 	da je za svako  $n$ vrednost $|f_n(x) - f_n(y)|$ proizvoljno mala (ovo je moguc1e zbog ravnostepene neprekidnosti).
 	Iskoristiti sada i da postoji tachka u preseku $S$ i svake takve lopte. Na kraju dovrshiti dokaz ocenom
-	$|f_n(x) - f_m(x)|$ uz pomoc1u nejednakosti trougla, Kosijevog uslova (u kompletnom prostoru $\CC$).
+	$|f_n(x) - f_m(x)|$ uz pomoc1u nejednakosti trougla, Koshijevog uslova (u kompletnom prostoru $\CC$).
 \end{proof}
 
 \begin{nap}
@@ -623,6 +623,11 @@ Konstruisati neprekidno preskikavanje $f: \bigcup_{\lambda \in \Lambda} S_{\lamb
 Vaz1i i uopshtenje: $\{S_{\lambda}\}_{\lambda \in \Lambda}$ povezani i $(\exists \lambda_0) (\forall \lambda \in \Lambda) S_{\lambda} \bigcap S_{\lambda_0} \ne \emptyset \implies \bigcup_{\lambda \in \Lambda} S_{\lambda}$ povezan - (teorema "cvetic1").
 \end{nap}
 
+\begin{nap}
+	Prethodna dva tvrdjenja vazhe i za putnu povezanost, ali ne i za prostu povezanost (posmatrati dve duzhi medjusobno zalepljene u krajevima, unija te dve duzhi
+	je krug, koji nije prosto povezan, ali obe duzhi jesu prosto povezane i presek im je neprazan).
+\end{nap}
+
 \begin{posl}
 Dekartov proizvod povezanih metrichkih prostora je povezan.
 \end{posl}
@@ -644,6 +649,9 @@ Putno povezan skup je povezan.
 \begin{proof}
 Pokazati da je neprekidno $\varphi: S \to \{0,1\}$ konstantno. Zakljuchiti da je $\varphi \circ \gamma = \const$ gde je $\gamma:[0,1] \to S$ neprekidno takvo da je $\gamma(0) = s_0, \gamma(1) = x$. Odatle sledi $\varphi(x) = \varphi(s_0)$, tj. $\varphi = \const$.
 \end{proof}
+
+\pr (Beskonachna metla) Neka je $L_n$ duzh koja spaja tachke $(0, 0)$ i $(1, \frac{1}{n})$ i neka je $L_\infty = [0, 1]$ (na $x-$osi). Neka je $M := \bigcup_{n \in \NN} L_n$ i
+$ A  = M \cup \{(1, 0)\}$. Tada je $M \psj A \psj \overline M$, pa je $A$ povezan, ali ne i putno povezan.
 
 \begin{tvr}
 Neprekidna slika putno povezanog skupa je putno povezan.
