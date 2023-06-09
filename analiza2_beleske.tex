@@ -723,12 +723,54 @@ Ako za $\alpha, \beta, \gamma, a, b, c \in \R_+ $ vaz1i $c \leq a+b$ i $\gamma =
 \[\frac{c}{\gamma} \leq \max \{ \frac{a}{\alpha}, \frac{b}{\beta} \} \]
 \end{nap}
 \\ \\
+
+\begin{posl}
+	Ako je $V$ otvoren i povezan skup, $f:V \to Y$ diferencijabilna i $Df\equiv 0$, onda je $f \equiv \mathrm{const}$.
+\end{posl}
+\begin{proof}
+	Dokazati najpre da je $V$ putno povezan (ovo vazhi u normiranim vektorskim prostorima). Iz konveksnosti lopti zakljuchiti da
+	mora biti $f$ biti konstantno na lopti, i iskoristiti da svaki put mozhemo pokriti sa konachno mnogo lopti.
+\end{proof}
+
+\begin{posl}
+	Neka je $f$ kao u postavci Teoreme o konachnom prirashtaju i $L \in \mathcal{L}(X; Y)$. Tada je:
+	\[ \norm{f(a+h) - f(a) - Lh} \leq \sup_{x\in(a, a+h)} \norm{f'(x) - L} \cdot \norm h .\] 
+\end{posl}
+\begin{proof}
+	Primeniti teoremu na $F:V \to Y$, \( F(x) := f(x) - L(x)\). 
+\end{proof}
+
 \begin{tma}
 (Ojlerova teorema) Neka je $X$ normirani vektorski prostor nad $\R$. Di\-fe\-ren\-ci\-ja\-bil\-na funkcija $f: X \to \R$ je homogena stepena $k>0$ ako i samo ako je \[df(x) \cdot x = k f(x)\]
 \end{tma}
 \begin{proof}
-Definishati pomoc1nu funkciju $\psi (t) = f(tx) - t^kf(x)$ i odatle dokazati oba smera ekvivalencije. 
+	Definisati pomoc1nu funkciju $\psi (t) = f(tx) - t^kf(x)$, gde $\psi:(0, +\infty) \to \RR$ i odatle dokazati oba smera ekvivalencije. 
 \end{proof}
+
+
+\begin{tvr}
+	Neka je $X = X_1\times X_2\times \dotso \times X_l$, $V\psj X$ otvoren i $f\mathcal D_Y V$. Tada vazhi:
+	\[ f \in C^1_Y(V) \iff (\forall j) D_j f \in C_Y(V) .\] 
+\end{tvr}
+\begin{proof}
+	Dokazati da vazhi ekvivalencija:
+	\[ Df(x) \overset{x\to a}{\longrightarrow} Df(a) \iff (\forall j)D_jf(x) \overset{x\to a}{\longrightarrow} D_jf(a) ,\] 
+	ocenom norme $\norm{Df(x) - Df(a)}$ odozgo i odozdo.
+\end{proof}
+
+\begin{tma}
+		Neka je $X = X_1\times X_2\times \dotso \times X_l$,  $a$ unutrashnja tachka skupa $V\psj X$. Ako preslikavanje $f:V\to Y$
+		ima sve parcijalne izvode u $a$ i neprekidni su u tachki $a$, onda je preslikavanje $f$ diferencijabilno u tachki $a$.
+\end{tma}
+\begin{proof}
+	Definisati $\ds{Lh := \sum_{j=1}^n D_jf(a)h_j}$ i dokazati da je $L = Df(a)$ primenom posledice 2 Teoreme o konachnom prirashtaju i 
+	neprekidnosti $D_jf$ u tachki $a$.
+\end{proof}
+
+\begin{posl}
+	Preslikavanje je neprekidno diferencijabilno akko su mu svi parcijalni izvodi neprekidni.
+\end{posl}\\
+
 
 \begin{tvr}
 $\mathcal{L} (X; \mathcal{L}(X;Y)) \cong \mathcal{L} (X,X; Y)$
@@ -750,12 +792,16 @@ Dokazati da je sa $\varphi(L) = \tilde{L}$ dobro definisan traz1eni izomorfizam.
 \end{proof}
 
 \begin{tma}
-Neka su $X, Y$ normirani vektorski prostori, $V \psj X$ otvoren, $a \in V$, $f \mathcal{D}^{n-1}V$ i $f\mathcal{D}^n a$. Tada je 
+(Tejlorova formula) Neka su $X, Y$ normirani vektorski prostori, $V \psj X$ otvoren, $a \in V$, $f \mathcal{D}^{n-1}V$ i $f\mathcal{D}^n a$. Tada je 
 \[f(a+h) = f(a) + f'(a)h + \dots + \frac{1}{n!} f^{(n)}(a) h^n + o(\norm{h}^n), h \to 0\]
 \end{tma}
 \begin{proof}
 Dokaz izvesti indukcijom po $n$ korish\-c1e\-njem Posledice 2. teoreme o konachnom prirashtaju i chinjenice da je $(Lx^n)' = n Lx^{n-1}$.
 \end{proof}
+
+\begin{nap}
+	Zapis $f^{(n)}(a) x^n$ znachi da je $D^nf(a)$ $n-$linearna simetrichna forma koja deluje na vektor $x^n = \underbrace{(x, x, \dotso, x)}_{n}$.
+\end{nap}
 
 \subsection{Unutrashnje tachke ekstremuma}
 
@@ -776,6 +822,8 @@ Dokaz izvesti indukcijom po $n$ korish\-c1e\-njem Posledice 2. teoreme o konachn
 \begin{pr}(Ojler--Lagranzhove jednachine)
 	%TODO
 \end{pr}
+
+\newpage
 
 \subsection{Teorema o implicitnoj funkciji}
 
@@ -810,6 +858,11 @@ Tada postoje okolina $V_0 \subseteq Y$ tachke $y_0$ i okolina $U_0 \subseteq X$ 
 \begin{proof}
 Dokaz sledi iz Teoreme o implicitnoj funkciji primenjene na funkciju $F(x,y) = x - g(y)$.
 \end{proof}
+
+\begin{posl}
+	Ako je $f:V\to Y$ lokalni difeomorfizam, onda je za svaki otvoren skup $U\psj V$ skup $f(U)$ otvoren.
+\end{posl}\\
+
 \begin{tma}(Teorema o rangu) Neka je $V \subseteq \R^k$ otvoren i $f: V \to \R^l$ preslikavanje klase $C^n$, takvo da je za sve $x \in V$ $\rang Df(x) = r$. Tada u okolini svake tachke $x_0 \in V$ i njene slike $y_0 = f(x_0) \in \R^l$ postoje lokalne koordinate (difeomorfizmi) klase $C^n$ u kojima $f$ ima zapis \[f: (s_1, \dots , s_k) \to (s_1, \dots, s_r, 0, \dots , 0).\]
 Krac1e recheno, preslikavanje konstantnog ranga $r$ lokalno izgleda kao projekcija na $\R^r$.
 \end{tma}
