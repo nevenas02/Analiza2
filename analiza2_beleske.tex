@@ -916,7 +916,7 @@ Indukcijom po $k$ dokazati da difeomorfizam koji menja najvishe $k$ koordinata m
 Za $M \psj \R^{k+l}$ sledec1a tvrd1enja su ekvivalenta:
 \begin{itemize}
 \item[(a)] M je $k$ - dimenziona podmnogostrukost klase $C^p$
-\item[(b)] $(\forall p \in M)$ postoje otvorene okoline $p \in V$ i $0 \in U$ u $\R^{k+l}$ i difeomorfizam $g: U \to V$ klase $C^p$ takav da je $g(V \cap M) = U \cap (\R^k \times {0})$
+\item[(b)] $(\forall p \in M)$ postoje otvorene okoline $p \in V$ i $0 \in U$ u $\R^{k+l}$ i difeomorfizam $g: V \to U$ klase $C^p$ takav da je $g(V \cap M) = U \cap (\R^k \times {0})$
 \item[(v)] $(\forall p \in M)$ postoje otvorene okoline $p \in V$  u $\R^{k+l}$ i $0 \in U$ u $\R^k$ i imerzija $h: D \to V$ klase $C^p$ takva da je $h: D \to V \cap M$ homeomorfizam u relativnoj topologiji na $V \cap M$ nasled1enoj iz $R^{k+l}$.
 \end{itemize}
 \end{tvr}
@@ -930,6 +930,16 @@ Neka je $h:D \to M$ lokalna parametrizacija okoline tachke $p = h(0)$ i neka je 
 \end{tvr}
 \begin{proof}
 Diferenciranjem $f(h(t)) \equiv 0$ u tachki $t = 0$ i primenom pravila za izvod kom\-po\-zi\-ci\-je preslikavanja zakljuchiti da je $T_p M \psj \ker Df(p)$. Odatle, primenom Prve teoreme o i\-zo\-mor\-fi\-zmu na preslikavanje $Df(p)$ zakljuchiti da vaz1i jednakost.
+\end{proof}
+
+\begin{tvr}
+	Tangentni prostor (u tachki $p$) je skup svih vektora tangentnih na krive koje sadrzhe tachku $p$ i lezhe na mnogostrukosti.
+\end{tvr}
+\begin{proof}
+	Za jedan smer iskoristiti da je $f\circ \gamma = 0$ i diferencirati izraz u tachki $0$ (to odgovara tachki $p$ na mnogostrukosti). Za drugi
+	smer zakljuchiti da je $Dh(0): \RR^{k} \to T_p M$ izomorfizam, odakle sledi da za svaki tangentni vektor $\xi$ postoji vektor $\eta \in \RR^k$,
+	takav da je $\xi = Dh(0) \cdot \eta$. Definisati pravu $l(s) = s\cdot \eta$ u $\RR^k$ i dokazati da je $\gamma = h\circ l$ trazhena kriva 
+	(treba dokazati da je $\gamma'(0) = \xi$).
 \end{proof}
 
 \begin{tma}
@@ -951,6 +961,12 @@ g(p) &= 0
 \end{empheq}
 \end{nap}
 
+\begin{tma}
+	Neka je $V\psj \RR^n$ otvoren, $f:V\to \RR$ klase $C^2$, $M\psj V$ podmnogostrukost zadata sa $M = g^{-1}(0)$ ($0\in \RR^l$), 
+	gde je $g$ submerzija iz definicije podmnogostrukosti. Tada bilinearno preslikavanje $D^2L(p, \lambda^0)$ nam daje informaciju
+	o tipu i postojanju uslovnog lokalnog ekstremuma funkcije $f$.
+\end{tma}
+
 \subsection{Apstraktne mnogostrukosti}
 
 \begin{lema}
@@ -959,11 +975,20 @@ Neka je $M \subseteq \RR^{k+l}$ $k$ - dimenziona podmnogostrukost klase $C^p$, n
 difeomorfizam klase $C^p$.
 \end{lema}
 \begin{proof}
-Dokaz leme sledi iz chinjenice da je kompozicija difeomorfizama difeomor-fizam.
+Dokaz leme sledi iz chinjenice da je kompozicija difeomorfizama difeomor\-fizam.
 %\begin{center}
 %\includegraphics[width=5cm]
 %{Two_coordinate_charts_on_a_manifold.png}
 %\end{center}
+\end{proof}
+
+\begin{tvr}
+	Projektivni prostor $\RR P^n := \RR^{n+1}/_{\sim}$ je glatka mnogostrukost dimenzije $n$.
+\end{tvr}
+\begin{proof}
+	Posmatrati $\widetilde{U_j} = \{x \in \RR^{n+1} \mid x_j \neq 0\}$, $U_j = \pi(U_j)$, gde je $\pi$ prirodna projekcija. Definisati
+	$\varphi_j([x_0:x_1:\dotso:x_n]) := (\frac{x_0}{x_j},\frac{x_1}{x_j}, \dotso, \frac{x_n}{x_j}) \in \RR^n$. Karte $(U_j, \varphi_j)$
+	chine trazheni atlas na $\RR P^n$.
 \end{proof}
 
 \begin{tvr}
@@ -1040,9 +1065,9 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 \begin{proof}
 	Napisati $f(x)$ kao u prethodnoj lemi, i primeniti derivaciju na taj zapis. Dobi-jemo
 	\[ Df(x) = \sum_{j=1}^n(D\pi_j(x)\cdot g_j(x) + (x_j - p_j)\cdot Dg_j(x)) ,\] 
-	Primenom ovoga u tachki $p$ imamo:
-	\[ Df(p) = \sum_{j=1}^nD\pi_j(p)\cdot \dfrac{\partial f}{\partial x_j}(p) = df(p)\cdot \xi ,\]
-	za $\xi = (D\pi_1, D\pi_2, \dotso, D\pi_n)$.
+	Primenom ovoga u tachki $p$ dobijamo rezultat, za $\xi = (D\pi_1, D\pi_2, \dotso, D\pi_n)$.
+	%\[ Df(p) = \sum_{j=1}^nD\pi_j(p)\cdot \dfrac{\partial f}{\partial x_j}(p) = df(p)\cdot \xi ,\]
+	%za $\xi = (D\pi_1, D\pi_2, \dotso, D\pi_n)$.
 \end{proof}
 
 \begin{nap}
@@ -1063,6 +1088,13 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	baza za $T_{\varphi(p)} U$, pa je 
 	$(\varphi^{-1})_*\dfrac{\partial }{\partial x_1}\Big|_p, (\varphi^{-1})_*\dfrac{\partial }{\partial x_2}\Big|_p, \dotso, (\varphi^{-1})_*\dfrac{\partial }{\partial x_n}\Big|_p$
 	baza za $T_p M$.
+\end{proof}
+
+\begin{tvr}
+	Ako je $M$ glatka mnogostrukost dimenzije $n$, onda je $TM$ je glatka mnogostrukost dimenzije $2n$.
+\end{tvr}
+\begin{proof}
+	Posmatrati karte $\varphi\times \varphi_* : U\times \RR^n \to \RR^n \times \RR^n$ na $TM$.
 \end{proof}
 
 \section{Integracija}
