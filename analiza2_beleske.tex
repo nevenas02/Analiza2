@@ -1515,7 +1515,7 @@ Sledi da je \[\int_{\varphi(J)} f(x) dx = \sum_l f(\xi_l) \mu(\varphi(J_l))\]
 Dokazati josh da je $\mu(\varphi(J_l)) = |\det \varphi| \cdot \mu(J_l)$. U sluchaju da je $\varphi$ linearno, dokaz izvesti koristec1i teoremu o jedinstvenosti determinante. U sluchaju da $\varphi$ nije linearno pred-staviti ga kao $\varphi \approx C + \varphi '$, gde je $\varphi '$ linearno a $C = \varphi(x_0)$ translacija, stoga ne menja zapreminu.
 \end{nap}
 
-\section{Vektorska polja i diferencijalne forme}
+\section{Diferencijalne forme}
 
 \begin{tvr}
 Za $\alpha \in \Omega^k(M)$, $\beta \in \Omega^l(M)$ i glatko preslikavanje $F: M \to N$ vaz1i:
@@ -1699,7 +1699,7 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 	znachi da trazhenje primitivne funkcije zavisi od topologije prostora.
 \end{nap}
 
-\section{Dualni pogled na diferencijalne forme}
+\subsection{Dualni pogled na diferencijalne forme}
 
 \begin{tvr}
 	\( \div \circ \rot = 0, \rot \circ \grad = 0 .\)
@@ -1741,6 +1741,169 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 	koordinatnom zapisu.
 \end{proof}
 
+
+\subsection{Stoksova teorema}
+
+\begin{tvr}
+	Neka je $M$ glatka mnogostrukost dimenzije $n$ i $w\in \Omega^n(M)$, $\varphi:M\to M$. Tada je:
+	\[ \varphi^* \omega = \det(\varphi_*) \omega .\] 
+\end{tvr}
+\begin{proof}
+	Sledi iz chinjenice da su obe strane antisimetrichne $n-$linearne forme koje se podudaraju na bazi 
+	$e_1, e_2, \dotso, e_n$.
+\end{proof}
+
+\begin{nap}
+	Neka je $L:V^n\to \RR$ $n-$linearna antisimetrichno preslikavanje razlichito od $0$ u svakoj tachki. Baza
+	$e_1, e_2, \dotso, e_n$ zadaje orijentaciju ako je $L(e_1, e_2, \dotso, e_n) > 0$. Takodje, vazhi:
+	\begin{itemize}
+		\item[(a)] Neka je $A$ matrica dimenzija $n\times n$. Onda je:
+			\[ L(Ae_1, Ae_2, \dotso, Ae_n) = \det(A) L(e_1, e_2, \dotso, e_n) .\] 
+		\item[(b)] Ako dve baze zadaju istu orijentaciju, onda je:
+			\[L(e_1, e_2, \dotso, e_n) > 0 \iff L(f_1, f_2, \dotso, f_n) > 0.\] 
+	\end{itemize}
+	Dakle, izbor takvog preslikavanje $L$ (za koje mozhemo smatrati da je determinanta), odredjuje orijentaciju
+	vektorskog prostora $V$.
+\end{nap}
+
+\begin{nap}
+	Ako je mnogostrukost orijentabilna, onda je definicija integrala forme po lokalnoj karti dobra.
+\end{nap}
+\begin{proof}
+	Teorema o smeni promenljive u integralu.
+\end{proof}
+
+\begin{tvr}
+	Integral $n-$forme po orijentabilnoj mnogostrukosti ne zavisi od razlaganja jedinice niti od atlasa koji
+	zadaje istu orijentaciju.
+\end{tvr}
+\begin{proof}
+	Neka su $\{(U_j, \varphi_j)\}, \{\rho_j\}, j \in J$ i  $\{(V_i, \psi_i)\}, \{\chi_i\}, i \in I$ dva atlasa
+	iste orijentacije i razlaganja jedinice.
+	\begin{align*}
+		\sum_{j \in J} \int_{U_j} \rho_j \omega &= \sum_{j \in J} \int_{U_j}(\sum_{i \in I} \chi_i) \rho_j \omega \\
+		&= \sum_{j \in J} \sum_{i \in I}\int_{U_j}\chi_i \rho_j \omega \\
+		&= \sum_{i \in I} \sum_{j \in J}\int_{U_j \cap V_i}\chi_i \rho_j \omega \\
+		&= \sum_{i \in I} \int_{V_i}\chi_i\omega
+	\end{align*}
+	Zahtev da atlasi moraju zadavati iste orijentacije se krije izmedju prvog i drugog reda, kada
+	se formalno ispishe sve.
+	%ovo i nisam bas siguran, al tu se negde krije
+\end{proof}
+
+\begin{tvr}
+	Mnogostrukost $M$ dimeznije $n$ je orijentabilna akko postoji $n-$forma $\omega$ takva da je
+	$(\forall p \in M)(\forall e_1, e_2, \dotso, e_n \in T_p M)\omega_p (e_1, e_2, \dotso, e_n)\neq 0$.
+\end{tvr}
+\begin{proof}
+	\begin{itemize}
+		\item[$\implies$] Koristiti razlaganje jedinice i \zn povuc1i\zng formu $dx_1\wedge \dotso \wedge dx_n$ iz $\RR^n$ na $M$,
+			uz pomoc1 lokalne karte.
+		\item[$\impliedby$] Neka je dat proizvoljan atlas, tada je $(\varphi_j^{-1})^* \omega = f_j dx_1\wedge\dotso\wedge dx_n$.
+			Zakljuchiti da $f_j$ mora biti razlichito od nule, i u zavisnosti od znaka $f_j$ definisati atlas $\{(U_j, \psi_j)\}_{j \in J}$, sa
+			\[ \psi_j = \begin{cases}
+				\varphi_j, &f_j > 0 \\
+				\varphi_j \circ \sigma, &f_j < 0
+			\end{cases} ,\] 
+			gde je $\sigma:\RR^n \to \RR^n$, $(x_1, x_2, \dotso, x_n) \overset{\sigma}{\mapsto} (x_2, x_1, \dotso, x_n)$ (menjamo orijentaciju).
+	\end{itemize}
+	Ovo tvrdjenje predstavlja globalnu nelinearnu verziju jednog od prethodnih tvrdjenja za zadavanje orijentacije pomoc1u $n-$forme na 
+	vektorskom prostoru.
+\end{proof}
+
+\begin{nap}
+	Specijalno, kada mnogostrukost mozhemo prekriti jednom kartom $\varphi: M \to V\psj \RR^n$, onda je $\int_M \omega = \int_V v^* \omega$, za 
+	$v = \varphi^{-1}$. U koordinatama:
+	\[ \int_M \omega = \int_V \omega\left(\frac{\partial u}{\partial t_1}, \frac{\partial u}{\partial t_2}, \dotso, \frac{\partial u}{\partial t_n}\right)dt_1 dt_2 \dotso dt_n.\] 
+	Za $n=1$ i $n=2$, kao i forme $\omega^1_f$ i $\omega^2_f$ dobijamo krivolinijski i povrshinski integral druge vrste.
+\end{nap}\\
+
+\begin{nap}
+	Ako je $M$ mnogostrukost, onda je i $\partial M$ mnogostrukost, kodimenzije 1.
+\end{nap}\\
+
+\begin{nap}
+	Granica u topoloshkom smislu i u smislu mnogostrukosti nisu isti pojam.
+\end{nap}\\
+
+\begin{nap}
+	Kako difeomorfizam slika granicu na granicu, sledi da je matrica prvog izvoda smene koordinata na krovu kocke oblika
+	\[ (\varphi \circ \psi^{-1})'(x) = \left(\begin{matrix}
+		\frac{\partial y_1}{\partial x_1}  & 0 \\
+		* & *
+	\end{matrix}\right)  .\] 
+	Odavde sledi da je granica orijentabilne mnogostrukosti takodje orijentabilna. Inter\-pretacija toga kakva je orijentacija zavisi od znaka
+	$\frac{\partial y_1}{\partial x_1}$.
+\end{nap}\\
+
+\begin{nap}
+	Dualno mozhemo definisati orijentaciju na mnogosturkosti preko dife\-rencijalnih formi. Tangentni prostor u tachki
+	$p \in \partial M$ je definisan kao \zn guranje\zng odgo\-varajuc1eg prostora iz $\RR^n$ i $\hat{n}$ je vektor spoljashnje
+	normale pri tom preslikavanju. Ako je $\omega$ forma koja zadaje orijentaciju na $M$, onda je $\hat{n} \lrcorner \omega$ forma
+	koja zadaje orijentaciju na $\partial M$. Obrnuto ne vazhi: $ N = M\times [0, 1]$, gde je $M$ Mebijusova traka. Dokazati da je 
+	$\partial N$ Klajnova boca.
+\end{nap}\\
+
+\begin{tma}(Stoksova)
+	Neka je $M$ kompaktna orijentabilna glatka mnogostrukost dimenzije $n$ i neka je orijentacija na rubu indukovana unutrashnjim
+	izvodom duzh spoljashnje normale. Tada za svaku $\omega \in \Omega^{n-1} (M)$ vazhi:
+	\[ \int_M d\omega = \int_{\partial M} \omega .\] 
+\end{tma}
+\begin{proof}
+	Zakljuchiti da je dovoljno dokazati zasebno za kartu $U$.
+	\begin{enumerate}
+		\item[(1)] Neka je $U$ otvorena kocka. Tada je $\partial U = \emptyset$, pa je integral sa desne strane 0.
+			Forma $\rho \omega$ je oblika $\sum_i a_i(x) dx_1 \dotso \widehat{dx_i} \dotso dx_n$. Iz Fubinijeve teoreme primenjene na 
+			$d(\rho \omega)$ i chinjenice da je $\mathrm{supp} (\omega)$ kompaktno sadrzhan u $U$, zakljuchiti da je i leva strana 0.
+		\item[(2)] Neka je $U$ kocka sa krovom. Analogno izvesti zakljuchak, s tim shto sada $a_i(1)$ ne mora biti nula i 
+			ono uchestvuje u integraciji.
+	\end{enumerate}
+
+	Detalji:
+	\begin{itemize}
+		\item Ovo je dokaz za kocku, za formalan dokaz moramo koristiti {\latin{pullback}}.
+		\item Dokazati da razlaganje jedinice na $M$ indukuje razlaganje jedinice na $\partial M$.
+		\item Treba opravdati da ovo jeste zapravo nasledjena orijentacija.
+	\end{itemize}
+\end{proof}
+
+\begin{posl}
+	\( \partial M = 0 \implies \int_M d\omega = 0 \) 
+\end{posl}\\
+
+\begin{posl}
+	Ako je $M$ kompaktna orijentisana mnogostrukost bez granice i $\dim M = n$, preslikavanje \( \int_M:\Omega^n(M) \to \RR \) 
+	indukuje preslikavanje \( \int_M:\hdr{n} \to \RR \) 
+\end{posl}\\
+
+\begin{tma}(De Ramova)
+	Neka je $M$ kompaktna orijentisana mnogostrukost bez granice i $\dim M = n$. Onda je preslikavanje
+	\[ \int_M: \hdr{l}(M) \times \hdr{n - l}(M) \to \RR, (\alpha, \beta) \mapsto \int_M(\alpha\wedge\beta) \] 
+	nedegenerisana bilinearna forma.
+\end{tma}
+
+\begin{posl}
+	Ako je $M$ kompaktna orijentisana mnogostrukost bez granice i $\dim M = n$. Onda je 
+	$\int_M:\hdr n (M) \to \RR$ izomorfizam. Specijalno: 
+	\[ \hdr n (M) \cong \RR.\] 
+\end{posl}
+
+\begin{tvr}
+	Ako je $\partial$ operator granice singularne $l-$kocke, onda je $\partial \circ \partial = 0$.
+\end{tvr}\\ 
+
+\begin{nap}
+	Ako je $\hdr 1(M) = 0$, onda je $M$ prosto povezan (obrnuto ne mora da vazhi). U tom sluchaju, mozhemo
+	trazhiti primitivnu formu proizvoljne $1-$forme sa $f(x, y) = \int_\gamma Pdx + Qdy$, gde je $\gamma$ kriva
+	koja se zavrshava u $(x, y)$ (tada c1e ova definicija biti dobra, tj. nec1e zavisiti od $\gamma$). Slichno mozhemo
+	rezonovati pri ispitivanju solenoidnosti vektorskog polja.
+\end{nap}\\
+
+\begin{tvr}
+	Forma 
+	\[ \omega = \sum_{j= 0}^n (-1)^j x_j dx_1 \wedge \dotso \wedge \widehat{dx_j} \wedge \dotso\wedge dx_n \] 
+	je forma zapremine na $\mathbb{S}^n$ saglasna sa Rimanovom metrikom.
+\end{tvr}
 
 \section{Furijeova analiza}
 
