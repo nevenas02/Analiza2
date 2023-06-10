@@ -41,7 +41,7 @@
 \newcommand{\rang}{\mathrm{rang}}
 \newcommand{\diam}{\mathrm{diam}}
 %\renewcommand{\dim}{\mathrm{dim}}
-\newcommand{\hdr}[1]{{\mathrm{H_{dR}}}^{#1}}
+\newcommand{\hdr}[1]{\mathrm{H}_\mathrm{dR}^{#1}}
 \newcommand{\const}{\mathrm{const}}
 \newcommand{\grad}{\mathrm{grad}}
 \newcommand{\rot}{\mathrm{rot}}
@@ -1113,7 +1113,7 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	Radonov integral je ujedno i elementarni integral.
 \end{tvr}
 \begin{proof}
-	Po definiciji je radonov integral linearan, tako da je dovoljno dokazati da 
+	Po definiciji je Radonov integral linearan, tako da je dovoljno dokazati da 
 	za opadajuc1i niz funkcija $f_n$ sa kompaktnim nosachem koji tezhi $0$
 	vazhi i da je $I(f_n) \to 0$, kad $n\to \infty$. Neka je $K_n$ nosach funkcije
 	$f_n$. Kako je $f_n$ opadajuc1i niz koji tezhi nuli, sledi da je $K_1\supseteq K_2 \supseteq \dotso$.
@@ -1149,8 +1149,12 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	\end{enumerate}
 \end{lema}
 \begin{proof}
-	Za prvi deo tvrdjenja primeniti linearnost i pozitivnost $I$. Za drugi deo primeniti prvi deo i $-|f| \leq f \leq |f|$.
+	Za prvi deo tvrdjenja primeniti linearnost i pozitivnost $I$. Za drugi deo prime\-niti prvi deo i $-|f| \leq f \leq |f|$.
 \end{proof}
+
+\begin{nap}
+	Prethodna lema vazhi i za elementaran integral, jedino na shta se oslanjamo su pozitivnost i linearnost $I$.
+\end{nap}
 
 \begin{tvr}
 	Neka je $T$ lokalno kompaktan Hausdorfov prostor, $K \psj T$ kompaktan podskup i $C(T; K)$ skup funkcija i $C_C(T)$
@@ -1165,13 +1169,17 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	pa je $|I(f)| \leq I(|f|) \leq I(\psi) \cdot \norm{f}_K$.
 \end{proof}
 
+\begin{nap}
+	Ideja dosta ovih dokaza jeste da ogranichimo integral sa $I(\psi)$, shto je konstanta.
+\end{nap}
+
 \begin{tma}(Fubini)
 	Neka su $S$ i $T$ komapktni Hausdorfovi prostori i neka su 
 	\[ I_S : C(S) \to \RR ,  I_T : C(T) \to \RR\] 
 	Radonovi integrali. Tada postoji jedinstven Radonov integral 
 	\[ I:C(S\times T) \to \RR \] 
 	takav da je 
-	\[ I(f\otimes g) = I(f)\cdot I(g) .\] 
+	\[ I(f\otimes g) = I_S(f)\cdot I_T(g) .\] 
 \end{tma}
 
 \begin{nap}
@@ -1184,10 +1192,19 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 \end{nap}
 \begin{proof}
 	Iz prethodnog tvrdjenja sledi da je Radonov integral na kompaktnim prostorima neprekidan,
-	pa je i ravnomerno neprekidan po Kantorovoj teoremi. Iz Ston-Vajershtrasove teoreme sledi
+	pa je i ravnomerno neprekidan po Kantorovoj teoremi. Iz Ston-Vajershtra\-sove teoreme sledi
 	da je $\overline{C(S)\otimes C(T)} = C(S\times T)$, pa dokaz tvrdjenja sledi iz Principa
 	produzhenja ravnomerno neprekidnog preslikavanja sa kompletnim kodomenom (odatle 
 	sledi i jedinstvenost).
+	
+	Uverimo se da $C(S)\otimes C(T)$ jeste podalgebra algebre $C(S\times T)$ koja sadrzhi $1$ i razlikuje tachke. 
+	Jasno je da jeste algebra i da sadrzhi $1$ ($1 = 1 \otimes 1$). Da bismo dokazali da razdvaja tachke, treba
+	dokazati:
+	\[ (\forall (s_1, t_1), (s_2, t_2) \in S\times T)(\exists f \in C(S)\otimes C(T))(s_1, t_1)\neq (s_2, t_2) \implies f((s_1, t_1)) \neq f((s_2, t_2)) .\] 
+	Ideja je da uzmemo $f=\varphi \times \psi$, gde su $\varphi \in C(S)$, $\psi \in C(T)$. Odaberimo ih tako da je 
+	$\varphi(s_1) = \psi(t_1) = 0$, $\varphi(s_2) = \psi(t_2) = 1$ (tada se razlikuju vrednosti $\varphi\times\psi$).
+	Mozhemo uzeti $\varphi(s) = \frac{d(s, s_1)}{d(s_1, s_2)}$ i slichno za $\psi$. Ako su $S, T$ lokalno kompaktni Hausdorfovi prostori,
+	konstrukcija takvih funkcija je komplikovanija, treba najpre razdvojiti tachke $s_1$ i $s_2$ i potom primeniti Urisonovu lemu.
 \end{proof}
 
 \begin{posl}(Fubinijeva teorema za Rimanov integral)
@@ -1262,7 +1279,7 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 \begin{posl}
 	Kompletiranje prostora $(C(\mathcal J), \norm{\cdot}_1)$ naziva se prostorom funkcija inte\-grabilnih po Lebegu. 
 	Kako je integral ravnomerno neprekidan, onda se on mozhe (iz Principa produzhenja ravnomerno neprekidne funkcije
-	sa kompletnim kodomenom) pro\-duzhiti do preslikavanja koje nazivamo Lebegovim integralo.
+	sa kompletnim kodomenom) pro\-duzhiti do preslikavanja koje nazivamo Lebegovim integralom.
 \end{posl}
 
 \subsection{Klasa funkcija integrabilnih po Rimanu}
@@ -1323,7 +1340,7 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 \end{proof}
 
 \begin{posl}(Darbuov kriterijum integrabilnosti po Rimanu)
-	\[ f \in \mathcal R(\mathcal J) \iff f \text{ je ogranichena i } \underline \int f(x)dx = \overline \int f(x)dx\] 
+	\[ f \in \mathcal R(\mathcal J) \iff f \text{ je ogranichena i } \underline{\int_{\mathcal J}}f(x)dx = \overline{\int_{\mathcal J}}f(x)dx\] 
 \end{posl}
 
 \begin{lema}
@@ -1354,7 +1371,8 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	Za $t \in \mathcal J \setminus \bigcup_{i=1}^k J_k$ vazhi \( \omega(f; t) < \frac{\eps}{2\mu(J)}\), tj.
 	za svako takvo $t$ postoji kvadar $I_t$ takav da je $\sup_{I_t}f - \inf_{I_t}f< \frac{\eps}{2\mu(J)} $.
 	Kako je skup $t \in \mathcal J \setminus \bigcup_{i=1}^k J_k$ zatovren, mozhemo izdvojiti konachno potpokrivanje $I_t$.
-	Na kraju, razliku $S(f, \mathcal P) - s(f, \mathcal P)$ predstaviti kao $\sum (M_i - m_i) \mu(K_i)$ i razdvojiti je 
+	Na kraju, razliku $S(f, \mathcal P) - s(f, \mathcal P)$ ($\mathcal P$ je podela takva da se svaki od kvadara $J_i$ i $I_t$ mozhe predstaviti
+	kao unija kvadara iz $\mathcal P$) predstaviti kao $\sum (M_i - m_i) \mu(K_i)$ i razdvojiti je 
 	na sumiranje po kvadrima $J_i$ i $I_t$, odakle c1emo dobiti $S(f, \mathcal P) - s(f, \mathcal P) < \eps$.
 \end{proof}
 
@@ -1392,7 +1410,7 @@ gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
 	integrabilne po Rimanu.
 \end{nap}
 
-\begin{tma}
+\begin{tma}(Kavaljerijev princip)
 	Neka je $\mathcal J \psj \RR^k$ $k-$dim kvadar i $E\psj \mathcal J$ skup merljiv po Zhordanu. Predstavimo $\mathcal J$
 	kao proizvod $\mathcal J = \mathcal J_x \times \mathcal J_y$ kvadara $\mathcal J_x \psj \RR^l$ i $\mathcal J_y \psj \RR^{k-l}$.
 	Tada je za svako $y_0 \in \mathcal J_y$ presek $E_{y_0} := \{(x, y) \in E \mid y = y_0\}$ skupa $E$ i $l-$dimenzione ravni $y=y_0$
@@ -1449,7 +1467,8 @@ Dokazati primenom Njutn - Lajbnicove formule iz Analize 1.
 \end{proof}
 
 \begin{nap}
-Kod smene promenljive za funkcije jedne promenljive u uobichajenom obliku nemamo apsolutnu vrednost kod $\varphi '$. To nije u koliziji, zbog toga shto se u u toj apsolutnoj vrednosti samo krije znak koji "obrc1e" granice intervala.
+Kod smene promenljive za funkcije jedne promenljive u uobichajenom obliku nemamo apsolutnu vrednost kod $\varphi '$. To nije u koliziji,
+	zbog toga shto se u u toj apsolutnoj vrednosti samo krije znak koji \zn obrc1e\zng granice intervala.
 \end{nap}
 \\ \\
 \begin{nap}
@@ -1524,38 +1543,79 @@ homomorfizam algebri.
 \end{itemize}
 \end{proof}
 
-\begin{nap} \latin{Pullback} \fontencoding{OT2}\selectfont se takod1e slaz1e i sa spoljashnjim diferencijalom, odnosno vaz1i \[F^* \circ d  = d \circ F^* \]
+\begin{tvr} \latin{Pullback} \fontencoding{OT2}\selectfont se takod1e slaz1e i sa spoljashnjim diferencijalom, odnosno vaz1i \[F^* \circ d  = d \circ F^* \]
 za $F: U \to V$ preslikavanje klase $C^{\infty}$, gde su $U \in \RR^n$ i $V \in \RR^k$.
  Zahvaljujuc1i ovome, moguc1e je definisati $d: \Omega^l(M) \to \Omega^{l+1}(M)$ za proizvoljnu mno\-go\-stru\-kost. 
-\end{nap}
-\\ \\
+\end{tvr}
+
+\begin{proof}
+	\begin{align*}
+		d(F^*\alpha) = d(\alpha\circ F_*) = d\alpha \cdot dF_* = d\alpha \cdot F_* = F^*(d\alpha)
+	\end{align*}
+\end{proof}
 
 \begin{tvr} (Lajbnicovo pravilo)
 Neka su $\alpha \in \Omega^l(M)$ i $\beta \in \Omega^k(M)$ dve forme. Tada vaz1i 
 \[d(\alpha \wedge \beta) = d \alpha \wedge \beta + (-1)^l \alpha \wedge d \beta \]
 \end{tvr}
 \begin{proof}
-Zbog linearnosti $d$ dovoljno je dokazati formulu za $\alpha = f(x) dx_{j_1} \wedge \dots \wedge dx_{j_l}$ i $\beta = g(x) dx_{i_1} \wedge \dots \wedge dx_{i_k}$. Primeniti definiciju $d$ i izvesti zakljuchak.
+Dokazhimo najpre za $M = U \psj \RR^n$. Zbog linearnosti $d$ dovoljno je dokazati formulu za $\alpha = f(x) dx_{j_1} \wedge \dots \wedge dx_{j_l}$ i $\beta = g(x) dx_{i_1} \wedge \dots \wedge dx_{i_k}$. 
+	Primeniti definiciju $d$ i izvesti zakljuchak.
+
+	Kada je $M$ proizvoljna mnogostrukost, neka je $\varphi:M\to U$ lokalna karta. Imamo
+	\begin{align*}
+		d(\alpha \wedge \beta) :&= \varphi^* d((\varphi^{-1})^* (\alpha \wedge \beta)) \\
+		&= \varphi^* d((\varphi^{-1})^* \alpha \wedge(\varphi^{-1})^*  \beta)) \\
+		&= \varphi^*( d(\varphi^{-1})^* \alpha \wedge(\varphi^{-1})^*  \beta + (-1)^l (\varphi^{-1})^* \alpha \wedge d(\varphi^{-1})^*  \beta) \\
+		&= \varphi^* d(\varphi^{-1})^* \alpha \wedge(\varphi^{-1})^*  \beta + (-1)^l \varphi^* (\varphi^{-1})^* \alpha \wedge d(\varphi^{-1})^*  \beta \\
+		&= d \alpha \wedge \beta + (-1)^l \alpha \wedge d \beta.
+	\end{align*}
 \end{proof}
 
-\begin{tma} 
+\begin{tma}(Osnovni identitet homoloshke algebre) 
 $\alpha \in \Omega^l(M) \implies d(d \alpha) = 0$
 \end{tma}
 
 \begin{proof}
-Dva puta primeniti definiciju $d$ na $f dx_{j_1}\wedge \dots \wedge dx_{j_l} $ i iskoristiti anti\-ko\-mu\-ta\-tiv\-nost $\wedge$.
+Dva puta primeniti definiciju $d$ na $f dx_{j_1}\wedge \dots \wedge dx_{j_l} $ i iskoristiti antikomu\-tativnost $\wedge$.
 \end{proof}
 
 \begin{posl}
 $\mathrm{Im} \hspace{0.1cm} d \psj \mathrm{Ker} \hspace{0.1cm} d$
-\end{posl}
-\\ \\
+\end{posl} 
+
+
+\newpage
 \begin{tvr}
-Ako je $F: M \to N$ difeomorfizam, onda je $F* : \hdr{l} (N) \to \hdr{l} (M)$ izomorfizam.
+	Neka $F:M\to N$ i $G:N\to S$. Tada vazhi:
+	\begin{enumerate}
+		\item \( (G\circ F)_* = G_* \circ F_* \) 
+		\item \( (G\circ F)^* = F^* \circ G^* \) 
+	\end{enumerate}
 \end{tvr}
 
 \begin{proof}
-Iskoristiti chinjenicu da je ${(G \circ F)}^* = F^* \circ G^*$. Odatle zakljuchiti ${(F^{-1})}^* = {(F^*)}^{-1}$.
+	Prvi deo tvrdjenja je zapis izvoda slozhene funkcije, a drugi iz:
+	\begin{align*}
+		(G\circ F)^* \alpha &= \alpha((G\circ F)_*) \\
+		&= \alpha(G_* \circ F_*) \\
+		&= F^* \alpha(G_*) \\
+		&= G^* \circ F^* \alpha
+	\end{align*}
+\end{proof}
+
+\begin{posl}
+Ako je $F: M \to N$ difeomorfizam, onda je $F^* : \hdr{l} (N) \to \hdr{l} (M)$ izomorfi\-zam.
+\end{posl}
+
+\begin{tvr}
+	$(\hdr{*}(M), +, \wedge)$ je prsten, gde je $\wedge:\hdr{l} \times \hdr{k} \to \hdr{l+k}$ indukovano preslikavanjem
+	$\wedge: \Omega^l(M) \times \Omega^{k}(M) \to \Omega^{k+l}(M)$.
+\end{tvr}
+
+\begin{proof}
+	Dovoljno je dokazati da je $[\alpha] \wedge [\beta] = [\alpha \wedge \beta]$ dobro definisano. Pretpostaviti $\alpha_1 = \alpha + d\zeta$, 
+	$\beta_1 = \beta + d\eta$ i dokazati da je $[\alpha_1] \wedge [\beta_1] = [\alpha \wedge\beta]$.
 \end{proof}
 
 \begin{tvr}
@@ -1573,12 +1633,27 @@ Izvesti iz Vajershtrasove teoreme o aproksimaciji i razlaganja jedinice.
 \end{tvr}
 \begin{proof}
 Indukcijom po $l$.
-\end{proof}
+\begin{itemize}
+	\item[(BI)] Dokazhimo za $l=0$, tj. $\alpha = f \in C^\infty(M)$.
+		\begin{align*}
+			\frac{d}{dt}\phi^*_t f &=  \frac{d}{dt} f(\phi_t) \\
+			&=f'(\phi_t)\phi'_t\\
+			&=\phi_t^* df(X)
+		\end{align*}
+	shto je kraj dokaza, jer je $d(X\lrcorner f) = 0$ i $X\lrcorner df = df(X)$.
+	\item[(IH)] Pretpostavimo da tvrdjenje vazhi za $l-$forme.
+	\item[(IK)] Zbog linearnosti $d$, dovoljno je dokazati tvrdjenje za $\beta = df \wedge \alpha$, gde je 
+		$\alpha \in \Omega^l(m)$.
+		\[\frac{d}{dt}\phi^*_t (df \wedge \alpha) = \frac{d}{dt}\phi^*_t df \wedge \alpha + df \wedge\frac{d}{dt}\phi^*_t  \alpha,   \] 
+\end{itemize} \end{proof}
 
 \begin{posl}
 Neka su $f_0, f_1 : M \to N$, ${f_0}^*, {f_1}^* : \hdr{*}(N)\to \hdr{*}(M)$. Tada vaz1i 
 \[f_0 \simeq f_1 \implies f_0^* = f_1^*\]
 \end{posl}
+\begin{proof}
+	Dokazati da je $f_0^*\alpha - f_1^*\alpha \in \mathrm{Im} d$, uz pomoc1 Kartanove formule, komutiranja $d$ i $f_t^*$ i komutiranja $d$ i integrala.
+\end{proof}
 
 \begin{posl}
 Ako je $M \simeq N$ onda je $\hdr{*}(M) \cong \hdr{*}(N)$.
@@ -1600,11 +1675,14 @@ Ako $l \in \{0,n\}$ onda vaz1i $\hdr{l} (\mathbb{S}^n) = \RR$, inache $\hdr{l} (
 Ne postoji glatko preslikavanje $f: \mathbb{B}^n \to \mathbb{S}^{n-1} := \partial \mathbb{B}^n$ takvo da je $f(x) = x$ za sve $x \in \mathbb{S}^n$. Odnosno, ne postoji glatka retrakcija $\mathbb{B}^n$ na $\partial \mathbb{B}^n$.
 \end{tvr}
 \begin{proof}
-Definisati $j: \mathbb{S}^{n-1} \to \mathbb{B}^n$ kao $j(x) = x$. Pretpostaviti suprotno, da postoji traz1ena retrakcija $f: \mathbb{B}^n \to \mathbb{S}^{n-1}$, td. $\forall a \in \mathbb{S}^{n-1}$ $f(a) = a$. Posmatrati $f \circ j$ i $\hdr{n-1}$ posmatranih objekata ($\mathbb{S}^{n-1}$ i $\mathbb{B}^n$) i izvesti konstradikciju.
+Definisati $j: \mathbb{S}^{n-1} \to \mathbb{B}^n$ kao $j(x) = x$. Pretpostaviti suprotno, da postoji traz1ena retrakcija $f: \mathbb{B}^n \to \mathbb{S}^{n-1}$, 
+	td. $\forall a \in \mathbb{S}^{n-1}$ $f(a) = a$. Posmatrati $f \circ j$ i $\hdr{n-1}$ posmatranih objekata ($\mathbb{S}^{n-1}$ i $\mathbb{B}^n$) i izvesti konstradikciju
+	iz chinjenice da se identiteta ne mozhe faktorisati kroz $0$.
 \end{proof}
 \begin{nap}
 Ne postoji neprekidna retrakcija mnogostrukosti na granicu.
 % jel ovo validno? i zasto neprekidna, nije li retrakcija po def nepr
+% jest validno
 \end{nap}
 \\ \\
 \begin{tma}
@@ -1612,8 +1690,14 @@ Ne postoji neprekidna retrakcija mnogostrukosti na granicu.
 \[f \in C(\mathbb{B}^n, \mathbb{B}^n) \implies (\exists x_0 \in \mathbb{B}^n) f(x_0) = x_0 \]
 \end{tma}
 \begin{proof}
-Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Definisati $r(x) = \frac{f(x) - x}{\norm{f(x) - x}}$, $r: \mathbb{B}^n \to \mathbb{S}^{n-1}$. Pokazati da je $r$ retrakcija. Odatle, na osnovu prethodnog, izvesti kontradikciju.
+Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Definisati $r(x) = \frac{f(x) - x}{\norm{f(x) - x}}$, $r: \mathbb{B}^n \to
+	\mathbb{S}^{n-1}$. Pokazati da je $r$ retrakcija. Odatle, na osnovu prethodnog, izvesti kontradikciju.
 \end{proof}
+
+\begin{nap}
+	Diferencijalna forma $\alpha \in \Omega^{l}(M)$ ima \zn primitivnu\zng formu ako i samo ako je $[\alpha] = 0$ u $\hdr{l}(M)$. Ovo 
+	znachi da trazhenje primitivne funkcije zavisi od topologije prostora.
+\end{nap}
 
 \section{Dualni pogled na diferencijalne forme}
 
@@ -1625,7 +1709,7 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 \end{proof}
 
 \begin{nap}
-	Vektor $\vec \nabla$ mozhe da se s\-hvati kao analogija diferencijala $d$, a prethodno tvrdjenje kao $d\circ d = 0$.
+	\zn Vektor\zng $\vec \nabla$ mozhe da se s\-hvati kao analogija diferencijala $d$, a prethodno tvrdjenje kao $d\circ d = 0$.
 	Uspostaviti izomorfizam izmedju diferencijalnih formi i odgovarajuc1ih prostora glatkih funkcija na kojima definishemo
 	$\grad, \rot, \div$ i dokazati da c1e svi dijagrami komutirati.
 \end{nap}
@@ -1635,7 +1719,7 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 	svaka $2-$forma u $\RR^3$ je oblika $\omega^2_{\vec B} := (\vec B, \cdot, \cdot) $ za jedinstveno $\vec B$.
 \end{tvr}
 \begin{proof}
-	Sledi iz chinjenice da su to potprostori celog prostora iste dimenzije kao i ceo prostor.
+	Sledi iz chinjenice da su to potprostori celog prostora, iste dimenzije kao i ceo prostor.
 \end{proof}
 
 \begin{nap}
