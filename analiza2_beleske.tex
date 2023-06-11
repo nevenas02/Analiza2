@@ -1854,7 +1854,7 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 	\begin{enumerate}
 		\item[(1)] Neka je $U$ otvorena kocka. Tada je $\partial U = \emptyset$, pa je integral sa desne strane 0.
 			Forma $\rho \omega$ je oblika $\sum_i a_i(x) dx_1 \dotso \widehat{dx_i} \dotso dx_n$. Iz Fubinijeve teoreme primenjene na 
-			$d(\rho \omega)$ i chinjenice da je $\mathrm{supp} (\omega)$ kompaktno sadrzhan u $U$, zakljuchiti da je i leva strana 0.
+			$d(\rho \omega)$ i chinjenice da je $\mathrm{supp} (\rho \omega)$ kompaktno sadrzhan u $U$, zakljuchiti da je i leva strana 0.
 		\item[(2)] Neka je $U$ kocka sa krovom. Analogno izvesti zakljuchak, s tim shto sada $a_i(1)$ ne mora biti nula i 
 			ono uchestvuje u integraciji.
 	\end{enumerate}
@@ -1864,6 +1864,10 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 		\item Ovo je dokaz za kocku, za formalan dokaz moramo koristiti {\latin{pullback}}.
 		\item Dokazati da razlaganje jedinice na $M$ indukuje razlaganje jedinice na $\partial M$.
 		\item Treba opravdati da ovo jeste zapravo nasledjena orijentacija.
+		\item Koristili smo da je $\mathrm{supp}(\rho \omega)$ kompaktno sadrzhan u $U$, a rekli smo da je razlaganje jedinice
+			potchinjeno atlasu, shto u opshtem sluchaju ne mora da vazhi istovremeno. Medjutim, kako je mnogostrukost kompaktna
+			i nosach je zatvoren (iz definicije), sledi da je i $\mathrm{supp}(\rho \omega)$ kompaktan, kao zatvoren podskup
+			kompaktnog skupa. Ako nosach nije kompaktan i ako mnogostrukost nije kompaktna, teorema ne mora da vazhi.
 	\end{itemize}
 \end{proof}
 
@@ -1906,6 +1910,35 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 \end{tvr}
 
 \section{Furijeova analiza}
+
+\begin{tvr}
+	$\widehat{\RR} \cong \RR$
+\end{tvr}
+\begin{proof}
+	Posmatrati proizvoljan karakter $\gamma\in \mathrm{Hom}(\RR, \mathbb{S}^1)$. Dokazati, korishc1enjem invari\-jantnosti
+	Harove mere u odnosu na translaciju, da je $\gamma$ diferencijabilno (treba izraziti $\gamma(x)$ preko $\int_x^{x+\eps}\gamma(s)ds$).
+	Iz prethodnog postaviti diferencijalnu jednachinu i reshavanjem zakljuchiti da je $\gamma(x) = e^{-itx}$. Preslikavanje $\gamma\mapsto t$
+	je trazheni izomorfizam.
+\end{proof}
+
+\begin{nap}
+	Slichno mozhemo zakljuchiti da je $\widehat{\mathbb{S}^1} \cong \ZZ$, $\widehat{\ZZ} \cong \mathbb{S}^1$ i $\widehat{\ZZ_n} \cong \ZZ_n$.
+\end{nap}\\
+
+\begin{tma}(Pontrjaginova dualnost)
+	$\widehat{\widehat{G}} \cong G$
+\end{tma}\\
+
+\begin{tma}(Kompaktno-diskretna dualnost)
+	Ako je $G$ kompaktna, onda je $\widehat{G}$ diskretna. Ako je $G$ diskretna, onda je $\widehat{G}$ kompaktna.
+\end{tma}\\
+
+\begin{nap}
+	Svaki sistem linearno nezavishnih vektora mozhemo ortonormirati tako da ima isti linearni omotach, 
+	Gram--Shmitovim postupkom.
+\end{nap}\\
+
+
 
 \begin{lema}
 Neka je $\{e_1, \dots, e_n\}$ ortonormiran sistem i $f$ proizvoljan vektor. Tada je vektor 
@@ -1977,7 +2010,7 @@ $\boxed{\Rightarrow}:$ je a) $\Longrightarrow$ b) u prethodnoj teoremi
 \end{proof}
 
 \begin{pr}
-Sistem $\{1,x,x^2, \dots \}$ je potpun u pred - Hilbertovom prostoru $C_{\CC}[-1,1]$ sa skalarnim proizvodom $\int_{-1}^1 f(x) g(x) dx$, ali on nije baza!
+Sistem $\{1,x,x^2, \dots \}$ je potpun u pred-Hilbertovom prostoru $C_{\CC}[-1,1]$ sa ska\-larnim proizvodom $\int_{-1}^1 f(x) g(x) dx$, ali on nije baza!
 \end{pr}
 \\ \\
 \begin{tma}
@@ -2019,7 +2052,7 @@ Sistem $\{1, x, x^2, \dots \}$ je linearno nezavisan i potpun u pred-Hilbertovom
 \end{pr}
 \\ \\
 \begin{tma}
-Svaka funkcija moz1e proizvoljno dobro da se aproksimira u normi $\norm{\cdot}_2$:
+	Svaka funkcija iz $\mathcal R ^2[-\pi, \pi]$ moz1e proizvoljno dobro da se aproksimira u normi $\norm{\cdot}_2$:
 \begin{itemize}
 \item[(a)] funkcijom koja je ogranichena na $]- \pi, \pi[$ i integrabilna na $[-\pi, \pi]$
 \item[(b)] deo po deo konstantnom funkcijom
@@ -2052,14 +2085,23 @@ konvergira ka funkciji $f$ u normi izvedenoj iz skalarnog proizvoda, onda je on 
 \item[(v)] Iz prethodnog.
 \end{itemize}
 \end{proof}
-\begin{lema}(Riman - Lebegova) Neka je $f: ]\alpha, \beta[ \to \CC$ lokalno antegrabilna i neka je apsolutno integrabilna u obichnom Rimanovom ili nesvojstvenom smislu. Tada je 
+\begin{lema}(Riman--Lebegova) Neka je $f: ]\alpha, \beta[ \to \CC$ lokalno antegrabilna i neka je apsolutno integrabilna u obichnom Rimanovom ili nesvojstvenom smislu. Tada je 
 \[\lim_{\RR \ni \lambda \to \infty} \int_{\alpha}^{\beta} f(x) e^{i \lambda x} dx = 0\]
 \end{lema}
 \begin{proof}
 Prvo, zakljuchiti da je dovoljno dokazati tvrd1enje za realnu funkciju $f$. Dalje, zakljuchiti da je dovoljno da se tvrd1enje dokaz1e za funkciju $f: [a,b] \to \RR$, odnosno da moz1emo iskljuchiti tachke $\alpha$ i  $\beta$ iz domena. Tako moz1emo postupiti sa svim singularnim tachkama. Posmatrati donju Darbuovu sumu $\sum m_j \Delta x_j$ i  funkciju $g(x) = m_j$ za $x_{j-1} \leq x \leq x_j$. Zakljuchiti da je dovoljno dokazati tvrd1enje za $g$ umesto $f$. Za $g$ dati integral se eksplicitno izrachinava.
 \end{proof}
+
+\begin{nap}
+	Parcialna suma Furijeovog reda $\sum c_n e^{inx}$ se rachuna po formuli
+	\begin{align*}
+	 	s_n(x) &= \frac{1}{2\pi}(f*D_n)(x) = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(t)D_n(x-t)dt\\
+	&=\frac{1}{2\pi}(D_n*f)(x) =   \frac{1}{2\pi}\int_{-\pi}^{\pi} D_n(t)f(x-t)dt. 
+	\end{align*}
+\end{nap}
+
 \begin{tma}
-Neka funckija $f:]-\pi, \pi[ \to \CC$ zadovoljava uslove Riman-Lebegove leme i neka je $0 < \delta < \pi$. Tada za svako $x \in ]-\pi, \pi[$ vaz1i
+Neka funckija $f:]-\pi, \pi[ \to \CC$ zadovoljava uslove Riman--Lebegove leme i neka je $0 < \delta < \pi$. Tada za svako $x \in ]-\pi, \pi[$ vaz1i
 \[\lim_{n \to \infty}\big(\int_{-\pi}^{-\delta}f(x-t)D_n(t) dt + \int_\delta^\pi f(x-t)D_n(t)dt\big) = 0\]
 \end{tma}
 \begin{proof}
@@ -2072,7 +2114,7 @@ g(t) = \begin{cases}
 \]
 Izvesti zakljuchak iz chinjence da je $D_n(x) = \frac{\sin(n + \frac{1}{2})x}{\sin \frac{x}{2}}$ i Riman-Lebegove leme.
 \end{proof}
-\begin{posl}(Princip lokalizacije) Neka funkcije $f,g:]-\pi, \pi[ \to \CC$ zadovoljavaju uslove Riman-Lebegove leme i neka u nekoj okolini $V$ tachke $x_0 \in ]-\pi, \pi[$ vaz1i $f|_V \equiv g|_V$. Tada Furijeovi redovi 
+\begin{posl}(Princip lokalizacije) Neka funkcije $f,g:]-\pi, \pi[ \to \CC$ zadovoljavaju uslove Riman--Lebegove leme i neka u nekoj okolini $V$ tachke $x_0 \in ]-\pi, \pi[$ vaz1i $f|_V \equiv g|_V$. Tada Furijeovi redovi 
 \[f \sim \sum_{n = - \infty}^{+ \infty} c_n e^{inx_0}\]
 i
 \[g \sim \sum_{n = -\infty}^{+ \infty} d_n e^{inx_0} \]
@@ -2083,21 +2125,73 @@ Parcijalna suma Furijeovog reda funkcije $f$ u tachki $x_0$ je
 \[S_n(x_0) = \frac{1}{2\pi} \int_{-\pi}^{\pi}f(x_0 - t) D_n(t) dt\]
 To lako dobijamo iz chinjenice da za konachne sume integral i suma komutiraju, kao i chinjenice da je $D_n$ $2 \pi$-periodichno. Dalje, na osnovu perthodne teoreme zakljuchujemo da $\lim_{n\to \infty} S_n(x_0)$ zavisi samo od restrikcije $f|_V = g|_V$.
 \end{proof}
-\begin{tma}(Dinijev dovoljan uslov konvergencije Furijeovog reda)
-Neka je $f: \RR \to \CC$ $2 \pi$-periodichna funkcija koja zadovoljava uslove Riman-Lebegove leme. Ako $f$ zadovoljava Dinijev uslov u tachki $x$, onda njen Furijeov red konvergira u toj tachki i vaz1i
+
+\begin{tma}(Dinijev uslov konvergencije Furijeovog reda)
+Neka je $f: \RR \to \CC$ $2 \pi-$periodi\-chna funkcija koja zadovoljava uslove Riman-Lebegove leme. Ako $f$ zadovoljava Dinijev uslov u tachki $x$, onda njen Furijeov red konvergira u toj tachki i vaz1i
 \[\sum_{n = - \infty}^{\infty} c_n e^{inx} = \frac{f(x_-) + f(x_+)}{2}\]
 \end{tma}
+\begin{proof}
+	Napisati parcijalnu sumu Furijeovog reda u tachki $x$ kao
+	\[ s_n(x) = \frac{1}{2\pi}\int_0^\pi (f(x-t) + f(x+t)) D_n(t) dt ,\] 
+	dodati i oduzeti $f(x_-) + f(x_+)$, regrupisati do integrala na koje mozhemo primeniti Riman--Lebegovu lemu, zbog Dinijevog uslova.
+\end{proof}
+
 \begin{nap}
-Ne moz1emo da ochekujemo da Furijeov red funkcije u tachki uvek konvergira ka vrednosti $f(x)$ funkcije u toj tachki.
-\end{nap}
-\\ \\
+Ne moz1emo da ochekujemo da Furijeov red funkcije u tachki uvek konvergira ka vrednosti $f(x)$ funkcije u toj tachki. To je prirodno,
+funkcije se mogu razlikovati u prebrojivo mnogo tachaka i da imaju iste Furijeove koeficijente, jer su oni definisani preko integrala.
+\end{nap}\\
+
 \begin{tma}
-(Fejerova) Neka je $f: \RR \to \CC$ $2 \pi$-periodichna funkcija, apsolutno integrabilna na $[-\pi, \pi]$. Tada vaz1i:
+(Fejerova) Neka je $f: \RR \to \CC$ $2 \pi$-periodichna funkcija, apsolutno integra\-bilna na $[-\pi, \pi]$. Tada vaz1i:
 \begin{itemize}
 \item[(1)] $f \in C(\RR) \implies \sigma_n \rightrightarrows f$
 \item[(2)] $fCx_0 \implies \sigma_n(x_0) \to f(x_0)$
 \end{itemize}
 gde je \[\sigma_n(x):= \frac{S_0(x) + \dots + S_n(x)}{n+1}\]
 \end{tma}
+
+\begin{proof}
+	Primetiti najpre da je $\sigma_n(x) = \frac{1}{2\pi} (f*F_n)(x)$ i zakljuchiti
+	\[ |\sigma_n(x) - f_n(x)| \leq \frac{1}{2\pi} \int_{-\pi}^\pi |f(x-t) - f(x)|F_n(t)dt .\] 
+	Iz Kantorove teoreme zakljuchiti da je $f$ ravnomerno neprekidna, oceniti $F_n$ odozgo i razdvojiti integral na 
+	$\int_{-\delta}^\delta + (\int_{-\pi}^{-\delta} + \int_{\delta}^{\pi})$, pa potom ogranichiti svaki od njih.
+\end{proof}
+
+\begin{nap}
+	Prethodna teorema nam daje josh jedan dokaz druge Vajershtrasove teoreme o aproksimaciji neprekidnih$ 2\pi-$periodichnih
+	funkcija trigonometrijskim polinomima.
+\end{nap}\\
+
+\begin{tvr}(Diferenciranje Furijeovog reda)
+	Neka je $f:[-\pi, \pi] \to \CC$ neprekidna deo-po-deo diferencijabilna funkcija, takva da je $f(-\pi) = f(\pi)$.
+	Onda se njen Furijeov red mozhe \zn diferencirati chlan po chlan\zng.
+\end{tvr}
+\begin{proof}
+	Primeniti parcijalnu integraciju pri rachunanju koeficijenata za Furijeov red funkcije $f'$.
+\end{proof}
+
+\begin{posl}
+	Prethodno tvrdjenje nam omoguc1ava da ispitujemo diferencijabilnost fun\-kcije rachunanjem njenog integrala. Naime,
+	ako je funkcija $f$ kao u prethodnoj teoremi klase $C^{k-1}$ i svaki njen izvod ispunjava ista svojstva kao u 
+	prethodnoj teoremi, onda za koeficijente Furijeovog reda funkcije $f^{(k)}$ vazhi:
+	\[ |c_n| = \frac{\gamma_n}{n^k} = o\left(\frac{1}{n^k}\right), \text{kad }n\to \infty .\] 
+\end{posl}
+\begin{proof}
+	Zakljuchiti da $\sum |\gamma_n|^2$ konvergira (iz Beselove nejednakosti) i primeniti $\gamma_n = (in)^k c_n$.
+\end{proof}
+
+\begin{nap}
+	Za funkciju iz prethodne posledice se mozhe dokazati da njen Furijeov red konvergira apsolutno i ravnomerno na $[-\pi, \pi]$,
+	primenom $AG$ nejednakosti i Vajershtra\-sovog stava o ravnomernoj i apsolutnoj konvergenciji.
+\end{nap}\\
+
+\begin{tvr}(Integracija Furijeovog reda)
+	Neka je $f:[-\pi, \pi] \to \CC$ deo-po-deo neprekidna. Onda se njen Furijeov red mozhe integraliti chlan po chlan, pri
+	chemu vazhi jednakost u svakoj tachki.
+\end{tvr}
+\begin{proof}
+	Primeniti tvrdjenje o difereneciranju Furijeovog reda i prethodnu napomenu na funkciju
+	\[ F(x) = \int_0^xf(t)dt - c_0x .\] 
+\end{proof}
 
 \end{document}
