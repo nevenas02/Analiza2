@@ -70,7 +70,7 @@
 \section{Neprekidnost}
 
 \begin{tvr}
-(Koshi - Shvarcova nejednakost) Ako je $\langle \cdot, \cdot \rangle$ pozitivna hermit\-ska forma, onda je 
+(Koshi--Shvarcova nejednakost) Ako je $\langle \cdot, \cdot \rangle$ pozitivna hermit\-ska forma, onda je 
 \[{|\langle x, y \rangle |}^2 = \langle x, x \rangle \langle y, y \rangle\]
 \end{tvr}
 \begin{proof}
@@ -102,22 +102,22 @@ Primetiti da g) $\implies$ v)$ \implies$ b) $ \implies$ a) uvek vaz1i. Dalje, d)
 \begin{nap}
 	Ukoliko je $L$ vishelinearno preslikavanje, onda se na slichan nachin mozhe definisati $\norm L _{\infty}$. Tada
 	vazhi: $L$ je neprekdino akko je $\norm L _{\infty} < \infty$. Primeri ovoga su mnozhenje, determinanta, 
-	mnozhenje skalarom, vektorski proizvod, hermitski proizvod, meshoviti, slaganje neprekidnih
+	mnozhenje skalarom, vektorski proizvod, hermit\-ski proizvod, meshoviti, slaganje neprekidnih
 	linearnih preslikavanja, \dotso
 \end{nap}
 
 \newpage
 
 \begin{tvr}
-	Neka je $\ds{(X,d_\infty) = \prod_{j=1}^{\infty}(X_j, d_j)}$, $A_j\psj X_j$, $\ds{A = \prod_{j=1}^{\infty}A}$. Tada vazhi:
+	Neka je $\ds{(X,d_\infty) = \prod_{j=1}^{k}(X_j, d_j)}$, $A_j\psj X_j$, $\ds{A = \prod_{j=1}^{k}A}$. Tada vazhi:
 	\begin{enumerate}
 		\item[(1)] Projekcije $\pi_j:X \to X_j$ su otvorena preslikavanja.
 		\item[(2)] Unutrashnjost skupa $A$ je proizvod unutrashnjosti skupova $A_j$. Specijalno, $A$ je otvoren akko je otvoren \zn po koordinatama\zng.
-		\item[(3)] Zatvorenje skupa $A$ je proizvod zatvorenja skupova $A_j$. Specijalno, $A$ je zatvoren akko je otvoren \zn po koordinatama\zng.
+		\item[(3)] Zatvorenje skupa $A$ je proizvod zatvorenja skupova $A_j$. Specijalno, $A$ je zatvoren akko je zatvoren \zn po koordinatama\zng.
 	\end{enumerate}
 \end{tvr}
 \begin{proof}
-	Iskoristiti da je $\ds{B(a, \delta) = \prod_{j=1}^{\infty}B(a_j, \delta)}$
+	Iskoristiti da je $\ds{B(a, \delta) = \prod_{j=1}^{k}B(a_j, \delta)}$
 \end{proof}
 
 \begin{tma}
@@ -167,8 +167,7 @@ Definisati preslikavanje $\varphi := g - f : X \to \RR$ i za $1)$ i $2)$ posmatr
 
 \begin{nap}
 U prethodnom tvrd1enju kodomen funkcija $f$ i $g$ je $\RR$ zbog toga shto nam je zbog nejednakosti potrebno ured1enje na kodomenu.
-\end{nap}
-\\ \\
+\end{nap} \\
 \begin{posl}
 	$\diam(A) = \diam(\overline{A})$, $d(A, B) = d(\overline A, \overline B)$
 \end{posl}
@@ -247,8 +246,8 @@ $\boxed{\Leftarrow}$ Neka je $a_n$ Koshijev niz u $X$. Definisati $F_n := \overl
 \end{tma}
 \begin{proof}
 \begin{itemize}
-	\item[(1)] Jedan smer je trivijalan. Za drugi smer iskoristiti svojstvo neprekidne funkcije $f(\overline{A}) \psj \overline{f(A)}$,
-		primenjeno na odgovarajuc1u okolinu tachke.
+	\item[(1)] Jedan smer je trivijalan. Za drugi smer iskoristiti svojstvo neprekidne funkcije
+		$f(U) \psj V$, primenjeno na odgovarajuc1u okolinu tachke.
 \item[(2)] Neka je $x\in X$ proizvoljna tachka i $a_n$ niz u $A$ koji tezhi ka $x$. Tada je $a_n$ Koshijev, pa 
 	je $f(a_n)$ takodje Koshijev (jer je $Y$ kompletan i $f$ ravnomerno neprekidno), pa je $f(a_n)$ konvergentan.
 		Da bismo mogli da kazhemo $F(x):= \lim_{n\to\infty}f(a_n)$, moramo dokazati da ova definicija ne zavisi od izbora
@@ -260,7 +259,7 @@ $\boxed{\Leftarrow}$ Neka je $a_n$ Koshijev niz u $X$. Definisati $F_n := \overl
 \end{proof}
 
 \begin{tma}
-(Banahova teorema o fiksnoj tachki) Neka je $X$ kompletan metrichki prostor, $f: X \to X$ kontrakcija, $0 < q = \mathrm{lip} f < 1$. Tada $f$ ima tachno jednu fiksnu tachku, tj. postoji jedinstvena tachka $a_{\infty} \in X$ takva da je $f(a_{\infty}) = a_{\infty}$.\\ \\
+(Banahova teorema o fiksnoj tachki) Neka je $X$ kompletan metrichki prostor, $f: X \to X$ kontrakcija, $0 < q = \mathrm{lip} f < 1$. Tada $f$ ima tachno jednu fiksnu tachku, tj. postoji jedinstvena tachka $a_{\infty} \in X$ takva da je $f(a_{\infty}) = a_{\infty}$.\\
 Tachka $a_{\infty}$ je granichna vrednost niza definisanog rekurentno: $a_0$ proizvoljno, $a_{n+1} = f(a_n)$ (niz sukcesivnih aproksimacija) i pri tome vaz1i \[d(a_n, a_{\infty}) \leq \frac{q^n}{1-q} d(a_0, a_1)\]
 \end{tma}
 
@@ -302,17 +301,17 @@ Dokaz sledi iz prethodnog i toga da je $\mathcal{L}(X;Y)\hookrightarrow B_Y(S)$ 
 \end{proof}
 
 \begin{nap} Ako je $X$ normirani vektorski prostor nad poljem $\mathbb{K} \in \{\RR, \CC \}$, onda je njegov dual $X^* := \mathcal{L} (X; \mathbb{K})$ kompletan.
-\end{nap}
-\\ \\
+\end{nap} \\
+
 \begin{nap}
 U konachno dimenzionom sluchaju $X \cong X^*$, tj vaz1i Risova teorema o re\-pre\-zen\-ta\-ci\-ji
 \[(\forall \alpha \in X^*) (\exists a \in X) (\forall v \in X) \hspace{0.12cm} \alpha(v) = \langle v, a \rangle \]
-\end{nap}
-\\ \\
+\end{nap} \\
+
 \begin{nap}
 U beskonachno dimenzionom slucaju ne mora da vaz1i prethodno, $X$ ne mora biti kompletan, a $X^*$ je uvek kompletan.
-\end{nap}
-\\ \\
+\end{nap} \\
+
 \begin{nap}
 Ako je $X$ Hilbertov, onda je $X \cong X^*$.
 \end{nap}
@@ -350,7 +349,7 @@ Konstruisati niz $b_n$ u $f(X)$. Nac1i njegov konvergentan podniz.
 \end{proof}
 
 \begin{posl}
-Neprekidna realna funkcija na kompaktnom skupu je ogranichena i ima $\min$ i $\max$.
+Neprekidna realna funkcija na kompaktnom skupu je ogranichena i dostizhe $\min$ i $\max$.
 \end{posl}
 \\
 \begin{tvr}
@@ -377,7 +376,7 @@ Neka je $F \psj X$ zatvoren podskup. Tada je $F$ kompaktan, pa je i $f(F)$ kompa
 
 \begin{nap}
 Preslikavanje $\varphi: [0,2 \pi[ \to \mathbb{S}^1$ dato kao $ \varphi(t):= e^{it}$ je neprekidna bijekcija koja nije homeomorfizam.
-\end{nap}
+\end{nap}\\
 
 \begin{tma}
 (Kantorova) Neprekidno preslikavanje na kompaktu je ravnomerno neprekidno.
@@ -389,7 +388,7 @@ Pretpostaviti suprotno, da je $X$ kompaktan, $f:X \to Y$ neprekidno, ali nije ra
 \begin{lema}
 Svaka norma 
 \[\norm{\cdot} : \mathbb{K}^r \to \RR \]
-na vektorskom prostoru $\mathbb{K}^r$ je Lipshicovo preslikavanje normiranog vektorskog prostora $(\mathbb{K}^r, \norm{\cdot})$ sa standardnom euklidskom normom.
+na vektorskom prostoru $\mathbb{K}^r$ je Lipshicovo preslikavanje normiranog vektorskog prostora $(\mathbb{K}^r, |\cdot|)$ sa standardnom euklidskom normom.
 \end{lema}
 \begin{proof}
 Predstaviti $x = (x_1, \dots, x_r)$ kao linearnu kombinaciju baznih vektora. Primenom Koshi-Shvarcove nejednakosti zakljuchiti da je $\norm{x} \leq C |x|$, odnosno dalje, $|\norm{x} - \norm{y} | \leq \norm{x-y} \leq C |x-y|$.
@@ -544,7 +543,15 @@ Profinjenje Prve Vajershtrasove teoreme je razvoj u stepeni red.
 \end{itemize}
 \end{tma}
 \begin{proof}
-
+	Sprovesti dokaz iz sledec1ih koraka:
+	\begin{itemize}
+		\item[1)] $f \in \mathcal A \implies |f| \in \overline{\mathcal A}$ 
+		\item[2)] $f, g \in \mathcal A \implies \max\{f, g\}, \min\{f, g\} \in \overline{\mathcal A}$
+		\item[3)] Za proizvoljne $x_0\neq y_0 \in \RR$, $\lambda, \mu \in\RR$ postoji $f\in mathcal A$
+			takvo da je $f(x_0) = \lambda, f(y_0) = \mu$.
+		\item[4)] Za svako $h\in C_\RR(X), x_0 \in X$ i $\eps > 0$, postoji $g\in\overline{\mathcal A}$, takvo da je 
+			$g(x_0) = h(x_0)$ i $g \leq h+ \eps$. Primeniti kompaktnost $X$ i izvesti zakljuchak.
+	\end{itemize}
 \end{proof}
 
 \begin{posl}
@@ -568,9 +575,11 @@ Profinjenje Druge Vajershtrasove teoreme jeste razvoj u Furijeov red.
 Tada niz $f_n$ ima podniz koji ravnomerno konvergira na svakom kompaktnom podskupu.
 \end{tma}
 \begin{proof}
-Poshto je $X$ separabilan, postoji prebrojiv gust podskup $S \ps X$. Pored1ajmo njegove tachke u niz $S = \{x_1, x_2, \dots \}$. Definishimo niz podskupova $N_k \ps \NN$ induktivno. Neka je $N_0 = N$. Neka je $N_k$ definisano. Prema uslovu $1.$ postoji beskonachan skup $N_{k+1} \ps N_k$, takav da postoji 
+Poshto je $X$ separabilan, postoji prebrojiv gust podskup $S \ps X$. Pored1ajmo njegove tachke u niz $S = \{x_1, x_2, \dots \}$. 
+	Definishimo niz podskupova $N_k \ps \NN$ induktivno. Neka je $N_0 = \NN$. Neka je $N_k$ definisano. Prema uslovu $1.$ 
+	postoji beskonachan skup $N_{k+1} \ps N_k$, takav da postoji 
 \[\lim_{ N_{k+1}\ni n \to \infty} f_n(x_{k+1}) \]
-Formirajmo $N := \{n_1, n_2, \dots \}$ gde je $n_k$ $k$ - ti element iz skupa $N_k$ za svako $k$ - dijagonalni izbor. Iz konstrukcije
+	Formirajmo $N := \{n_1, n_2, \dots \}$ gde je $n_k$ $k$ - ti element iz skupa $N_k$ za svako $k$ (dijagonalni izbor). Iz konstrukcije
 sledi da za svako $x\in S$ postoji
 	\[ \lim_{N\ni n \to \infty}f_n(x) .\] 
 	Neka je $K\ps M$ kompaktan podskup. Pokriti $K$ sa konachno mnogo otvorenih lopti, koje su dovoljno malog poluprechnika takvog
@@ -620,7 +629,7 @@ Konstruisati neprekidno preskikavanje $f: \bigcup_{\lambda \in \Lambda} S_{\lamb
 \end{proof}
 
 \begin{nap}
-Vaz1i i uopshtenje: $\{S_{\lambda}\}_{\lambda \in \Lambda}$ povezani i $(\exists \lambda_0) (\forall \lambda \in \Lambda) S_{\lambda} \bigcap S_{\lambda_0} \ne \emptyset \implies \bigcup_{\lambda \in \Lambda} S_{\lambda}$ povezan - (teorema "cvetic1").
+Vaz1i i uopshtenje: $\{S_{\lambda}\}_{\lambda \in \Lambda}$ povezani i $(\exists \lambda_0) (\forall \lambda \in \Lambda) S_{\lambda} \bigcap S_{\lambda_0} \ne \emptyset \implies \bigcup_{\lambda \in \Lambda} S_{\lambda}$ povezan (teorema \zn cvetic1\zng).
 \end{nap}
 
 \begin{nap}
@@ -661,7 +670,7 @@ Konstruisati $f \circ \gamma$. Posmatrati shta je to preslikavanje u $0$ i $1$.
 \end{proof}
 
 \begin{nap}
-Prethodni dokaz i dokaz slichnog tvrd1enja za obichnu povezanost su na neki nachin dualni ("metod obrnutih strelica").
+	Prethodni dokaz i dokaz slichnog tvrd1enja za obichnu povezanost su na neki nachin dualni (\zn metod obrnutih strelica").
 \end{nap}
 
 \section{Diferenciranje}
@@ -720,7 +729,7 @@ Podeliti interval $[c_1, c_2]$ na dva podintervala i primeniti pomoc1nu lemu na 
 \begin{nap}
 Pomoc1na lema iz prethodne teoreme je sledec1a nejednakost: \\ \\
 Ako za $\alpha, \beta, \gamma, a, b, c \in \R_+ $ vaz1i $c \leq a+b$ i $\gamma = \alpha + \beta$, onda je
-\[\frac{c}{\gamma} \leq \max \{ \frac{a}{\alpha}, \frac{b}{\beta} \} \]
+\[\frac{c}{\gamma} \leq \max \left\{ \frac{a}{\alpha}, \frac{b}{\beta} \right\} \]
 \end{nap}
 \\ \\
 
@@ -853,7 +862,7 @@ Poshto su translacije homeomorfizmi, bez umanjenja opshtosti pretpostaviti da va
 \item[(2)] $DgCy_0$
 \item[(3)] $\exists {(Dg(y_0))}^{-1} \in \mathcal{L} (X; Y)$
 \end{enumerate}
-Tada postoje okolina $V_0 \subseteq Y$ tachke $y_0$ i okolina $U_0 \subseteq X$ tachke $x_0 := g(y_0)$ takve da je $g: V_0 \to U_0$ bijekcija, $g^{-1} \mathcal{D} x_0$ i vaz1i \[ Dg^{-1}(x_0) = {(Dg(y))}^{-1}.\]
+Tada postoje okolina $V_0 \subseteq Y$ tachke $y_0$ i okolina $U_0 \subseteq X$ tachke $x_0 := g(y_0)$ takve da je $g: V_0 \to U_0$ bijekcija, $g^{-1} \mathcal{D} x_0$ i vaz1i \[ Dg^{-1}(x_0) = {(Dg(y_0))}^{-1}.\]
 \end{tma}
 \begin{proof}
 Dokaz sledi iz Teoreme o implicitnoj funkciji primenjene na funkciju $F(x,y) = x - g(y)$.
@@ -861,7 +870,11 @@ Dokaz sledi iz Teoreme o implicitnoj funkciji primenjene na funkciju $F(x,y) = x
 
 \begin{posl}
 	Ako je $f:V\to Y$ lokalni difeomorfizam, onda je za svaki otvoren skup $U\psj V$ skup $f(U)$ otvoren.
-\end{posl}\\
+\end{posl}
+\begin{proof}
+	Za svaku tachku $x_0 \in U$ postoji otvorena okolina i onda primenom teoreme sledi da i oko tachke
+	$f(x_0)$ postoji otvorena okolina (na kojoj vazhe stavke teoreme, koje nama ovde nisu od znachaja).
+\end{proof}
 
 \begin{tma}(Teorema o rangu) Neka je $V \subseteq \R^k$ otvoren i $f: V \to \R^l$ preslikavanje klase $C^n$, takvo da je za sve $x \in V$ $\rang Df(x) = r$. Tada u okolini svake tachke $x_0 \in V$ i njene slike $y_0 = f(x_0) \in \R^l$ postoje lokalne koordinate (difeomorfizmi) klase $C^n$ u kojima $f$ ima zapis \[f: (s_1, \dots , s_k) \to (s_1, \dots, s_r, 0, \dots , 0).\]
 Krac1e recheno, preslikavanje konstantnog ranga $r$ lokalno izgleda kao projekcija na $\R^r$.
@@ -878,22 +891,25 @@ Krac1e recheno, preslikavanje konstantnog ranga $r$ lokalno izgleda kao projekci
 			x_j, &r<j\leq k
 		\end{cases}
 	\end{align*}
-	Ono jeste lokalni difeomorfizam, jer je $D\varphi \neq 0$ i vazhi 
+	Ono jeste lokalni difeomorfizam, jer je $\det D\varphi \neq 0$. Iz teoreme o inverznoj funkciji sledi da u nekoj okolini
+	postoji $\varphi^{-1}$ i vazhi 
 	\begin{align*}
 		f_j\circ \varphi^{-1}(s_1,\dotso, s_k) = 
 		\begin{cases}
 			s_j, &1 \leq j \leq r \\ 
-			f_j(s_1, \dotso , s_k), &r < j \leq k
+			g_j(s_1, \dotso , s_k), &r < j \leq l
 		\end{cases}
 	\end{align*}
+	gde je $g_j = f_j \circ \varphi^{-1}$.
 	Sada zakljuchiti kako izgleda matrica prvog izvoda $D(f\circ \varphi^{-1})$ i zbog chinjenice da je $\varphi$ lokalni
-	difeomorfizam zakljuchiti da je ona istog ranga kao i $Df$, kao i da je $\frac{\partial f_i}{\partial x_j}= 0,r< i, j \leq k$,
-	odakle sledi da $f_j(s_1, \dotso , s_k)$ zavisi samo od $s_1,\dotso, s_r$. Na kraju, definisati $\psi$ sa 
+	difeomorfizam zakljuchiti da je ona istog ranga kao i $Df$, kao i da je $\frac{\partial g_i}{\partial x_j}= 0$ za 
+	elemente donjeg desnog minora,
+	odakle sledi da $g_j(s_1, \dotso , s_k)$ zavisi samo od $s_1,\dotso, s_r$. Na kraju, definisati $\psi$ sa 
 	\begin{align*}
 		\psi_j (y):= 
 		\begin{cases}
 			y_j, &1\leq j \leq r \\
-			y_j - f_j(y_1,\dotso, y_r), &r<j\leq l
+			y_j - g_j(y_1,\dotso, y_r), &r<j\leq l
 		\end{cases}
 	\end{align*}
 	Zakljuchiti da je $\psi$ lokalni izomorfizam i da je $\psi\circ f\circ \varphi^{-1}$ trazhena kompozicija.
@@ -1027,8 +1043,8 @@ e^{-\frac{1}{t}}, \hspace{0.5cm} t>0\\
 Definisati preslikavanje \[f:M \to \underbrace{\RR^n \times \dots \times \RR^n}_{k}\times \underbrace{\RR \times \dots \times \RR}_{k} =: \RR^l\]
 sa 
 \[f(p) = \biggl(h_1(p)\varphi_1(p), \dots , h_k(p)\varphi_k(p), h_1(p), \dots , h_k(p)\biggr)\]
-gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje.
-\\
+gde je $n = \dim M$. Dokazati da je $f$ jedno ulaganje, najpre zakljuchiti da je ono ranga $n$, odakle sledi da je 
+imerzija. Na kraju, primetiti da je dovoljno dokazati da je in\-jekcija.
 \end{proof}
 
 \subsection{Izvod preslikavanja $f:M \to N$}
@@ -1606,7 +1622,7 @@ $\mathrm{Im} \hspace{0.1cm} d \psj \mathrm{Ker} \hspace{0.1cm} d$
 
 \begin{posl}
 Ako je $F: M \to N$ difeomorfizam, onda je $F^* : \hdr{l} (N) \to \hdr{l} (M)$ izomorfi\-zam.
-\end{posl}
+\end{posl}\\
 
 \begin{tvr}
 	$(\hdr{*}(M), +, \wedge)$ je prsten, gde je $\wedge:\hdr{l} \times \hdr{k} \to \hdr{l+k}$ indukovano preslikavanjem
@@ -1625,7 +1641,12 @@ Za svako neprekidno preslikavanje $f: M \to N$ glatkih mnogostrukosti postoji gl
 \begin{proof}
 Izvesti iz Vajershtrasove teoreme o aproksimaciji i razlaganja jedinice. 
 %Kako? pomoc
+%Ovo je bas netrivijalno ja mislim, trazio sam po internetu i nisam uspeo da nadjem
 \end{proof}
+
+\begin{tvr}
+	$X\lrcorner(\alpha \wedge \beta) = X\lrcorner\alpha \wedge \beta + (-1)^{\deg \alpha} \alpha\wedge X\lrcorner \beta$
+\end{tvr}\\
 
 \begin{tvr}
 (Kartanova formula) $\phi_t : M \to M$ glatka (po $t$) familija glatkih pre\-sli\-ka\-va\-nja. Neka je $X(\phi_t(p)) := \frac{d \phi_t}{dt} (p)$ (pishemo krac1e: $X$). Za $\alpha \in \Omega^l(M)$ vaz1i:
@@ -1904,10 +1925,32 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 \end{nap}\\
 
 \begin{tvr}
+	Na svakoj glatkoj mnogostrukosti postoji Rimanova metrika.
+\end{tvr}
+\begin{proof}
+	Neka je $\{(U_j, \varphi_j)\}_{j \in J}$ atlas. Definishemo
+	\[ g^j_p = \varphi_j^*(p)\langle \cdot, \cdot \rangle ,\] 
+	shto nam daje lokalnu definiciju. Globalno defiinishemo kao
+	\[ g_p = \sum_{j \in J} \rho_j(p) g^j_p\]
+\end{proof}
+
+\begin{nap}
+	Ako je zadata Rimanova metrika na mnogostrukosti, moguc1e je definisati formu kanonske zapremine (povrshine).
+	Neka je $X_i = (\varphi^{-1})_* \frac{\partial}{\partial x_i}$ i $G = \det(g(X_i, X_j))$ determinanta Gramove 
+	matrice Rimanove metrike. Tada je 
+	\[ \mu := \varphi^*(\sqrt G dx_1\wedge \dotso \wedge dx_n) \] 
+	jedna takva forma. Specijalno, ako je moguc1e pokriti mnogostrukost jednom kartom (ili pokriti do na skup mere $0$),
+	onda mozhemo rachunati njenu povrshinu kao 
+	\[ \int_{\varphi(U)} \sqrt Gdx_1\wedge \dotso \wedge dx_n  .\] 
+	Ovo je analogno rachunanju povrshine regularne elementarne povrshi ($G = \det I$).
+\end{nap}\\
+
+\begin{tvr}
 	Forma 
 	\[ \omega = \sum_{j= 0}^n (-1)^j x_j dx_1 \wedge \dotso \wedge \widehat{dx_j} \wedge \dotso\wedge dx_n \] 
 	je forma zapremine na $\mathbb{S}^n$ saglasna sa Rimanovom metrikom.
 \end{tvr}
+
 
 \section{Furijeova analiza}
 
@@ -1915,7 +1958,7 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 	$\widehat{\RR} \cong \RR$
 \end{tvr}
 \begin{proof}
-	Posmatrati proizvoljan karakter $\gamma\in \mathrm{Hom}(\RR, \mathbb{S}^1)$. Dokazati, korishc1enjem invari\-jantnosti
+	Posmatrati proizvoljan karakter $\gamma\in \mathrm{Hom}(\RR, \mathbb{S}^1)$. Dokazati, korish\-c1enjem invari\-jantnosti
 	Harove mere u odnosu na translaciju, da je $\gamma$ diferencijabilno (treba izraziti $\gamma(x)$ preko $\int_x^{x+\eps}\gamma(s)ds$).
 	Iz prethodnog postaviti diferencijalnu jednachinu i reshavanjem zakljuchiti da je $\gamma(x) = e^{-itx}$. Preslikavanje $\gamma\mapsto t$
 	je trazheni izomorfizam.
