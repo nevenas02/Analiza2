@@ -67,6 +67,8 @@
 
 \maketitle
 
+\textit{Ideje su kao ribe. Ako si zadovoljan malom ribom, moz1esh da ostanesh u plic1aku. Ali ako z1elish da ulovish veliku ribu, morash da odesh dublje.}
+
 \section{Neprekidnost}
 
 \begin{tvr}
@@ -167,7 +169,7 @@ Definisati preslikavanje $\varphi := g - f : X \to \RR$ i za $1)$ i $2)$ posmatr
 
 \begin{nap}
 U prethodnom tvrd1enju kodomen funkcija $f$ i $g$ je $\RR$ zbog toga shto nam je zbog nejednakosti potrebno ured1enje na kodomenu.
-\end{nap} \\
+\end{nap} \\ \\
 \begin{posl}
 	$\diam(A) = \diam(\overline{A})$, $d(A, B) = d(\overline A, \overline B)$
 \end{posl}
@@ -220,7 +222,7 @@ $\boxed{\Leftarrow}$ Iz zatvorenosti svaki Koshijev niz je konvergentan u $A$.
 \begin{nap}
 Primeri prostora koji nisu kompletni su nezatvoreni podskupovi komple\-tnih.
 \end{nap}
-
+\\ \\
 \begin{tvr}
 Proizvod $(X, d_{\infty}) = \prod_{j=1}^{k} (X_i, d_i)$ je kompletan ako i samo ako su svi $X_i$ kompletni.
 \end{tvr}
@@ -351,12 +353,12 @@ Konstruisati niz $b_n$ u $f(X)$. Nac1i njegov konvergentan podniz.
 \begin{posl}
 Neprekidna realna funkcija na kompaktnom skupu je ogranichena i dostizhe $\min$ i $\max$.
 \end{posl}
-\\
+\\ \\
 \begin{tvr}
 Proizvod metrichkih prostora je kompaktan ako i samo ako su takvi prostori faktori.
 \end{tvr}
 \begin{proof}
-$\boxed{\Rightarrow}$ projekcije su neprekidne surjekcije pa su im slike kompaktne \\
+$\boxed{\Rightarrow}$ projekcije su neprekidne surjekcije pa su im slike kompaktne \\ 
 $\boxed{\Leftarrow}$ princip dijagonalizacije
 \end{proof}
 
@@ -376,13 +378,12 @@ Neka je $F \psj X$ zatvoren podskup. Tada je $F$ kompaktan, pa je i $f(F)$ kompa
 
 \begin{nap}
 Preslikavanje $\varphi: [0,2 \pi[ \to \mathbb{S}^1$ dato kao $ \varphi(t):= e^{it}$ je neprekidna bijekcija koja nije homeomorfizam.
-\end{nap}\\
-
+\end{nap} \\ \\
 \begin{tma}
 (Kantorova) Neprekidno preslikavanje na kompaktu je ravnomerno neprekidno.
 \end{tma}
 \begin{proof}
-Pretpostaviti suprotno, da je $X$ kompaktan, $f:X \to Y$ neprekidno, ali nije ravnomerno. Negirati uslov ravnomerne neprekidnosti i uzeti $\delta = \frac{1}{n}$.  Izvesti kontradik\-ciju. 
+Pretpostaviti suprotno, da je $X$ kompaktan, $f:X \to Y$ neprekidno, ali nije ravnomerno. Negirati uslov ravnomerne neprekidnosti i uzeti $\delta = \frac{1}{n}$.  Izvesti kontra\-dik\-ci\-ju. 
 \end{proof}
 
 \begin{lema}
@@ -427,7 +428,7 @@ $\boxed{\Leftarrow}$ Pretpostaviti suprotno, da $X$ nije totalno ogranichen. Izv
 \begin{posl}
 Metrichki prostor je kompaktan ako i samo ako je kompletan i totalno ogranichen.
 \end{posl}
-
+\\ \\
 \begin{tvr}
 Podskup $A \psj X$ kompletnog metrichkog prostora $X$ je relativno kompaktan, odnosno njegovo zatvorenje je kompaktno, ako i samo ako je totalno ogranichen.
 \end{tvr}
@@ -536,7 +537,7 @@ Profinjenje Prve Vajershtrasove teoreme je razvoj u stepeni red.
 \end{nap}
 \\ \\
 \begin{tma}
-(Ston - Vajershtrasov stav)
+(Ston-Vajershtrasov stav)
 \begin{itemize}
 \item Realni oblik: Ako je $\mathcal{A}$ podalgebra algebre $C_{\RR}(X)$ koja sadrz1i $1$ i razlikuje tachke, tj. vaz1i $(\forall x,y \in X) x \ne y \implies (\exists f \in \mathcal{A}) f(x) \ne f(y)$, onda je $\mathcal{A}$ gusta u $C_{\RR}(X)$: $\overline{\mathcal{A}} = C_{\RR}(X)$.
 \item Kompleksni oblik: Ako je $\mathcal{A}$ podalgebra algebre $C_{\CC}(X)$ koja sadrz1i $1$ i razlikuje tachke i zatvorena je za kon\-jugovanje, tj. $f \in \mathcal{A} \implies \overline{f} \in \mathcal{A}$, onda je $\mathcal{A}$ gusta u $C_{\CC}(X)$.
@@ -547,13 +548,12 @@ Profinjenje Prve Vajershtrasove teoreme je razvoj u stepeni red.
 	\begin{itemize}
 		\item[1)] $f \in \mathcal A \implies |f| \in \overline{\mathcal A}$ 
 		\item[2)] $f, g \in \mathcal A \implies \max\{f, g\}, \min\{f, g\} \in \overline{\mathcal A}$
-		\item[3)] Za proizvoljne $x_0\neq y_0 \in \RR$, $\lambda, \mu \in\RR$ postoji $f\in mathcal A$
+		\item[3)] Za proizvoljne $x_0\neq y_0 \in \RR$, $\lambda, \mu \in\RR$ postoji $f\in \mathcal A$
 			takvo da je $f(x_0) = \lambda, f(y_0) = \mu$.
 		\item[4)] Za svako $h\in C_\RR(X), x_0 \in X$ i $\eps > 0$, postoji $g\in\overline{\mathcal A}$, takvo da je 
 			$g(x_0) = h(x_0)$ i $g \leq h+ \eps$. Primeniti kompaktnost $X$ i izvesti zakljuchak.
 	\end{itemize}
 \end{proof}
-
 \begin{posl}
 (Druga Vajershtrasova teorema)
 \begin{itemize}
@@ -589,7 +589,7 @@ sledi da za svako $x\in S$ postoji
 \end{proof}
 
 \begin{nap}
-U Arcela - Askolijevoj teoremi $X$ moz1e biti i kompaktan, poshto je kompakt\-nost jache svojstvo od separabilnosti.
+U Arcela-Askolijevoj teoremi $X$ moz1e biti i kompaktan, poshto je kompakt\-nost jache svojstvo od separabilnosti.
 \end{nap}
 \subsection{Povezanost}
 
@@ -604,7 +604,7 @@ Za topoloshki prostor $(X, \tau)$ sledec1i iskazi su ekvivalentni:
 \end{tma}
 
 \begin{proof}
-a) $\Leftrightarrow$ b) : Pretpostaviti suprotno. Zakljuchak sledi iz chinjenice da ako je $A$ otvoren tada je $B = X \setminus A$ zatvoren i obrnuto. \\ 
+a) $\Longleftrightarrow$ b) : Pretpostaviti suprotno. Zakljuchak sledi iz chinjenice da ako je $A$ otvoren tada je $B = X \setminus A$ zatvoren i obrnuto. \\ 
 a) $\implies$ v) : Pretpostaviti suprotno, da postoji $A \subset X$ koji je i otvoren i zatvoren i neprazan. Tada se $X$ moz1e predstaviti kao unija dva otvorena disjunktna skupa $A$ i $X \setminus A$ odakle sledi kontradikcija sem ako $A$ nije prazan.
 \\ 
 v) $\implies$ a) : Slichno prethodnom.
@@ -631,12 +631,12 @@ Konstruisati neprekidno preskikavanje $f: \bigcup_{\lambda \in \Lambda} S_{\lamb
 \begin{nap}
 Vaz1i i uopshtenje: $\{S_{\lambda}\}_{\lambda \in \Lambda}$ povezani i $(\exists \lambda_0) (\forall \lambda \in \Lambda) S_{\lambda} \bigcap S_{\lambda_0} \ne \emptyset \implies \bigcup_{\lambda \in \Lambda} S_{\lambda}$ povezan (teorema \zn cvetic1\zng).
 \end{nap}
-
+\\ \\
 \begin{nap}
 	Prethodna dva tvrdjenja vazhe i za putnu povezanost, ali ne i za prostu povezanost (posmatrati dve duzhi medjusobno zalepljene u krajevima, unija te dve duzhi
 	je krug, koji nije prosto povezan, ali obe duzhi jesu prosto povezane i presek im je neprazan).
 \end{nap}
-
+\\ \\
 \begin{posl}
 Dekartov proizvod povezanih metrichkih prostora je povezan.
 \end{posl}
@@ -1090,11 +1090,11 @@ imerzija. Na kraju, primetiti da je dovoljno dokazati da je in\-jekcija.
 	Prethodna teorema nam daje ekvivalenciju geometrijskog i algebarskog (analitichkog) pristupa
 	definiciji tangnetnog prostora mnogostrukosti.
 \end{nap}
-
+\\ \\
 \begin{posl}
 	$T_p M$ je vektorski prostor, jer je linearna kombinacija derivacija takodje derivacija.
 \end{posl}
-
+\\ \\
 \begin{posl}
 	$\dim M = n \implies \dim T_p M = n$
 \end{posl}
@@ -1147,7 +1147,7 @@ imerzija. Na kraju, primetiti da je dovoljno dokazati da je in\-jekcija.
 	Prostor $C_C(T)$ je prostor neprekidnih funkcija $f:T\to \RR$ koje imaju kompaktan nosach, pri chemu je 
 	$T$ lokalno kompaktan metrichki (ili Hausdorfov) prostor.
 \end{nap}
-
+\\
 \begin{pr}
 	Josh neki primeri elementarnog integrala su:
 	\begin{itemize}
@@ -1171,7 +1171,7 @@ imerzija. Na kraju, primetiti da je dovoljno dokazati da je in\-jekcija.
 \begin{nap}
 	Prethodna lema vazhi i za elementaran integral, jedino na shta se oslanjamo su pozitivnost i linearnost $I$.
 \end{nap}
-
+\\ \\
 \begin{tvr}
 	Neka je $T$ lokalno kompaktan Hausdorfov prostor, $K \psj T$ kompaktan podskup i $C(T; K)$ skup funkcija i $C_C(T)$
 	kojima je nosach u $K$. Tada je restrikcija
@@ -1188,7 +1188,7 @@ imerzija. Na kraju, primetiti da je dovoljno dokazati da je in\-jekcija.
 \begin{nap}
 	Ideja dosta ovih dokaza jeste da ogranichimo integral sa $I(\psi)$, shto je konstanta.
 \end{nap}
-
+\\ \\
 \begin{tma}(Fubini)
 	Neka su $S$ i $T$ komapktni Hausdorfovi prostori i neka su 
 	\[ I_S : C(S) \to \RR ,  I_T : C(T) \to \RR\] 
@@ -1214,7 +1214,7 @@ imerzija. Na kraju, primetiti da je dovoljno dokazati da je in\-jekcija.
 	sledi i jedinstvenost).
 	
 	Uverimo se da $C(S)\otimes C(T)$ jeste podalgebra algebre $C(S\times T)$ koja sadrzhi $1$ i razlikuje tachke. 
-	Jasno je da jeste algebra i da sadrzhi $1$ ($1 = 1 \otimes 1$). Da bismo dokazali da razdvaja tachke, treba
+	Jasno je da jeste algebra i da sadrzhi $1$ ($1 = 1 \otimes 1$). Da bismo dokazali da razlikuje tachke, treba
 	dokazati:
 	\[ (\forall (s_1, t_1), (s_2, t_2) \in S\times T)(\exists f \in C(S)\otimes C(T))(s_1, t_1)\neq (s_2, t_2) \implies f((s_1, t_1)) \neq f((s_2, t_2)) .\] 
 	Ideja je da uzmemo $f=\varphi \times \psi$, gde su $\varphi \in C(S)$, $\psi \in C(T)$. Odaberimo ih tako da je 
@@ -1256,7 +1256,7 @@ imerzija. Na kraju, primetiti da je dovoljno dokazati da je in\-jekcija.
 \begin{posl}
 	$(\widetilde{D} (T,\mathcal{E}, I), \norm{\cdot}_1)$ je normirani vektorski prostor.
 \end{posl}
-
+\\ \\
 \begin{nap}
 	Preslikavanje $I:\widetilde{D} (T,\mathcal{E}, I) \to \RR$ je neprekidno linearno preslikavanje,
 	jer je $|I(f)| \leq I(|f|) =:\norm{f}_1$.
@@ -1291,7 +1291,7 @@ imerzija. Na kraju, primetiti da je dovoljno dokazati da je in\-jekcija.
 	se mozhe izvesti elegantnije, zbog chinjenice da je dual uvek kompletan i zbog chinjenice 
 	da postoji linearno ulaganje normiranog vektorskog prostora u dual duala.
 \end{nap}
-
+\\ \\
 \begin{posl}
 	Kompletiranje prostora $(C(\mathcal J), \norm{\cdot}_1)$ naziva se prostorom funkcija inte\-grabilnih po Lebegu. 
 	Kako je integral ravnomerno neprekidan, onda se on mozhe (iz Principa produzhenja ravnomerno neprekidne funkcije
@@ -1394,7 +1394,7 @@ imerzija. Na kraju, primetiti da je dovoljno dokazati da je in\-jekcija.
 
 \begin{posl}
 	Neka je $E\psj \RR^K$ ogranichen skup sadrzhan u kvadru $\mathcal J$. Tada je 
-	\[ \chi_E \in \mathcal R (\mathcal J) \iff \partial E \text{ je skup mere 0} .\] 
+	\[ \chi_E \in \mathcal R (\mathcal J) \iff \partial E \text{ je skup mere 0} \] 
 \end{posl}
 \begin{proof}
 	$\partial E$ je skup prekida funkcije $\chi_E$.
@@ -1425,7 +1425,11 @@ imerzija. Na kraju, primetiti da je dovoljno dokazati da je in\-jekcija.
 	Pre smo Fubinija dokazali za Rimanov integral neprekidne funkcije, sada smo dokazali za Rimanov integral funkcije 
 	integrabilne po Rimanu.
 \end{nap}
-
+\\ \\
+\begin{nap}
+Takodje, do sada govorili smo o dva prostora u kojima je $(C(\mathcal J), \norm{\cdot}_1)$ gust; $\mathcal{R}(\mathcal{J})$ funkcija integrabilnih po Rimanu, i prostoru $\mathcal{L}^1(\mathcal{J})$ funkcija integrabilnih po Lebegu. Moz1e se dokazati da vaz1i $C(\mathcal J) \ps \mathcal{R}(\mathcal{J}) \ps \mathcal{L}^1(\mathcal{J})$. Odatle sledi da $(\mathcal{R}(\mathcal J), \norm{\cdot}_1)$ nije kompletan.
+\end{nap}
+\\ \\
 \begin{tma}(Kavaljerijev princip)
 	Neka je $\mathcal J \psj \RR^k$ $k-$dim kvadar i $E\psj \mathcal J$ skup merljiv po Zhordanu. Predstavimo $\mathcal J$
 	kao proizvod $\mathcal J = \mathcal J_x \times \mathcal J_y$ kvadara $\mathcal J_x \psj \RR^l$ i $\mathcal J_y \psj \RR^{k-l}$.
@@ -1547,7 +1551,7 @@ homomorfizam algebri.
 \begin{proof}
 \begin{itemize}
 \item[(1)] $F^*(\alpha + \beta) X = (\alpha + \beta) (F_* X) = \alpha(F_* X) + \beta(F_* X) = (F^* \alpha + F^* \beta) X$
-\item[(2)]
+\item[(2)] Navodimo dokaz za 1-forme:
 \begin{align*}
  F^* (\alpha \wedge \beta) (X,Y) &= (\alpha \wedge \beta) (F_* (X), F_* (Y)) \\
  &= \begin{vmatrix} \alpha(F_*(X)) & \alpha(F_*(Y)) \\ \beta(F_*(X)) & \beta(F_*(Y)) \end{vmatrix} \\
@@ -1734,7 +1738,7 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 	Uspostaviti izomorfizam izmedju diferencijalnih formi i odgovarajuc1ih prostora glatkih funkcija na kojima definishemo
 	$\grad, \rot, \div$ i dokazati da c1e svi dijagrami komutirati.
 \end{nap}
-
+\\ \\
 \begin{tvr}
 	Svaka $1-$forma u $\RR^n$ je oblika $\omega^1_{\vec B} := \langle \vec B, \cdot \rangle$, za jedinstveno $\vec B$ i 
 	svaka $2-$forma u $\RR^3$ je oblika $\omega^2_{\vec B} := (\vec B, \cdot, \cdot) $ za jedinstveno $\vec B$.
@@ -1752,7 +1756,7 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 	\end{align*}
 	Iz ove definicije je jasno da \( \div \circ \rot = 0, \rot \circ \grad = 0 \) sledi iz $d \circ d = 0$.
 \end{nap}
-
+\\ \\
 \begin{pr}
 	\( \omega^1_{\vec A}\wedge \omega^1_{\vec B} = \omega^2_{\vec A \times \vec B}\),
 	\( \omega^1_{\vec A}\wedge \omega^2_{\vec B} = \omega^3_{\vec A \cdot \vec B}\) 
@@ -1786,7 +1790,7 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 	Dakle, izbor takvog preslikavanje $L$ (za koje mozhemo smatrati da je determinanta), odredjuje orijentaciju
 	vektorskog prostora $V$.
 \end{nap}
-
+\\ \\
 \begin{nap}
 	Ako je mnogostrukost orijentabilna, onda je definicija integrala forme po lokalnoj karti dobra.
 \end{nap}
@@ -1906,7 +1910,7 @@ Pretpostaviti suprotno, da $\forall x \in \mathbb{B}^n$ vaz1i $f(x) \ne x$. Defi
 	\[ \int_M: \hdr{l}(M) \times \hdr{n - l}(M) \to \RR, (\alpha, \beta) \mapsto \int_M(\alpha\wedge\beta) \] 
 	nedegenerisana bilinearna forma.
 \end{tma}
-
+\\ \\
 \begin{posl}
 	Ako je $M$ kompaktna orijentisana mnogostrukost bez granice i $\dim M = n$. Onda je 
 	$\int_M:\hdr n (M) \to \RR$ izomorfizam. Specijalno: 
@@ -2201,7 +2205,7 @@ gde je \[\sigma_n(x):= \frac{S_0(x) + \dots + S_n(x)}{n+1}\]
 \end{proof}
 
 \begin{nap}
-	Prethodna teorema nam daje josh jedan dokaz druge Vajershtrasove teoreme o aproksimaciji neprekidnih$ 2\pi-$periodichnih
+	Prethodna teorema nam daje josh jedan dokaz druge Vajershtrasove teoreme o aproksimaciji neprekidnih $ 2\pi-$periodichnih
 	funkcija trigonometrijskim polinomima.
 \end{nap}\\
 
